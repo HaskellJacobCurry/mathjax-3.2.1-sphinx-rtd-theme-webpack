@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathML Support &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lazy Typesetting" href="lazy.html" />
+    <link rel="prev" title="SVG Support" href="svg.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Output Formats</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="html.html">HTML Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svg.html">SVG Support</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MathML Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">MathJax Output Formats</a> &raquo;</li>
+      <li>MathML Support</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/output/mathml.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mathml-support">
+<span id="mathml-output"></span><h1>MathML Support<a class="headerlink" href="#mathml-support" title="Permalink to this heading"></a></h1>
+<p>MathJax uses MathML as the basis for its internal format for
+mathematical expressions, so MathML support is built into MathJax at a
+fundamental level.  There is a <a class="reference internal" href="../basic/mathematics.html#mathml-input"><span class="std std-ref">MathML input jax</span></a>
+for converting from MathML elements into the internal format
+(javascript objects representing the MathML elements), and there is a
+mechanism that can convert the internal format into a serialized
+MathML string provided by <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.toMML()</span></code> (if you are
+using MathJax components).</p>
+<p id="nativemml">While MathJax version 2 included a <cite>NativeMML</cite> output jax for
+producing MathML output in the web page, because MathML is not
+available in the Chrome, Edge, and IE browsers, because the MathML
+support in Safari and Firefox don’t include all the features needed by
+MathJax (e.g., the <cite>&lt;mlabeledtr&gt;</cite> element needed for labeled
+equations), and because the quality of the results in Safari and
+Firefox are not always comparable to the output from MathJax, the
+<cite>NativeMML</cite> output jax is no longer provided in MathJax version 3.</p>
+<p>You can, however, use MathJax’s MathML serialization features to
+implement your own native MathML output if you wish.  Here is one
+example that does so for TeX input to MathML output.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nt">mjx-container</span><span class="o">[</span><span class="nt">display</span><span class="o">=</span><span class="s2">&quot;block&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//  Load only TeX input and the contextual menu</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/tex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ui/menu&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//  When page is ready, render the math in the document</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//  When page is ready:</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//    disable the assistive-mathml menu item</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//    render the document, handling require and autoload calls</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pageReady</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">menu</span><span class="p">.</span><span class="nx">menu</span><span class="p">.</span><span class="nx">findID</span><span class="p">(</span><span class="s1">&#39;Accessibility&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;AssistiveMml&#39;</span><span class="p">).</span><span class="nx">disable</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">mathjax</span><span class="p">.</span><span class="nx">mathjax</span><span class="p">.</span><span class="nx">handleRetriesFor</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">render</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//  Override the usual typeset render action with one that generates MathML output</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">renderActions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">assistiveMml</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">  </span><span class="c1">// disable assistive mathml</span><span class="w"></span>
+<span class="w">      </span><span class="nx">typeset</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">150</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">math</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">math</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">renderMathML</span><span class="p">(</span><span class="nx">math</span><span class="p">,</span><span class="w"> </span><span class="nx">doc</span><span class="p">)}},</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="nx">math</span><span class="p">,</span><span class="w"> </span><span class="nx">doc</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">renderMathML</span><span class="p">(</span><span class="nx">math</span><span class="p">,</span><span class="w"> </span><span class="nx">doc</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nx">menuOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">assistiveMml</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// The action to use for rendering MathML</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//</span><span class="w"></span>
+<span class="w">  </span><span class="nx">renderMathML</span><span class="p">(</span><span class="nx">math</span><span class="p">,</span><span class="w"> </span><span class="nx">doc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">typesetRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;mjx-container&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">typesetRoot</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">toMML</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">root</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">typesetRoot</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;block&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This example uses the <a class="reference internal" href="../web/components/misc.html#startup-component"><span class="std std-ref">startup</span></a> component to load just
+the <a class="reference internal" href="../web/components/input.html#tex-component"><span class="std std-ref">input/tex</span></a> and <a class="reference internal" href="../web/components/misc.html#menu-component"><span class="std std-ref">contextual menu</span></a> components, and defines a new render action that
+replaces the standard <code class="docutils literal notranslate"><span class="pre">typeset</span></code> action with one that creates a
+MathJax container element and stores it in <code class="xref js js-attr docutils literal notranslate"><span class="pre">math.typesetRoot</span></code>,
+then converts the internal format to a MathML string (via
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.toMML()</span></code>) and has the browser parse that into
+DOM element (via <code class="xref js js-attr docutils literal notranslate"><span class="pre">innerHTML</span></code>).  A later render action will move
+the container and its MathML contents into the DOM at the proper
+location.  For math that is in display style, the container is marked
+with an attribute so that CSS can be used to make the container be a
+block-level element with some top and bottom margin.</p>
+<p>The example also takes several steps to disable the Assistive MathML
+extension that inserts hidden MathML for the usual output renders.
+This is unneeded since we are generating MathML ourselves as the
+primary output.  Setting the <code class="xref js js-attr docutils literal notranslate"><span class="pre">menuOptions.settings.assistiveMml</span></code>
+option to <code class="docutils literal notranslate"><span class="pre">false</span></code> turns off the assistive MathML in the contextual
+menu. The <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> function also includes a line that
+disables the assistive-MathML item in the menu, so user’s can’t
+accidentaly turn it on again.  Finally, the <cite>assistiveMml</cite> render
+action is disabled, since it will never be activated (overkill
+perhaps, but no need to run the usual code for nothing).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MathJax’s version 2 NativeMML output processor worked around
+various limitations of Firefox/Gecko and Safari/WebKit (e.g., to
+provide support for equation labels), but this approach does not,
+as it just uses the generic MathML.</p>
+</div>
+<p><hr></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="svg.html" class="btn btn-neutral float-left" title="SVG Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lazy.html" class="btn btn-neutral float-right" title="Lazy Typesetting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

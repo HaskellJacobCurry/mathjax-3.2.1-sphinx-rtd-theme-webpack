@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrading from v2 to v3 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What’s New in MathJax" href="index.html" />
+    <link rel="prev" title="Articles and Presentations" href="../misc/articles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Upgrading from v2 to v3</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/upgrading/v2.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="upgrading-from-v2-to-v3">
+<span id="upgrade-v2"></span><h1>Upgrading from v2 to v3<a class="headerlink" href="#upgrading-from-v2-to-v3" title="Permalink to this heading"></a></h1>
+<p>MathJax v3 is a complete rewrite of MathJax from the ground up (see
+<a class="reference internal" href="whats-new-3.0.html#whats-new-3-0"><span class="std std-ref">What’s New in MathJax v3.0</span></a>), and so its internal structure is quite
+different from that of version 2.  That means MathJax v3 is <strong>not</strong> a
+drop-in replacement for MathJax v2, and upgrading to version 3 takes
+some adjustment to your web pages.  The sections below describe the
+changes you will need to make, and the most important differences
+between v2 and v3.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using the <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> feature of MathJax v2 on a CDN,
+note that this will <strong>not</strong> update to version 3 automatically,
+since there are significant and potentially breaking changes in
+version 3.  There is, however, a bug in <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> in versions
+2.7.5 and below; when the current version is 3.0 or higher,
+<code class="docutils literal notranslate"><span class="pre">latest.js</span></code> will not use the highest version of 2.x, but instead
+will use the version from which <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> has been taken.  For
+example, if you load <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> from version 2.7.3, it currently
+is giving you version 2.7.5 as the latest version, when version 3
+is released to the CDN, your pages will revert to using version
+2.7.3 again.  This behavior has been corrected in version 2.7.6, so
+if you change to loading <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> from version 2.7.6, you
+should get the latest 2.x version regardless of the presence of
+version 3 on the CDN.</p>
+</div>
+<p>MathJax v3 is still a work in progress; not all features of version
+2 have been converted to version 3 yet, and some may not be.  MathJax
+v2 will continue to be maintained as we work to move more features
+into version 3, but MathJax v2 likely will not see much further
+development, just maintenance, once MathJax v3 is fully converted.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#v2-configuration-changes"><span class="std std-ref">Configuration Changes</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-loading-changes"><span class="std std-ref">Changes in Loading MathJax</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-api-changes"><span class="std std-ref">Changes in the MathJax API</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-jax-changes"><span class="std std-ref">Changes in Input and Output Jax</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-not-available"><span class="std std-ref">No Longer Applies to Version 3</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-not-ported"><span class="std std-ref">Not Yet Ported to Version 3</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-contextual-menu-changes"><span class="std std-ref">Contextual Menu Changes</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-mathjax-node"><span class="std std-ref">MathJax in Node</span></a></p></li>
+<li><p><a class="reference internal" href="#v2-compatibility-example"><span class="std std-ref">Version 2 Compatibility Example</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<section id="configuration-changes">
+<span id="v2-configuration-changes"></span><h2>Configuration Changes<a class="headerlink" href="#configuration-changes" title="Permalink to this heading"></a></h2>
+<p>There are a number of changes in version 3 that affect how MathJax is
+configured.  In version 2, there were several ways to provide
+configuration for MathJax; in MathJax 3, when you are using
+<a class="reference internal" href="../web/components/index.html#web-components"><span class="std std-ref">MathJax components</span></a>, there is now only one,
+which is to set the <code class="xref js js-data docutils literal notranslate"><span class="pre">MathJax</span></code> global to contain the
+configuration information prior to loading MathJax.  In particular,
+you no longer call <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Config()</span></code>, and this function does
+not exist in MathJax v3.  See the section <a class="reference internal" href="../web/configuration.html#configuration"><span class="std std-ref">Configuring MathJax</span></a> for
+more details on how to configure MathJax.</p>
+<p>In addition to requiring the use of the <code class="xref js js-data docutils literal notranslate"><span class="pre">MathJax</span></code> global
+variable for setting the configuration, the organization of the
+configuration options have been changed to accommodate the new
+internal structure of MathJax, and some of their names have changed as
+well.  To help you convert your existing version 2 configurations to
+version 3, we provide a <a class="reference external" href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">conversion tool</a>
+that you can use to obtain a version 3 configuration that is as close
+as possible to your current one.</p>
+<p>Not all configuration parameters can be converted directly, however.
+For some of these, it is because the version 2 features have not yet
+been ported to version 3, but for others, the version 2 feature may
+simply not exist in the new architecture of version 3.  For example,
+MathJax v2 updates the page in phases, first removing the math source
+expressions (e.g., the TeX code), then inserts a preview expression
+(fast to create, but not as accurately laid out), and then goes back
+and produces high-quality typeset versions, which it inserts in chunks
+between page updates.  MathJax version 3 does not work that way (it
+does not change the page until the math is entirely typeset), and so
+the options that control the math preview and the chunking of the
+equations for display simply have no counterparts in version 3.</p>
+<p>Finally, configurations that change the MathJax code via augmenting
+the existing MathJax objects, or that hook into MathJax’s processing
+pipeline via <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Register.StartupHook()</span></code> or one of the
+other hook mechanisms will not carry over to version 3.  MathJax v3
+does not use the queues, signals, and callbacks that are central to
+version 2, so code that relies on them will have to be updated.  See
+the <a class="reference internal" href="../web/configuration.html#web-configuration"><span class="std std-ref">Configuring and Loading MathJax</span></a> section for some approaches to these
+issues.</p>
+<hr class="docutils" />
+</section>
+<section id="changes-in-loading-mathjax">
+<span id="v2-loading-changes"></span><h2>Changes in Loading MathJax<a class="headerlink" href="#changes-in-loading-mathjax" title="Permalink to this heading"></a></h2>
+<p>Just as there are changes in how MathJax is configured, there are also
+changes in how MathJax is loaded.  With version 2, you load
+<code class="docutils literal notranslate"><span class="pre">MathJax.js</span></code> and indicate a combined configuration file using
+<code class="docutils literal notranslate"><span class="pre">?config=</span></code> followed by the name of the configuration file.  This
+always required at least two files to be loaded (and often more than
+that), and the second file was always loaded asynchronously, meaning
+MathJax always operated asynchronously.</p>
+<p>In version 3, there is no longer a <code class="docutils literal notranslate"><span class="pre">MathJax.js</span></code> file, and you load a
+combined component file directly.  E.g., you load <code class="docutils literal notranslate"><span class="pre">tex-chtml.js</span></code> to
+get TeX with CommonHTML output.  This reduces the number of files that
+need to be requested, and improves performance.  See
+<a class="reference internal" href="../web/configuration.html#loading-mathjax"><span class="std std-ref">Loading MathJax</span></a> for more details.</p>
+<p>Just as there is no need to use <code class="docutils literal notranslate"><span class="pre">?config=</span></code> in version 3, the other
+parameters that could be set in this way also are absent from
+version 3.  So, for example, you can’t set <code class="docutils literal notranslate"><span class="pre">delayStartupUntil</span></code> in
+the script that loads MathJax.</p>
+<p>The startup sequence operates fundamentally differently in version 3
+from how it did in version 2.  In version 2, MathJax would begin its
+startup process immediately upon MathJax being loaded, queuing action
+to perform configuration blocks, load extensions and jax, do the
+initial typesetting, and so on.  It was difficult to insert your own
+actions into this sequence, and timing issues could occur if you
+didn’t put your configuration in the right place.</p>
+<p>In version 3, synchronization with MathJax is done through ES6
+promises, rather than MathJax’s queues and signals, and MathJax’s
+startup process is more straight-forward.  You can insert your own
+code into the startup process more easily, and can replace the default
+startup actions entirely, if you wish.  The actions MathJax
+takes during startup are better separated so that you can pick and
+choose the ones you want to perform.  See the <a class="reference internal" href="whats-new-3.0.html#startup-actions"><span class="std std-ref">Startup Actions</span></a>
+section for more details on how to accomplish this.</p>
+<hr class="docutils" />
+</section>
+<section id="changes-in-the-mathjax-api">
+<span id="v2-api-changes"></span><h2>Changes in the MathJax API<a class="headerlink" href="#changes-in-the-mathjax-api" title="Permalink to this heading"></a></h2>
+<p>Because the internals have been completely redesigned, its <a class="reference internal" href="../index.html#api"><span class="std std-ref">API</span></a> has changed, and so if you have been calling MathJax functions,
+or have modified MathJax internals by augmenting the existing MathJax
+objects, that code will no longer work with version 3, and will have
+to be modified.  Some of the more important changes are discussed
+below.</p>
+<ul class="simple">
+<li><p>The <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Typeset()</span></code> function has been replaced by the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.typesetPromise()</span></code> and <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.typeset()</span></code>
+functions.  In fact, the <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.Hub</span></code> has been removed
+entirely.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The queues, signals, and callbacks that are central to version 2
+have been replaced by ES6 promises in version 3.  In particular, you
+can use <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> as a replacement for
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Queue()</span></code>.  See the <a class="reference internal" href="../web/typeset.html#typeset-async"><span class="std std-ref">Handling Asynchronous Typesetting</span></a> section
+for how this is done.  See the <a class="reference internal" href="#v2-compatibility-example"><span class="std std-ref">Version 2 Compatibility Example</span></a> below
+for code that may make it possible for you to use your version 2
+code in version 3.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Register.StartupHook()</span></code> and other related
+hooks have been replaced by <code class="docutils literal notranslate"><span class="pre">ready()</span></code> functions in the
+<a class="reference internal" href="../web/components/misc.html#loader-component"><span class="std std-ref">loader</span></a> component.  So code that relies on these
+hooks to alter MathJax need to be reworked.  The
+<a class="reference internal" href="whats-new-3.0.html#startup-actions"><span class="std std-ref">Startup Actions</span></a> section shows some mechanisms that can be
+used for this.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Version 2 configurations could include an <code class="xref js js-meth docutils literal notranslate"><span class="pre">Augment()</span></code> block that
+could be used to add (or override) methods and data in the main
+MathJax objects.  In version 3, this should be handled through
+subclassing the MathJax object classes, and passing the new classes
+to the objects that use them.  This can be done during the <cite>startup</cite>
+component’s <code class="docutils literal notranslate"><span class="pre">ready()</span></code> function, when the MathJax classes are
+available, but before any of their instances have been created.  See
+the <a class="reference internal" href="whats-new-3.0.html#startup-actions"><span class="std std-ref">Startup Actions</span></a> section for some ideas on how this can be
+done.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Augment</span></code> configuration blocks and <code class="xref js js-meth docutils literal notranslate"><span class="pre">StartupHooks()</span></code>
+function described above could be used in version 2 to extend
+MathJax’s capabilities, and in particular, to extend the TeX input
+jax by adding new javascript-based macros.  These version-2
+mechanisms are not available in version 3; instead, TeX extensions
+are more formalized in version 3.  See the <a class="reference internal" href="../web/webpack.html#custom-component"><span class="std std-ref">Building a Custom Component</span></a>
+section for an example of how this can be done.</p></li>
+</ul>
+<ul id="math-script-example">
+<li><p>In version 2, the mathematics that is located by MathJax is removed
+from the page and stored in special <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tags within the
+page.  These are not visible to the reader, but mark the location
+and content of the math on the page.  It was possible in version 2
+for programs to create these <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tags themselves, avoiding
+the need for MathJax to look for math delimiters, and for the page
+author to encode HTML special characters like <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&amp;</span></code> in their mathematics.  Version 3 does not alter the document
+in this way, and does not store the math that it locates in tags in
+the page.  Instead, it keeps an external list of math objects (of the
+<code class="docutils literal notranslate"><span class="pre">MathItem</span></code> class).  So if you wish to use such scripts to store
+the math in the page initially, you can replace the <code class="docutils literal notranslate"><span class="pre">find</span></code> action
+in the <a class="reference internal" href="../options/document.html#document-renderactions"><span class="std std-ref">renderActions</span></a> list to use a
+function that locates the scripts and creates the needed
+<code class="docutils literal notranslate"><span class="pre">MathItem</span></code> objects.  For example</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">renderActions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">find</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;script[type^=&quot;math/tex&quot;]&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!!</span><span class="nx">node</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/; *mode=display/</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">math</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">MathItem</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span><span class="p">,</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">inputJax</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">display</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="nx">node</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">replaceChild</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">node</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="nx">math</span><span class="p">.</span><span class="nx">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">node</span><span class="o">:</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">delim</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">};</span><span class="w"></span>
+<span class="w">          </span><span class="nx">math</span><span class="p">.</span><span class="nx">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">node</span><span class="o">:</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">delim</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">};</span><span class="w"></span>
+<span class="w">          </span><span class="nx">doc</span><span class="p">.</span><span class="nx">math</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">math</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>should find the scripts that MathJax version 2 normally would have
+created.</p>
+<p>Note that this will <em>replace</em> the standard <code class="docutils literal notranslate"><span class="pre">find</span></code> action that
+looks for math delimiters with this one that looks for the MathJax
+v2 script tags instead.  If you want to do <em>both</em> the original
+delimiter search <em>and</em> the search for script tags, then change the
+<code class="docutils literal notranslate"><span class="pre">find:</span></code> above to <code class="docutils literal notranslate"><span class="pre">findScript:</span></code> so that it doesn’t replace the
+default <code class="docutils literal notranslate"><span class="pre">find</span></code> action.  That way, both actions will occur.</p>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="changes-in-input-and-output-jax">
+<span id="v2-jax-changes"></span><h2>Changes in Input and Output Jax<a class="headerlink" href="#changes-in-input-and-output-jax" title="Permalink to this heading"></a></h2>
+<p>The input and output processors (called “jax”) are core pieces of
+MathJax.  All three input processors from version 2 are present in
+version 3, but the <a class="reference internal" href="../input/asciimath.html#asciimath-support"><span class="std std-ref">AsciiMath</span></a> processor has
+not been fully ported to version 3, and currently consists of the
+legacy version 2 code patched onto the version 3 framework.  This is
+larger and less efficient than a full version 3 port, which should be
+included in a future release.</p>
+<p>In version 2, MathJax used preprocessors (<cite>tex2jax</cite>, <cite>mml2jax</cite>,
+<cite>asciimath2jax</cite>, and <cite>jsMath2jax</cite>) to locate the mathematics in the
+page and prepare it for the input jax.  There was really no need to
+have these be separate pieces, so in version 3, these have been folded
+into their respective input jax.  That means that you don’t load them
+separately, and the configuration options of the preprocessor and
+input jax have been combined.  For example, the <code class="docutils literal notranslate"><span class="pre">tex2jax</span></code> and
+<code class="docutils literal notranslate"><span class="pre">TeX</span></code> options now both occur in the <code class="docutils literal notranslate"><span class="pre">tex</span></code> configuration block.</p>
+<p>MathJax version 2 included six different output jax, which had been
+developed over time to serve different purposes.  The original
+HTML-CSS output jax had the greatest browser coverage, but its output
+was browser-dependent, its font detection was fragile, and it was the
+slowest of the output processors.  The CommonHTML output jax was a
+more modern remake of the HTML output that was both browser
+independent, and considerably faster.  The SVG output jax produced SVG
+images rather than HTML DOM trees, and did not require web fonts in
+order to display the math, so the results could be made
+self-contained.  MathJax version 3 includes the CommonHTML and SVG
+output jax, but has dropped the older, slower HTML-CSS output format.</p>
+<p>MathJax 2 also included an output format that produced MathML for
+those browsers that support it.  Since only Firefox and Safari
+currently implement MathML rendering (with no support in IE, Edge, or
+Chrome), and because MathJax can’t control the quality or coverage of
+the MathML support in the browser, MathJax version 3 has dropped the
+NativeMML output format for now.  Should the browser situation improve
+in the future, it could be added again.  See <a class="reference internal" href="../output/mathml.html#mathml-output"><span class="std std-ref">MathML Support</span></a> for
+more on this, and for an example of how to implement MathML output
+yourself.</p>
+<p>There are few changes within the supported input and output jax, as
+described below:</p>
+<section id="input-changes">
+<h3>Input Changes<a class="headerlink" href="#input-changes" title="Permalink to this heading"></a></h3>
+<p>There are two changes in the TeX input jax that can affect backward
+compatibility with existing TeX content in your pages.</p>
+<p>The first concerns the <code class="docutils literal notranslate"><span class="pre">\color</span></code> macro; in version 2, <code class="docutils literal notranslate"><span class="pre">\color</span></code> is a
+non-standard in that it takes two arguments (the color an the math to
+be shown in that color), while the authentic LaTeX version is a switch
+that changes the color of everything that follows it.  The
+LaTeX-compatible one was available as an extension.  In version 3,
+both versions are extensions (see ), with the LaTeX-compatible one
+being autoloaded when <code class="docutils literal notranslate"><span class="pre">\color</span></code> is first used.  See the
+<a class="reference internal" href="../input/tex/extensions/color.html#tex-color"><span class="std std-ref">color</span></a> and <a class="reference internal" href="../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a> extensions for more
+information, and how to configure MathJax to use the original
+version-2 <code class="docutils literal notranslate"><span class="pre">\color</span></code> macro.</p>
+<p>The other incompatibility is that the names of some extensions have
+been changed in version 3.  For example, <cite>AMScd</cite> in version 2 is now
+<cite>amscd</cite> in version 3.  This means that you need to use
+<code class="docutils literal notranslate"><span class="pre">\require{amscd}</span></code> rather than <code class="docutils literal notranslate"><span class="pre">\require{AMScd}</span></code> to load the <cite>CD</cite>
+environment.  In order to support existing content that uses
+<code class="docutils literal notranslate"><span class="pre">\require</span></code>, you can use the code in the
+<a class="reference internal" href="#v2-compatibility-example"><span class="std std-ref">Version 2 Compatibility Example</span></a> section below.</p>
+<p>Some other changes include:</p>
+<ul class="simple">
+<li><p>The <cite>autoload-all</cite> extension has been rename <cite>autoload</cite>, and is more
+flexible and configurable than the original.</p></li>
+</ul>
+<ul class="simple">
+<li><p>There are two new extensions, <a class="reference internal" href="../input/tex/extensions/braket.html#tex-braket"><span class="std std-ref">braket</span></a> and
+<a class="reference internal" href="../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The configuration options for controlling the format of equation
+numbers have been moved to an extension; see the
+<a class="reference internal" href="../input/tex/extensions/tagformat.html#tex-tagformat"><span class="std std-ref">tagformat</span></a> documentation for details.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">useMathMLspacing</span></code> options for the various input jax have been
+moved to the output jax instead, as the <code class="docutils literal notranslate"><span class="pre">mathmlSpacing</span></code> option.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">processEscapes</span></code> option for the <cite>tex2jax</cite> preprocessor (now
+for the TeX input jax) had a default value of <code class="docutils literal notranslate"><span class="pre">false</span></code> in version 2,
+but has default value <code class="docutils literal notranslate"><span class="pre">true</span></code> in version 3.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The functionality of the <cite>MathChoice</cite> extension has been moved to
+the base TeX package.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The non-standard <code class="docutils literal notranslate"><span class="pre">UPDIAGONALARROW</span></code> and <code class="docutils literal notranslate"><span class="pre">ARROW</span></code> notations have
+been removed from the <code class="docutils literal notranslate"><span class="pre">menclose</span></code> element.  These have been
+replaced by the standard <code class="docutils literal notranslate"><span class="pre">northeastarrow</span></code> notation.</p></li>
+</ul>
+</section>
+<section id="output-changes">
+<h3>Output Changes<a class="headerlink" href="#output-changes" title="Permalink to this heading"></a></h3>
+<p>There are several important changes to the output jax in version 3,
+and several things that aren’t yet implemented, but will be in a
+future version.  One such feature is linebreaking, which hasn’t been
+ported to version 3 yet. Another is that only the MathJax TeX font is
+currently available in version 3.  See <a class="reference internal" href="#v2-not-ported"><span class="std std-ref">Not Yet Ported to Version 3</span></a> for a list of
+features that are still being converted.</p>
+<p>In addition, there a few other changes of importance:</p>
+<ul class="simple">
+<li><p>There are no more image fonts.  These were for use with the HTML-CSS
+output jax, and since that is not included in MathJax version 3,
+neither are the image fonts.  Since those took up a lot of disk
+space, this should make locally hosted MathJax installations smaller.</p></li>
+</ul>
+<ul class="simple">
+<li><p>For expressions with equation numbers, the SVG output jax now has
+these expressions float with the size of the container element, just
+like they do in HTML output.  This was not the case in version 2, so
+this is an important improvement for dynamic pages.</p></li>
+</ul>
+<ul>
+<li><p>The font used for characters that aren’t in the font used by MathJax
+used to be controlled by the <code class="docutils literal notranslate"><span class="pre">undefinedFont</span></code> configuration
+parameter in version 2, but in version 3, you should use CSS to set
+this instead.  For example,</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">mjx-container</span><span class="w"> </span><span class="nt">mjx-utext</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">my-favorite-font</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nt">mjx-container</span><span class="w"> </span><span class="nt">svg</span><span class="w"> </span><span class="nt">text</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">my-favorite-font</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>would select the <code class="docutils literal notranslate"><span class="pre">my-favorite-font</span></code> to be used for unknown
+characters.  The first declaration is for the CommonHTML output, and
+the second for the SVG output.  Once advantage of this approach is
+that you can specify the CSS separately for each variant; e.g.,</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">mjx-container</span><span class="w"> </span><span class="nt">mjx-utext</span><span class="o">[</span><span class="nt">variant</span><span class="o">=</span><span class="s2">&quot;sans-serif&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">my-sans-serif-font</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nt">mjx-container</span><span class="w"> </span><span class="nt">svg</span><span class="w"> </span><span class="nt">text</span><span class="o">[</span><span class="nt">data-variant</span><span class="o">=</span><span class="s2">&quot;sans-serif&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">my-sans-serif-font</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>would set the font to use for characters that aren’t in the MathJax
+fonts and that have requested the sans-serif variant.</p>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Version 3 only implements the CommonHTML and SVG output jax.  The
+original HTML-CSS output jax has been dropped, a has the NativeMML.
+The PreviewHTML and PlainSource output jax have not been ported to
+version 3, though they may be in the future, if there is interest.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+<section id="no-longer-applies-to-version-3">
+<span id="v2-not-available"></span><h2>No Longer Applies to Version 3<a class="headerlink" href="#no-longer-applies-to-version-3" title="Permalink to this heading"></a></h2>
+<p>A number of version 2 features have been removed as part of the
+redesign of MathJax version 3.  These are described below.</p>
+<ul class="simple">
+<li><p>In version 3, MathJax no longer updates the page in small “chunks”,
+but instead updates the page as a whole (a future version may
+include an extension that updates in smaller pieces).  This has an
+impact on a number of version 2 features.  First, because there is
+no incremental update, the MathJax message bar (usually in the lower
+left corner) that indicated the progress of the typesetting is no
+longer needed, and is not part of MathJax version 3.  Of course, the
+configuration options that control it have also been removed, as
+have the options for equation chunking (that controlled how many
+equations to process between screen updates.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Similarly, since the page updating is done all at once, there is no
+need for the math preview versions that were displayed while the
+equations where being typeset.  So the <cite>fast-preview</cite> extension and
+<cite>PreviewHTML</cite> output jax have been removed, along with the
+configuration options for them.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>PlainSource</cite> output jax has not be ported to version 3, though
+it may be in the future; it can be handled in other ways in
+version 3.  As mentioned above, the <cite>NativeMML</cite> has been dropped
+from version 3, though it is not hard to <a class="reference internal" href="../output/mathml.html#nativemml"><span class="std std-ref">implement a
+replacement</span></a> if you want.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>autobold</cite> TeX extension is no longer available in version 3,
+and is unlikely to be ported in the future.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>mhchem</cite> TeX extension in version 2 came in two forms:  the
+original extension that didn’t match the LaTeX implementation
+perfectly, and a rewrite by the author of the original LaTeX package
+that made it compatible with LaTeX.  The legacy version could be
+selected by a configuration option.  This is no longer possible in
+version 3 (the legacy version is no longer provided).</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>handle-floats</cite> extension for HTML output has been removed, as
+its functionality is now part of the standard CommonHTML output.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>jsMath2jax</cite> preprocessor has been dropped.  This was used to
+help bridge jsMath users to MathJax, but since it has been a decade
+since MathJax was introduced, the need for jsMath conversion should
+be very small at this point.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>MatchWebFonts</cite> extension is no longer available.  This was
+sometimes needed for HTML-CSS output, which relied on the fonts
+being in place when it ran.  The CommonHTML output is less
+susceptible to font issues, and this is no longer necessary.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>FontWarnings</cite> extension is no longer available, since it was
+for the HTML-CSS output jax, which is not part of MathJax
+version 3.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>HelpDialog</cite> extension is not included in version 3.  Its
+functionality is incorporated into the <a class="reference internal" href="../web/components/misc.html#menu-component"><span class="std std-ref">ui/menu</span></a>
+directly.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>toMathML</cite> extension is no longer provided in version 3.
+Instead, you can use <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.toMML()</span></code> if you are
+using MathJax components, or can use the <code class="docutils literal notranslate"><span class="pre">SerializedMMLVisitor</span></code>
+object if you are calling MathJax modules directly.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The configuration blocks no longer allow the <code class="docutils literal notranslate"><span class="pre">style</span></code> option that
+were available in version 2.  Instead, you should use CSS
+stylesheets and CSS style files directly.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Synchronization with MathJax in version 2 was handled via queues,
+signals, and callbacks.  In version 3, these have been replaced by
+ES6 promises.  See <a class="reference internal" href="../advanced/synchronize.html#synchronization"><span class="std std-ref">Synchronizing your code with MathJax</span></a> for more details.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="not-yet-ported-to-version-3">
+<span id="v2-not-ported"></span><h2>Not Yet Ported to Version 3<a class="headerlink" href="#not-yet-ported-to-version-3" title="Permalink to this heading"></a></h2>
+<p>As MathJax 3 is still a work in progress, not all of the version 2
+features have been converted to the new code base yet, though we hope
+to include them in version 3 in a future release.  Among the most
+important ones are the following.</p>
+<ul class="simple">
+<li><p>Currently, automatic line breaking support is missing from
+version 3.  This is a key feature to be included in a future
+release.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The MathJax v3 output jax currently only support one font, the
+MathJax TeX fonts.  Improved font support is an important goal for
+version 3, and this is one of the next features to be addressed.  We
+will be rebuilding the fonts used for MathJax, and making additional
+web fonts available in a future release.  We also plan to make the
+tools used for creating the necessary font data available for use in
+porting your own fonts for use with MathJax.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The localization mechanism available in version 2 has not yet been
+incorporated into version 3, so currently MathJax v3 is available
+only in English.  This is an important feature that will be added to
+MathJax v3 in a future release.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>begingroup</cite> and <cite>mediawiki-texvc</cite> TeX extensions haven’t been
+ported to version 3 yet, but should be in the future.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The <cite>auto-collapse</cite> assistive extension is not yet available for
+version 3.  If there is enough interest, that will also be ported to
+the new code base.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="contextual-menu-changes">
+<span id="v2-contextual-menu-changes"></span><h2>Contextual Menu Changes<a class="headerlink" href="#contextual-menu-changes" title="Permalink to this heading"></a></h2>
+<p>The contextual menu has been reorganized to make it easier to access
+some functions, and to add new ones.  One major new features is the
+<cite>Copy to Clipboard</cite> submenu, which mirrors the <cite>Show Math As</cite> menu,
+but sends the output to the clipboard rather than displaying it on
+screen.  This is a feature that has been requested for a long time,
+and we are pleased to be able to offer it in version 3.</p>
+<p>There is also a new <cite>Reset to defaults</cite> item that resets all the saved
+settings to their original values (effectively clearing any custom
+settings).</p>
+<p>The contextual menu now stores its data using the <code class="docutils literal notranslate"><span class="pre">localStorage</span></code>
+object in the browser, rather than using cookies like version 2 does.
+This should be more efficient and more secure, but does mean older
+browsers may not be able to save their settings from session to
+session (if they don’t support <code class="docutils literal notranslate"><span class="pre">localStorage</span></code>).</p>
+<p>The accessibility menu options are now built into the contextual menu,
+so there is no longer an <cite>accessibility-menu</cite> extension.  They also
+have been reorganized in the menu to make it easier to access the more
+important features.  The <cite>auto-collapse</cite> extension has not yet been
+ported to version 3, however.  The equation explorer has been expanded
+and improved; see <a class="reference internal" href="../basic/accessibility.html#accessibility"><span class="std std-ref">Accessibility Features</span></a> for details.</p>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">showMathMenu</span></code> and <code class="docutils literal notranslate"><span class="pre">showMathMenuMSIE</span></code> options have
+been removed.  The need for separate handling of the menu in IE is no
+longer applicable, and you control whether the contextual menu is
+attached to the typeset mathematics using the <code class="docutils literal notranslate"><span class="pre">enableMenu</span></code> property
+of the <code class="docutils literal notranslate"><span class="pre">options</span></code> block of the MathJax configuration (see
+the <a class="reference internal" href="../options/menu.html#menu-options"><span class="std std-ref">Contextual Menu Options</span></a> documentation).</p>
+<hr class="docutils" />
+</section>
+<section id="mathjax-in-node">
+<span id="v2-mathjax-node"></span><h2>MathJax in Node<a class="headerlink" href="#mathjax-in-node" title="Permalink to this heading"></a></h2>
+<p>Version 2 of MathJax was designed to work in a browser, and relied
+heavily on the presence of the browser window, document, DOM, and
+other browser-specific objects.  Using MathJax on a server to
+pre-process mathematics (e.g., to convert a TeX string to an SVG
+image, for example), was not easy in version 2.  The <cite>mathjax-node
+&lt;https://github.com/mathjax/mathjax-node&gt;</cite> project made that possible,
+but required a completely different way of interacting with MathJax,
+and was not as easy to use or as reliable as we would have liked.</p>
+<p>Version 3 has server-side use as an important use-case to support, and
+so it is possible to use MathJax in a <cite>node</cite> application in
+essentially the same way as in a browser, with only a few minor
+adjustments to the configuration to allow for that.  This should make
+it much easier to use MathJax on a server, as it will work the same
+there as for your web-based applications.  It is also possible to link
+to MathJax at a lower level and access the MathJax modules directly.
+See the section on <a class="reference internal" href="../server/start.html#node-start"><span class="std std-ref">using MathJax in node</span></a>, and the
+<a class="reference internal" href="../api/index.html#mathjax-api"><span class="std std-ref">MathJax API</span></a> for more information on these
+possibilities.</p>
+<hr class="docutils" />
+</section>
+<section id="version-2-compatibility-example">
+<span id="v2-compatibility-example"></span><h2>Version 2 Compatibility Example<a class="headerlink" href="#version-2-compatibility-example" title="Permalink to this heading"></a></h2>
+<p>The following example causes the <code class="docutils literal notranslate"><span class="pre">\color</span></code> macro to be the original
+one from version 2, and sets up the <code class="docutils literal notranslate"><span class="pre">\require</span></code> macro to translate
+the old package names into the new ones.  This should make MathJax v3
+handle existing content properly.</p>
+<p>Be sure to convert your version-2 configuration to a version-3 one via
+the <a class="reference external" href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">conversion tool</a>
+that we provide.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//  Mapping of old extension names to new ones</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//</span><span class="w"></span>
+<span class="w">    </span><span class="nx">requireMap</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">AMSmath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">AMSsymbols</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">AMScd</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;amscd&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">HTML</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;html&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">noErrors</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;noerrors&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">noUndefined</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;noundefined&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ready</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  Replace the require command map with a new one that checks for</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//    renamed extensions and converts them to the new names.</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">CommandMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">tex</span><span class="p">.</span><span class="nx">SymbolMap</span><span class="p">.</span><span class="nx">CommandMap</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">requireMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">requireMap</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">RequireLoad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">tex</span><span class="p">.</span><span class="nx">require</span><span class="p">.</span><span class="nx">RequireConfiguration</span><span class="p">.</span><span class="nx">RequireLoad</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">RequireMethods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Require</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">parser</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="kd">var</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">GetArgument</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">required</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/[^_a-zA-Z0-9]/</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TexError</span><span class="p">(</span><span class="s1">&#39;BadPackageName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argument for %1 is not a valid package name&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">requireMap</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">required</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requireMap</span><span class="p">[</span><span class="nx">required</span><span class="p">];</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="nx">RequireLoad</span><span class="p">(</span><span class="nx">parser</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">};</span><span class="w"></span>
+<span class="w">      </span><span class="ow">new</span><span class="w"> </span><span class="nx">CommandMap</span><span class="p">(</span><span class="s1">&#39;require&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">require</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Require&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">RequireMethods</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  Do the usual startup</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultReady</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">autoload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w">          </span><span class="c1">// don&#39;t autoload the color extension</span><span class="w"></span>
+<span class="w">      </span><span class="nx">colorv2</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// do autoload the colorv2 extension</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+ <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This uses the <code class="docutils literal notranslate"><span class="pre">tex-chtml.js</span></code> combined component, so change this to
+whichever one you want.</p>
+<p>If your website uses the MathJax API to queue typeset calls via</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">([</span><span class="s1">&#39;Typeset&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">]);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>for example, these calls will need to be converted to use the
+<a class="reference internal" href="../index.html#api"><span class="std std-ref">MathJax 3 API</span></a>.  You may be able to use the following code
+to patch into MathJax version 3, which provides implementations for
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Typeset()</span></code>, and <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Queue()</span></code>.  It
+also flags usages of <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Register.StartupHook()</span></code> and
+the other hook-registering commands, and that you have converted your
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Config()</span></code> and <code class="docutils literal notranslate"><span class="pre">x-mathjax-config</span></code> scripts to their
+version 3 counterparts (use the <a class="reference external" href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">conversion tool</a>).</p>
+<p>Add the following lines right after the <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">CommandMap()</span></code> call in
+the code above:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span><span class="w"></span>
+<span class="c1">// Add a replacement for MathJax.Callback command</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">args</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nb">Object</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="w">              </span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">1</span><span class="p">][</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">]])</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">Function</span><span class="p">.</span><span class="nx">bind</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">1</span><span class="p">][</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">]],</span><span class="w"> </span><span class="nx">args</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">Function</span><span class="p">.</span><span class="nx">bind</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="nb">window</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">)));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">Function</span><span class="p">.</span><span class="nx">bind</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="nx">args</span><span class="p">[</span><span class="mf">0</span><span class="p">]].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">)));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">args</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Can&#39;t make callback from given data&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">// Add a replacement for MathJax.Hub commands</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Queue</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">m</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="kd">var</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Callback</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">       </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Typeset</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">elements</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kd">var</span><span class="w"> </span><span class="nx">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">(</span><span class="nx">elements</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="nx">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="nx">promise</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Register</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">MessageHook</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MessageHooks are not supported in version 3&#39;</span><span class="p">)},</span><span class="w"></span>
+<span class="w">     </span><span class="nx">StartupHook</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;StartupHooks are not supported in version 3&#39;</span><span class="p">)},</span><span class="w"></span>
+<span class="w">     </span><span class="nx">LoadHook</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;LoadHooks are not supported in version 3&#39;</span><span class="p">)}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Config</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MathJax configurations should be converted for version 3&#39;</span><span class="p">)}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Warn about x-mathjax-config scripts</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;script[type=&quot;text/x-mathjax-config&quot;]&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;x-mathjax-config scripts should be converted to MathJax global variable&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>With this you may be able to get away with using your existing version
+2 code to interact with version 3.  But if not, either a more
+sophisticated compatibility module will be needed, or better yet,
+convert to the new version 3 API.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../misc/articles.html" class="btn btn-neutral float-left" title="Articles and Presentations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-right" title="What’s New in MathJax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

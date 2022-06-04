@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Differences from Actual TeX &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TeX and LaTeX math delimiters" href="delimiters.html" />
+    <link rel="prev" title="TeX and LaTeX Support" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions/index.html">The TeX/LaTeX Extension List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">TeX and LaTeX Support</a> &raquo;</li>
+      <li>Differences from Actual TeX</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/input/tex/differences.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="differences-from-actual-tex">
+<span id="tex-differences"></span><h1>Differences from Actual TeX<a class="headerlink" href="#differences-from-actual-tex" title="Permalink to this heading"></a></h1>
+<p>Since MathJax renders for the web and TeX is a print layout engine,
+there are natural limitations to which parts of TeX can be supported
+in a reasonable way. Accordingly, there are several differences
+between “real” TeX/LaTeX systems and MathJax’s TeX Input.</p>
+<p>First and foremost, the TeX input processor implements <strong>only</strong> the
+math-mode macros of TeX and LaTeX, not the text-mode macros.  MathJax
+expects that you will use standard HTML tags to handle formatting the
+text of your page; MathJax only handles the mathematics.  So, for
+example, MathJax does not implement <code class="docutils literal notranslate"><span class="pre">\emph</span></code> or
+<code class="docutils literal notranslate"><span class="pre">\begin{enumerate}...\end{enumerate}</span></code> or other text-mode macros or
+environments.  You must use HTML to handle such formatting tasks.  If
+you need a LaTeX-to-HTML converter, you should consider <a class="reference external" href="http://www.google.com/search?q=latex+to+html+converter">other options</a>.</p>
+<p>There are two exception to this rule. First, MathJax supports the
+<code class="docutils literal notranslate"><span class="pre">\ref</span></code> macro outside of math-mode. Second, MathJax supports some
+macros that add text within math-mode (such as <code class="docutils literal notranslate"><span class="pre">\text{}</span></code>) as well as
+<code class="docutils literal notranslate"><span class="pre">$...$</span></code> and <code class="docutils literal notranslate"><span class="pre">\(...\)</span></code> to switch back into math-mode, along with
+<code class="docutils literal notranslate"><span class="pre">\$</span></code> to escape a dollar sign.  MathJax does not perform other macros
+inside these text blocks, however, in general.  So, for example,
+<code class="docutils literal notranslate"><span class="pre">\text{some</span> <span class="pre">\textbf{bold}</span> <span class="pre">text}</span></code> will produce the output “some
+\textbf{bold} text”, not “some <strong>bold</strong> text”.</p>
+<p>There is an extension (new in version 3.1) that implements a numnber
+of text-mode macros within the <code class="docutils literal notranslate"><span class="pre">\text{}</span></code> macro and other ones that
+produce text-mode material.  See the <a class="reference internal" href="extensions/textmacros.html#tex-textmacros"><span class="std std-ref">textmacros</span></a>
+documentation for details.</p>
+<p>Second, some features in MathJax might be necessarily limited.  For
+example, MathJax only implements a limited subset of the <code class="docutils literal notranslate"><span class="pre">array</span></code>
+environment’s preamble; i.e., only the <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, and <code class="docutils literal notranslate"><span class="pre">|</span></code>
+characters alongside <code class="docutils literal notranslate"><span class="pre">:</span></code> for dashed lines — everything else is
+ignored.</p>
+<p><hr></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="TeX and LaTeX Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="delimiters.html" class="btn btn-neutral float-right" title="TeX and LaTeX math delimiters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

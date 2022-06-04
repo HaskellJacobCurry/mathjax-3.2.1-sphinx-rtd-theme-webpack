@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathML Support &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AsciiMath Support" href="asciimath.html" />
+    <link rel="prev" title="Supported TeX/LaTeX commands" href="tex/macros/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MathML Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mathml-in-html-pages">MathML in HTML pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-mathml-tags">Supported MathML tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#content-mathml">Content MathML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#experimental-mml3-extension">Experimental mml3 extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#semantics-and-annotations">Semantics and Annotations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MathML Support</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/input/mathml.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mathml-support">
+<span id="id1"></span><h1>MathML Support<a class="headerlink" href="#mathml-support" title="Permalink to this heading"></a></h1>
+<p>The support for MathML in MathJax involves two functions: the first
+looks for <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> tags within your document and marks them for
+later processing by MathJax, and the second converts the MathML to the
+internal format used by MathJax, where one of MathJax’s output
+processors then displays it in the web page.</p>
+<p>In addition, MathJax’s internal format is essentially MathML (with a
+few additions), implemented as javascript objects rather than DOM
+elements.  MathJax’s various input processors all convert their
+original format into this internal MathML format, and its output
+processors take this MathML and produce the proper output from it.
+Because the internal format is MathML-based, MathJax provides the
+ability to convert to and from MathML notation.</p>
+<p>Although some browsers have native support for rendering MathML, not
+all do, and so MathJax makes it possible to view MathML notation in
+<em>all</em> browsers.  Even for those that do support MathML, it may be
+valuable to use MathJax, since that will produce consistent output
+across all browsers, and MathJax implements features and functionality
+that is not available in some native MathML implementations.</p>
+<section id="mathml-in-html-pages">
+<span id="mathml-in-html"></span><h2>MathML in HTML pages<a class="headerlink" href="#mathml-in-html-pages" title="Permalink to this heading"></a></h2>
+<p>For MathML that is handled via the preprocessor, you should not use
+named MathML entities, but rather use numeric entities like
+<code class="docutils literal notranslate"><span class="pre">&amp;#x221A;</span></code> or unicode characters embedded in the page itself.  The
+reason is that entities are replaced by the browser before MathJax
+runs, and some browsers report errors for unknown entities.  For
+browsers that are not MathML-aware, that will cause errors to be
+displayed for the MathML entities.  While that might not occur in the
+browser you are using to compose your pages, it can happen with other
+browsers, so you should avoid the named entities whenever possible.
+If you must use named entities, you may need to declare them in the
+<cite>DOCTYPE</cite> declaration by hand.</p>
+<p>When you use MathML in an HTML document rather than an XHTML one
+(MathJax will work with both), you should not use the “self-closing”
+form for MathML tags with no content, but should use separate open and
+close tags.  That is, use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mspace</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;thinmathspace&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mspace</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>rather than <code class="docutils literal notranslate"><span class="pre">&lt;mspace</span> <span class="pre">width=&quot;thinmathspace&quot;</span> <span class="pre">/&gt;</span></code>.  This is because
+HTML does not have self-closing tags, and some browsers will get the
+nesting of tags wrong if you attempt to use them.  For example, with
+<code class="docutils literal notranslate"><span class="pre">&lt;mspace</span> <span class="pre">width=&quot;1em&quot;</span> <span class="pre">/&gt;</span></code>, since there is no closing tag, the rest of
+the mathematics will become the content of the <code class="docutils literal notranslate"><span class="pre">&lt;mspace&gt;</span></code> tag; but
+since <code class="docutils literal notranslate"><span class="pre">&lt;mspace&gt;</span></code> should have no content, the rest of the mathematics
+will not be displayed.  This is a common error that should be avoided.
+Modern browsers that support HTML5 should be able to handle
+self-closing tags, but older browsers have problems with them, so if
+you want your mathematics to be visible to the widest audience, do not
+use the self-closing form in HTML documents.</p>
+</section>
+<section id="supported-mathml-tags">
+<span id="mathml-tags"></span><h2>Supported MathML tags<a class="headerlink" href="#supported-mathml-tags" title="Permalink to this heading"></a></h2>
+<p>MathJax supports the <a class="reference external" href="http://www.w3.org/TR/MathML3/">MathML3.0</a>
+mathematics tags, with some limitations.  The MathML
+support is still under active development, so some tags are not yet
+implemented, and some features are not fully developed, but are
+coming.</p>
+<p>The deficiencies include:</p>
+<ul class="simple">
+<li><p>No support for alignment groups in tables.</p></li>
+<li><p>Not all attributes are supported for tables.  E.g., <code class="docutils literal notranslate"><span class="pre">columnspan</span></code>
+and <code class="docutils literal notranslate"><span class="pre">rowspan</span></code> are not implemented yet.</p></li>
+<li><p>Experimental support for the elementary math tags: <code class="docutils literal notranslate"><span class="pre">mstack</span></code>, <code class="docutils literal notranslate"><span class="pre">mlongdiv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">msgroup</span></code>, <code class="docutils literal notranslate"><span class="pre">msrow</span></code>, <code class="docutils literal notranslate"><span class="pre">mscarries</span></code>, and <code class="docutils literal notranslate"><span class="pre">mscarry</span></code> (via the <code class="docutils literal notranslate"><span class="pre">mml3</span></code> extension, see below).</p></li>
+<li><p>Experimental support for bidirectional mathematics (via the <code class="docutils literal notranslate"><span class="pre">mml3</span></code> extension, see below).</p></li>
+</ul>
+<p>See the <a class="reference external" href="http://www.w3.org/Math/testsuite/results/tests.html">results of the MathML3.0 test suite</a> for details.</p>
+</section>
+<section id="content-mathml">
+<span id="mathml-content-mathml"></span><h2>Content MathML<a class="headerlink" href="#content-mathml" title="Permalink to this heading"></a></h2>
+<p>The version 2 <code class="docutils literal notranslate"><span class="pre">content-mathml</span></code> extension is not yet available in
+version 3.</p>
+</section>
+<section id="experimental-mml3-extension">
+<span id="mathml-mml3"></span><h2>Experimental mml3 extension<a class="headerlink" href="#experimental-mml3-extension" title="Permalink to this heading"></a></h2>
+<p>MathML includes a number of tags that support elementary-school
+mathematics, like <code class="docutils literal notranslate"><span class="pre">&lt;mstack&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;mlongdiv&gt;</span></code>.  MathJax has only
+experimental support for these tags via the <cite>mml3</cite> extension.  This
+uses an XSLT transform to convert these tags into other presentation
+MathML tags that MathJax has implemented. This does a reasonable job
+for some constructs, and a poorer job for others, but it does make it
+possible to process elementary math within MathJax.  Better support is
+planned for the future.</p>
+<p>To activate experimental features in your documents, simply include
+<code class="docutils literal notranslate"><span class="pre">[mml]/mml3</span></code> in the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> section of your
+configuration:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[mml]/mml3&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This will install a pre-filter on the MathML input jax that performs
+the XSLT transform before processing it.</p>
+</section>
+<section id="semantics-and-annotations">
+<span id="mathml-semantics-annotations"></span><h2>Semantics and Annotations<a class="headerlink" href="#semantics-and-annotations" title="Permalink to this heading"></a></h2>
+<p>Some popular annotation formats like TeX, Maple, or Content MathML are
+often included in the MathML source via the <code class="docutils literal notranslate"><span class="pre">semantics</span></code> element.
+This is particularly true of MathML that is generated by other
+software, such as editors or computational tools.</p>
+<p>MathJax provides access to these annotations through the <code class="docutils literal notranslate"><span class="pre">&quot;Show</span> <span class="pre">Math</span>
+<span class="pre">As&quot;</span></code> menu, via the <code class="docutils literal notranslate"><span class="pre">Annotations</span></code> submenu.  See the <a class="reference external" href="http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations">MathML Annotation Framework</a> and
+the <a class="reference internal" href="../options/menu.html#menu-options"><span class="std std-ref">Contextual Menu Options</span></a> documentation for details.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tex/macros/index.html" class="btn btn-neutral float-left" title="Supported TeX/LaTeX commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asciimath.html" class="btn btn-neutral float-right" title="AsciiMath Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

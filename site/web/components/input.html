@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Components &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Output Components" href="output.html" />
+    <link rel="prev" title="Combined Components" href="combined.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"> The MathJax Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="combined.html">Combined Components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Input Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-tex">input/tex</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">input/tex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-tex-full">input/tex-full</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-tex-base">input/tex-base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tex-extension-packages">TeX Extension Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#input-mml">input/mml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-asciimath">input/asciimath</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">Miscellaneous Components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">The MathJax Components</a> &raquo;</li>
+      <li>Input Components</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/web/components/input.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="input-components">
+<span id="id1"></span><h1>Input Components<a class="headerlink" href="#input-components" title="Permalink to this heading"></a></h1>
+<p>Currently there are three MathJax input formats, each packaged into
+its own component.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tex-component"><span class="std std-ref">input/tex</span></a></p></li>
+<li><p><a class="reference internal" href="#mathml-component"><span class="std std-ref">input/mml</span></a></p></li>
+<li><p><a class="reference internal" href="#asciimath-component"><span class="std std-ref">input/asciimath</span></a></p></li>
+</ul>
+<p>These are described in more detail below.  See the
+<a class="reference internal" href="../../options/input/index.html#input-options"><span class="std std-ref">Input Processor Options</span></a> section for details about configuring these
+components.</p>
+<hr class="docutils" />
+<section id="input-tex">
+<span id="tex-component"></span><h2>input/tex<a class="headerlink" href="#input-tex" title="Permalink to this heading"></a></h2>
+<p>The TeX input format is packaged in three different ways, depending on
+which extensions are included in the component.  This gives you
+several possible trade-offs between file size and feature
+completeness.  See the <a class="reference internal" href="../../basic/mathematics.html#tex-input"><span class="std std-ref">TeX and LaTeX input</span></a> section for details about the
+TeX input processor.</p>
+<p>When you include one of the TeX input components, MathJax will define
+a function to convert TeX strings into the output format that
+has been loaded.  See the <a class="reference internal" href="../typeset.html#convert-math"><span class="std std-ref">Converting a Math String to Other Formats</span></a> section for details.</p>
+<section id="id2">
+<h3>input/tex<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>This is the standard TeX input component.  It includes the main
+TeX/LaTeX input parser, along with the base definitions for the most
+common macros and environments.  It also includes the <a class="reference internal" href="../../input/tex/extensions/ams.html#tex-ams"><span class="std std-ref">ams</span></a>,
+<a class="reference internal" href="../../input/tex/extensions/newcommand.html#tex-newcommand"><span class="std std-ref">newcommand</span></a>, <a class="reference internal" href="../../input/tex/extensions/require.html#tex-require"><span class="std std-ref">require</span></a>, <a class="reference internal" href="../../input/tex/extensions/autoload.html#tex-autoload"><span class="std std-ref">autoload</span></a>,
+<a class="reference internal" href="../../input/tex/extensions/configmacros.html#tex-configmacros"><span class="std std-ref">configmacros</span></a>, and <a class="reference internal" href="../../input/tex/extensions/noundefined.html#tex-noundefined"><span class="std std-ref">noundefined</span></a> extensions.  The
+remaining extensions (other than <a class="reference internal" href="../../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a> and
+<a class="reference internal" href="../../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a>) are loaded automatically when needed, or you can
+use <code class="docutils literal notranslate"><span class="pre">\require</span></code> to load any of them explicitly.  This will cause the
+extensions to be loaded dynamically, so if you are calling MathJax’s
+typesetting or conversion methods yourself, you should use the
+promise-based versions in order to handle that properly.</p>
+<p>See the <a class="reference internal" href="../../options/input/tex.html#tex-options"><span class="std std-ref">TeX Input Processor Options</span></a> section for information about
+configuring this component.</p>
+</section>
+<section id="input-tex-full">
+<h3>input/tex-full<a class="headerlink" href="#input-tex-full" title="Permalink to this heading"></a></h3>
+<p>This is the most complete TeX input component.  It includes the main
+TeX/LaTeX input parser, along with all the TeX extensions, and is
+configured to enable all of them other than <a class="reference internal" href="../../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a> and
+<a class="reference internal" href="../../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a>.  You can add these two to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array
+in the <code class="docutils literal notranslate"><span class="pre">tex</span></code> section of your MathJax configuration, though you
+should remove the <a class="reference internal" href="../../input/tex/extensions/color.html#tex-color"><span class="std std-ref">color</span></a> extension if you add the
+<a class="reference internal" href="../../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a> extension, and should remove the <a class="reference internal" href="../../input/tex/extensions/braket.html#tex-braket"><span class="std std-ref">braket</span></a>
+extension if you enable the <a class="reference internal" href="../../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a> package.</p>
+<p>See the <a class="reference internal" href="../../options/input/tex.html#tex-options"><span class="std std-ref">TeX Input Processor Options</span></a> section for information about
+configuring this component.</p>
+</section>
+<section id="input-tex-base">
+<h3>input/tex-base<a class="headerlink" href="#input-tex-base" title="Permalink to this heading"></a></h3>
+<p>This is a minimal TeX input component.  It includes the main TeX/LaTeX
+input parser, along with the base definitions for the most common
+macros and environments.  No other extensions are included, so no
+extensions are autoloaded, and you can not use <code class="docutils literal notranslate"><span class="pre">\require</span></code>.  For this
+component, you must explicitly load the extensions you want to use,
+and add them to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array.</p>
+<p>See the <a class="reference internal" href="../../options/input/tex.html#tex-options"><span class="std std-ref">TeX Input Processor Options</span></a> section for information about
+configuring this component.</p>
+</section>
+<section id="tex-extension-packages">
+<h3>TeX Extension Packages<a class="headerlink" href="#tex-extension-packages" title="Permalink to this heading"></a></h3>
+<p>Each of the TeX extensions listed in the <a class="reference internal" href="../../input/tex/extensions/index.html#extension-list"><span class="std std-ref">The TeX/LaTeX Extension List</span></a> has its
+own component.  The name of the component is the name of the extension
+preceded by <code class="docutils literal notranslate"><span class="pre">[tex]/</span></code>; so the component for the <code class="docutils literal notranslate"><span class="pre">enclose</span></code>
+extension is <code class="docutils literal notranslate"><span class="pre">[tex]/enclose</span></code>.  You can include any of the extension
+components in the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> section of your
+MathJax configuration, and add the extension to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array
+in the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block.  For example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>window.MathJax = {
+  loader: {load: [&#39;[tex]/enclose&#39;]},
+  tex: {
+    packages: {&#39;[+]&#39;, [&#39;enclose&#39;]}
+  }
+};
+</pre></div>
+</div>
+<p>Of course, if you are using one of the packages that includes the
+<a class="reference internal" href="../../input/tex/extensions/autoload.html#tex-autoload"><span class="std std-ref">autoload</span></a> extension, then you don’t have to load the
+extensions explicitly (except for <a class="reference internal" href="../../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a> and
+<a class="reference internal" href="../../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a>), as they will be loaded automatically when first
+used.</p>
+<p>In addition, there is a <code class="docutils literal notranslate"><span class="pre">[tex]/all-packages</span></code> component that includes
+all the packages, and configures the TeX input processors to include
+all of them except <a class="reference internal" href="../../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a> and <a class="reference internal" href="../../input/tex/extensions/colorv2.html#tex-colorv2"><span class="std std-ref">colorv2</span></a>.  The
+<cite>input/tex-base</cite> and <cite>[tex]/all-packages</cite> components together are
+effectively the same as the <cite>input/tex-full</cite> component.</p>
+<p>See the <a class="reference internal" href="../../options/input/tex.html#tex-extension-options"><span class="std std-ref">TeX Extension Options</span></a> section for information about
+configuring the TeX extensions.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="input-mml">
+<span id="mathml-component"></span><h2>input/mml<a class="headerlink" href="#input-mml" title="Permalink to this heading"></a></h2>
+<p>The <cite>input/mml</cite> component contains the MathML input processor,
+including the function that identifies MathML within the page.  See
+the <a class="reference internal" href="../../basic/mathematics.html#mathml-input"><span class="std std-ref">MathML input</span></a> section for details concerning the MathML
+input processor.  When you include the <cite>input/mml</cite> component,
+MathJax will define a function to convert serialized MathML strings
+into the output format that has been loaded.  See the
+<a class="reference internal" href="../typeset.html#convert-math"><span class="std std-ref">Converting a Math String to Other Formats</span></a> section for details.</p>
+<ul class="simple">
+<li><p>See the <a class="reference internal" href="../../output/mathml.html#mathml-output"><span class="std std-ref">MathML Support</span></a> section for details about MathML output.</p></li>
+<li><p>See the <a class="reference internal" href="../../options/input/mathml.html#mathml-options"><span class="std std-ref">MathML Input Processor Options</span></a> section for information about
+configuring this component.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="input-asciimath">
+<span id="asciimath-component"></span><h2>input/asciimath<a class="headerlink" href="#input-asciimath" title="Permalink to this heading"></a></h2>
+<p>The <cite>input/asciimath</cite> component contains the AsciiMath input
+processor, including the function that identifies AsciiMath within the
+page.  See <a class="reference internal" href="../../basic/mathematics.html#asciimath-input"><span class="std std-ref">AsciiMath input</span></a> section or details concerning the
+AsciiMath input processor.  When you include the <cite>input/asciimath</cite>
+component, MathJax will define a function to convert AsciiMath strings
+into the output format that has been loaded.  See the
+<a class="reference internal" href="../typeset.html#convert-math"><span class="std std-ref">Converting a Math String to Other Formats</span></a> section for details.</p>
+<p>See the <a class="reference internal" href="../../options/input/asciimath.html#asciimath-options"><span class="std std-ref">AsciiMath Input Processor Options</span></a> section for information about
+configuring this component.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AsciiMath input jax has not been fully ported to version 3
+yet.  The AsciiMath component includes legacy MathJax 2 code
+patched into the MathJax 3 framework.  That makes the AsciiMath
+component larger than usual, and slower than the other input
+components.</p>
+</div>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="combined.html" class="btn btn-neutral float-left" title="Combined Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="output.html" class="btn btn-neutral float-right" title="Output Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

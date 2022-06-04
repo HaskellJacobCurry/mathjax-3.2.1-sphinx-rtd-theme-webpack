@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miscellaneous Components &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Typesetting and Converting Mathematics" href="../typeset.html" />
+    <link rel="prev" title="Accessibility Components" href="accessibility.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"> The MathJax Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="combined.html">Combined Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility Components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Miscellaneous Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#startup">startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-safe">ui/safe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-menu">ui/menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adaptors-litedom">adaptors/liteDOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#core">core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loader">loader</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">The MathJax Components</a> &raquo;</li>
+      <li>Miscellaneous Components</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/web/components/misc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="miscellaneous-components">
+<span id="misc-components"></span><h1>Miscellaneous Components<a class="headerlink" href="#miscellaneous-components" title="Permalink to this heading"></a></h1>
+<p>There are several miscellaneous components that don’t fit into other
+categories.  These are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#startup-component"><span class="std std-ref">startup</span></a></p></li>
+<li><p><a class="reference internal" href="#safe-component"><span class="std std-ref">ui/safe</span></a></p></li>
+<li><p><a class="reference internal" href="#menu-component"><span class="std std-ref">ui/menu</span></a></p></li>
+<li><p><a class="reference internal" href="#litedom-component"><span class="std std-ref">adaptors/liteDOM</span></a></p></li>
+<li><p><a class="reference internal" href="#core-component"><span class="std std-ref">core</span></a></p></li>
+<li><p><a class="reference internal" href="#loader-component"><span class="std std-ref">loader</span></a></p></li>
+</ul>
+<p>They are described in more detail below.</p>
+<hr class="docutils" />
+<section id="startup">
+<span id="startup-component"></span><h2>startup<a class="headerlink" href="#startup" title="Permalink to this heading"></a></h2>
+<p>The <cite>startup</cite> component is the one that you would use if you are not
+using a <a class="reference internal" href="combined.html#combined-components"><span class="std std-ref">combined component</span></a>, but are using
+the <code class="docutils literal notranslate"><span class="pre">load</span></code> array to specify the components you want to load.  Like a
+combined component, you would load this directly via a <cite>&lt;script&gt;</cite> tag,
+as in</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This is the component that manages the global <code class="xref js js-data docutils literal notranslate"><span class="pre">MathJax</span></code> object.
+It is responsible for creating the needed objects (like the input and
+output jax), and for adding the typesetting and conversion methods
+described in the <a class="reference internal" href="../typeset.html#web-typeset"><span class="std std-ref">Typesetting and Converting Mathematics</span></a> section.</p>
+<p>See the <a class="reference internal" href="../../options/startup/startup.html#startup-options"><span class="std std-ref">Startup Options</span></a> section for information about
+configuring this component.</p>
+<hr class="docutils" />
+</section>
+<section id="ui-safe">
+<span id="safe-component"></span><h2>ui/safe<a class="headerlink" href="#ui-safe" title="Permalink to this heading"></a></h2>
+<p>The <cite>ui/safe</cite> component is intended for use in situations where your
+readers will be allowed to enter mathematical notation into your pages
+themselves, such as a question-and-answer site, or a blog with user
+comments.  It filters the mathematics on the page to make sure that
+certain values within the mathematics are not misused by the reader to
+cause problems on your page.  For example, the <code class="docutils literal notranslate"><span class="pre">\href</span></code> macro
+normally could be used to insert <code class="docutils literal notranslate"><span class="pre">javascript:</span></code> URLs into the page;
+the <cite>ui/safe</cite> extension can be used to prevent that.</p>
+<p>See the <a class="reference internal" href="../../options/safe.html#safe-options"><span class="std std-ref">Safe Extension Options</span></a> section for more information on what is
+filtered and how to control the level of filtering being performed.
+See <a class="reference internal" href="../typeset.html#safe-typesetting"><span class="std std-ref">Typesetting User-Supplied Content</span></a> for additional details.</p>
+<hr class="docutils" />
+</section>
+<section id="ui-menu">
+<span id="menu-component"></span><h2>ui/menu<a class="headerlink" href="#ui-menu" title="Permalink to this heading"></a></h2>
+<p>The <cite>ui/menu</cite> component implements the MathJax contextual menu, which
+allows you to obtain the MathML or original format of the mathematics,
+change parameters about the output renderer, enable accessibility
+features, and so on.</p>
+<p>See the <a class="reference internal" href="../../options/menu.html#menu-options"><span class="std std-ref">Contextual Menu Options</span></a> section for information about
+configuring this component.</p>
+<hr class="docutils" />
+</section>
+<section id="adaptors-litedom">
+<span id="litedom-component"></span><h2>adaptors/liteDOM<a class="headerlink" href="#adaptors-litedom" title="Permalink to this heading"></a></h2>
+<p>The <cite>adaptors/liteDOM</cite> component implements an alternative to the
+browser DOM that can be used to parse HTML pages outside of a
+browser.  This can be used in Node applications that don’t have access
+to a browser DOM, or in webworkers that can’t access the document DOM.</p>
+<hr class="docutils" />
+</section>
+<section id="core">
+<span id="core-component"></span><h2>core<a class="headerlink" href="#core" title="Permalink to this heading"></a></h2>
+<p>The <cite>core</cite> component includes the code that is required for all other
+components, including the base classes for input and output jax, math
+documents, math items within those documents, DOM adaptors, and so
+on.  This component is loaded automatically when needed, so you don’t
+usually have to load it yourself.  But you can include it if you are
+creating your own combined component.</p>
+<hr class="docutils" />
+</section>
+<section id="loader">
+<span id="loader-component"></span><h2>loader<a class="headerlink" href="#loader" title="Permalink to this heading"></a></h2>
+<p>The <cite>loader</cite> component contains the code needed to load other
+components.  It is included automatically by the
+<a class="reference internal" href="#startup-component"><span class="std std-ref">startup</span></a> component, but if you don’t want the features
+created by the <cite>startup</cite> module, you can use the <cite>loader</cite> component
+instead to load the MathJax component you need.  You can even use it
+as a general loader for other javascript, if you want.</p>
+<p>See the <a class="reference internal" href="../../options/startup/loader.html#loader-options"><span class="std std-ref">Loader Options</span></a> section for information about
+configuring this component.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessibility.html" class="btn btn-neutral float-left" title="Accessibility Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../typeset.html" class="btn btn-neutral float-right" title="Typesetting and Converting Mathematics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

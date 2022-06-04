@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What’s New in MathJax v2.3 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="What’s New in MathJax v2.2" href="whats-new-2.2.html" />
+    <link rel="prev" title="What’s New in MathJax v2.4" href="whats-new-2.4.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">What's New</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.2.html">In MathJax v3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.1.html">In MathJax v3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.0.html">In MathJax v3.0</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">In Earlier Versions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.7.html">What's New in MathJax v2.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.6.html">What's New in MathJax v2.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.5.html">What's New in MathJax v2.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.4.html">What's New in MathJax v2.4</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">What's New in MathJax v2.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.2.html">What's New in MathJax v2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.1.html">What's New in MathJax v2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.0.html">What's New in MathJax v2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-1.1.html">What's New in MathJax v1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade.html">Migrating from MathJax v1.0 to v1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsMath.html">Converting to MathJax from jsMath</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">What’s New in MathJax</a> &raquo;</li>
+          <li><a href="index.html">What’s New inEarlier Versions</a> &raquo;</li>
+      <li>What’s New in MathJax v2.3</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/upgrading/earlier/whats-new-2.3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-s-new-in-mathjax-v2-3">
+<span id="whats-new-2-3"></span><h1>What’s New in MathJax v2.3<a class="headerlink" href="#what-s-new-in-mathjax-v2-3" title="Permalink to this heading"></a></h1>
+<p>MathJax v2.3 includes a number of new features, as well a more than 30
+important bug fixes.</p>
+<section id="features">
+<h2>Features:<a class="headerlink" href="#features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><em>New webfonts:</em> MathJax v2.3 adds new webfonts for <code class="docutils literal notranslate"><span class="pre">STIX</span></code>, <code class="docutils literal notranslate"><span class="pre">Asana</span>
+<span class="pre">Math</span></code>, <code class="docutils literal notranslate"><span class="pre">Neo</span> <span class="pre">Euler</span></code>, <code class="docutils literal notranslate"><span class="pre">Gyre</span> <span class="pre">Pagella</span></code>, <code class="docutils literal notranslate"><span class="pre">Gyre</span> <span class="pre">Termes</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Latin</span> <span class="pre">Modern</span></code>.</p></li>
+<li><p><em>Localization improvements:</em> MathJax has been accepted into
+TranslateWiki.net. Thanks to the TWN community we could add
+12 complete and over 20 partial translations.</p></li>
+<li><p><em>MathML improvements:</em> MathJax’s “Show Math as” menu will now expose
+the MathML annotation features. There are also two new preview
+options for the MathML input mode: <code class="docutils literal notranslate"><span class="pre">mathml</span></code> (now the default),
+which uses the original MathML as a preview, and <code class="docutils literal notranslate"><span class="pre">altimage</span></code>, which
+uses the <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> element’s <code class="docutils literal notranslate"><span class="pre">altimg</span></code> (if any) for the preview.</p></li>
+<li><p><em>Miscellaneous improvements:</em> A new extension <code class="docutils literal notranslate"><span class="pre">MatchWebFonts</span></code>
+improves the interaction with the surrounding content when that uses
+a webfont. A new configuration method allows configurations to be
+specified using a regular JavaScript variable <code class="docutils literal notranslate"><span class="pre">window.MathJax</span></code>.</p></li>
+<li><p>MathJax is now available as a Bower package thanks to
+community contributions.</p></li>
+</ul>
+</section>
+<section id="tex-input">
+<h2>TeX input:<a class="headerlink" href="#tex-input" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Prevent the TeX pre-processor from rendering TeX in MathML
+annotation-xml elements.
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/484">Issue #484</a>)</p></li>
+<li><p>Fix sizing issue in <code class="docutils literal notranslate"><span class="pre">cases</span></code> environment
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/485">Issue #485</a>)</p></li>
+</ul>
+</section>
+<section id="fonts">
+<h2>Fonts:<a class="headerlink" href="#fonts" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix block-letter capital I (U+2111) appearing as J in MathJax font
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/555">Issue #555</a>)</p></li>
+</ul>
+</section>
+<section id="mathml">
+<h2>MathML:<a class="headerlink" href="#mathml" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Improved workarounds for MathML output on WebKit
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/482">Issue #482</a>)</p></li>
+<li><p>Handle empty <code class="docutils literal notranslate"><span class="pre">multiscript</span></code>, <code class="docutils literal notranslate"><span class="pre">mlabeledtr</span></code>, and other nodes in Native MathML output
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/486">Issue #486</a>)</p></li>
+<li><p>Replace non-standard <code class="docutils literal notranslate"><span class="pre">MJX-arrow</span></code> class by new <code class="docutils literal notranslate"><span class="pre">menclose</span></code> notation
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/481">Issue #481</a>)</p></li>
+<li><p>Fix incorrect widths in Firefox MathML output
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/558">Issue #558</a>)</p></li>
+<li><p>Fix display math not being centered in XHTML
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/650">Issue #650</a>)</p></li>
+<li><p>Fix problem when LaTeX code appears in <code class="docutils literal notranslate"><span class="pre">annotation</span></code> node
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/484">Issue #484</a>)</p></li>
+</ul>
+</section>
+<section id="html-css-svg-output">
+<h2>HTML-CSS/SVG output<a class="headerlink" href="#html-css-svg-output" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix MathJax not rendering in Chrome when sessionStorage is disabled
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/584">Issue #584</a>)</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">\mathchoice</span></code> error with linebreaking in SVG output
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/604">Issue #604</a>)</p></li>
+<li><p>Fix poor linebreaking of “flat” MathML with unmatched parentheses
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/523">Issue #523</a>)</p></li>
+</ul>
+</section>
+<section id="interface">
+<h2>Interface:<a class="headerlink" href="#interface" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix Double-Click zoom trigger
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/590">Issue #590</a>)</p></li>
+</ul>
+</section>
+<section id="miscellaneous">
+<h2>Miscellaneous:<a class="headerlink" href="#miscellaneous" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Localization: improved fallbacks for IETF tags
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/492">Issue #492</a>)</p></li>
+<li><p>Localization: support RTL in messages
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/627">Issue #627</a>)</p></li>
+<li><p>Improve PNG compression
+(<a class="reference external" href="https://github.com/mathjax/MathJax/issues/44">Issue #44</a>)</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whats-new-2.4.html" class="btn btn-neutral float-left" title="What’s New in MathJax v2.4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="whats-new-2.2.html" class="btn btn-neutral float-right" title="What’s New in MathJax v2.2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

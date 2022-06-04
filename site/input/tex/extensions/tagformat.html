@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tagformat &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="textcomp" href="textcomp.html" />
+    <link rel="prev" title="setoptions" href="setoptions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The TeX/LaTeX Extension List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="action.html">action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ams.html">ams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amscd.html">amscd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload.html">autoload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boldsymbol.html">boldsymbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braket.html">braket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bussproofs.html">bussproofs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cancel.html">cancel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cases.html">cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centernot.html">centernot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colortbl.html">colortbl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorv2.html">colorv2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configmacros.html">configmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="empheq.html">empheq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enclose.html">enclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extpfeil.html">extpfeil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gensymb.html">gensymb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mathtools.html">mathtools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mhchem.html">mhchem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newcommand.html">newcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noerrors.html">noerrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noundefined.html">noundefined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setoptions.html">setoptions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tagformat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tagformat-options">tagformat Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-section-numbering">Example: Section Numbering</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="textcomp.html">textcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textmacros.html">textmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgreek.html">upgreek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verb.html">verb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autobold.html">autobold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload-all.html">autoload-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="begingroup.html">begingroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mediawiki-texvc.html">mediawiki-texvc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">TeX and LaTeX Support</a> &raquo;</li>
+          <li><a href="index.html">The TeX/LaTeX Extension List</a> &raquo;</li>
+      <li>tagformat</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/input/tex/extensions/tagformat.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tagformat">
+<span id="tex-tagformat"></span><h1>tagformat<a class="headerlink" href="#tagformat" title="Permalink to this heading"></a></h1>
+<p>The <cite>tagformat</cite> extension provides the ability to customize the format
+of the equation tags and automatic equation numbers.  You do this by
+providing functions in the <code class="docutils literal notranslate"><span class="pre">tagformat</span></code> object of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block
+of your MathJax configuration.  The functions you can provide are
+listed in the <a class="reference internal" href="#tex-tagformat-options"><span class="std std-ref">tagformat Options</span></a> section.</p>
+<p>To load the <cite>tagformat</cite> extension, add <code class="docutils literal notranslate"><span class="pre">'[tex]/tagformat'</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your MathJax configuration,
+and add <code class="docutils literal notranslate"><span class="pre">'tagformat'</span></code> to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array of the <code class="docutils literal notranslate"><span class="pre">tex</span></code>
+block.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/tagformat&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;tagformat&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="tagformat-options">
+<span id="tex-tagformat-options"></span><h2>tagformat Options<a class="headerlink" href="#tagformat-options" title="Permalink to this heading"></a></h2>
+<p>Adding the <cite>tagformat</cite> extension to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array adds a
+<code class="docutils literal notranslate"><span class="pre">tagformat</span></code> sub-object to the <code class="docutils literal notranslate"><span class="pre">tex</span></code> configuration block with the
+following values:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">tagformat</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">number</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span><span class="w"></span>
+<span class="w">   </span><span class="nx">tag</span><span class="o">:</span><span class="w">    </span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">id</span><span class="o">:</span><span class="w">     </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;mjx-eqn:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">id</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">),</span><span class="w"></span>
+<span class="w">   </span><span class="nx">url</span><span class="o">:</span><span class="w">    </span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;#&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">id</span><span class="p">),</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">number:</span> <span class="pre">function</span> <span class="pre">(n)</span> <span class="pre">{return</span> <span class="pre">n.toString()}</span></span></dt>
+<dd><p>A function that tells MathJax what tag to use for equation number
+<code class="docutils literal notranslate"><span class="pre">n</span></code>.  This could be used to have the equations labeled by a
+sequence of symbols rather than numbers, or to use section and
+subsection numbers instead.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">tag:</span> <span class="pre">function</span> <span class="pre">(n)</span> <span class="pre">{return</span> <span class="pre">'('</span> <span class="pre">+</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">')'}</span></span></dt>
+<dd><p>A function that tells MathJax how to format an equation number for
+displaying as a tag for an equation.  This is what appears in the
+margin of a tagged or numbered equation.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">id:</span> <span class="pre">function</span> <span class="pre">(n)</span> <span class="pre">{return</span> <span class="pre">'mjx-eqn:'</span> <span class="pre">+</span> <span class="pre">n.replace(/\\s/g,</span> <span class="pre">'_')}</span></span></dt>
+<dd><p>A function that tells MathJax what ID to use as an anchor for the
+equation (so that it can be used in URL references).</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">url:</span> <span class="pre">function</span> <span class="pre">(id,</span> <span class="pre">base)</span> <span class="pre">{return</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">'#'</span> <span class="pre">+</span> <span class="pre">encodeURIComponent(id)}</span></span></dt>
+<dd><p>A function that takes an equation ID and base URL and returns the
+URL to link to it.  The <code class="docutils literal notranslate"><span class="pre">base</span></code> value is taken from the
+<a class="reference internal" href="../../../options/input/tex.html#tex-baseurl"><span class="std std-ref">baseURL</span></a> value, so that links can be make within
+a page even if it has a <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> element that sets the base URL
+for the page to a different location.</p>
+</dd></dl>
+
+<hr class="docutils" />
+</section>
+<section id="example-section-numbering">
+<span id="tex-tagformat-section-numbers"></span><h2>Example: Section Numbering<a class="headerlink" href="#example-section-numbering" title="Permalink to this heading"></a></h2>
+<p>This example shows one way to provide section numbers for the
+automatic equation numbers generated when the <code class="docutils literal notranslate"><span class="pre">tags</span></code> option in the
+<code class="docutils literal notranslate"><span class="pre">tex</span></code> configuration block is set to <code class="docutils literal notranslate"><span class="pre">'ams'</span></code> or <code class="docutils literal notranslate"><span class="pre">'all'</span></code>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">section</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">tagformat</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">number</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">section</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;eqn-id:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tag</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ready</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultReady</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">input</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">preFilters</span><span class="p">.</span><span class="nx">add</span><span class="p">(({</span><span class="nx">math</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">inputData</span><span class="p">.</span><span class="nx">recompile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">inputData</span><span class="p">.</span><span class="nx">recompile</span><span class="p">.</span><span class="nx">section</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">input</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">postFilters</span><span class="p">.</span><span class="nx">add</span><span class="p">(({</span><span class="nx">math</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">inputData</span><span class="p">.</span><span class="nx">recompile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nx">math</span><span class="p">.</span><span class="nx">inputData</span><span class="p">.</span><span class="nx">recompile</span><span class="p">.</span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">section</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This arranges for automatic equation numbers to be of the form
+<code class="docutils literal notranslate"><span class="pre">1.n</span></code>, and uses ids of the form <code class="docutils literal notranslate"><span class="pre">eqn-id:1.n</span></code> as the <code class="docutils literal notranslate"><span class="pre">id</span></code>
+attribute of the tags within the web page.  It also sets up pre- and
+post-filters for the TeX input jax that arrange for the section number
+to be properly handled for automatically numbered equations that
+contain forward references to later expressions.  This example uses
+the modern function notation (using <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>), but you could also use
+<code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">(n)</span> <span class="pre">{return</span> <span class="pre">...}</span></code>.</p>
+<p>You can adjust the section number using JavaScript by setting the
+<code class="docutils literal notranslate"><span class="pre">MathJax.config.section</span></code> variable.  It is also possible to create
+TeX macros for controlling the section number.  Here is one
+possibility:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ready</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">Configuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">tex</span><span class="p">.</span><span class="nx">Configuration</span><span class="p">.</span><span class="nx">Configuration</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">CommandMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">tex</span><span class="p">.</span><span class="nx">SymbolMap</span><span class="p">.</span><span class="nx">CommandMap</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="ow">new</span><span class="w"> </span><span class="nx">CommandMap</span><span class="p">(</span><span class="s1">&#39;sections&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">nextSection</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NextSection&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">setSection</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SetSection&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">NextSection</span><span class="p">(</span><span class="nx">parser</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">section</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="nx">parser</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">allCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nx">SetSection</span><span class="p">(</span><span class="nx">parser</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">GetArgument</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">          </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"></span>
+<span class="w">      </span><span class="nx">Configuration</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="s1">&#39;sections&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">handler</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">macro</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;sections&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="w">      </span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultReady</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Of course, you will want to merge this configuraiton in with the rest
+of your configuration options.</p>
+<p>This makes two new macros available: <code class="docutils literal notranslate"><span class="pre">\nextSection</span></code>, which
+increments the section counter, and <code class="docutils literal notranslate"><span class="pre">\setSection{n}</span></code>, which sets the
+section number to <code class="docutils literal notranslate"><span class="pre">n</span></code>.  Note that these must be issued within math
+delimiters in order for MathJax to process them.  In order to prevent
+them from producing any output in your page, you could enclose them
+within a hidden element.  For example,</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: hidden&quot;</span><span class="p">&gt;</span>\(\nextSection\)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>or something similar.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="setoptions.html" class="btn btn-neutral float-left" title="setoptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="textcomp.html" class="btn btn-neutral float-right" title="textcomp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

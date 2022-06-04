@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathJax Frequently Asked Questions &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MathJax Badges" href="badges.html" />
+    <link rel="prev" title="The Direct API" href="../api/direct.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MathJax FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#which-license-is-mathjax-distributed-under">Which license is MathJax distributed under?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#will-mathjax-make-my-page-load-slower-even-if-there-s-no-math">Will MathJax make my page load slower even if there’s no math?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mathematics-is-not-rendering-properly-in-ie-how-do-i-fix-that">Mathematics is not rendering properly in IE. How do I fix that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-should-ie-s-x-ua-compatible-meta-tag-be-set-to">What should IE’s X-UA-Compatible meta tag be set to?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#some-of-my-mathematics-is-too-large-or-too-small-how-do-i-get-it-right">Some of my mathematics is too large or too small. How do I get it right?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-mathematics-is-private-is-it-safe-to-use-mathjax">My mathematics is private. Is it safe to use MathJax?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#does-mathjax-support-presentation-and-or-content-mathml">Does MathJax support Presentation and/or Content MathML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-create-mathematical-expressions-for-display-with-mathjax">How do I create mathematical expressions for display with MathJax?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-ran-into-a-problem-with-mathjax-how-do-i-report-it">I ran into a problem with MathJax. How do I report it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-doesn-t-the-tex-macro-something-work">Why doesn’t the TeX macro <code class="docutils literal notranslate"><span class="pre">\something</span></code> work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#does-mathjax-support-user-defined-tex-macros">Does MathJax support user-defined TeX macros?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MathJax Frequently Asked Questions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/misc/faq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mathjax-frequently-asked-questions">
+<span id="faq"></span><h1>MathJax Frequently Asked Questions<a class="headerlink" href="#mathjax-frequently-asked-questions" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-license"><span class="std std-ref">Which license is MathJax distributed under?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-slow-no-math"><span class="std std-ref">Will MathJax make my page load slower even if there’s no math?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-ie-support"><span class="std std-ref">Mathematics is not rendering properly in IE. How do I fix that?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-ie-meta"><span class="std std-ref">What should IE’s X-UA-Compatible meta tag be set to?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-size-issues"><span class="std std-ref">Some of my mathematics is too large or too small. How do I get it right?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-safe"><span class="std std-ref">My mathematics is private. Is it safe to use MathJax?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-content-mml"><span class="std std-ref">Does MathJax support Presentation and/or Content MathML?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-create-math"><span class="std std-ref">How do I create mathematical expressions for display with MathJax?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-report-issue"><span class="std std-ref">I ran into a problem with MathJax. How do I report it?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-missing-macro"><span class="std std-ref">Why doesn’t the TeX macro \something work?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-user-macros"><span class="std std-ref">Does MathJax support user-defined TeX macros?</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<section id="which-license-is-mathjax-distributed-under">
+<span id="faq-license"></span><h2>Which license is MathJax distributed under?<a class="headerlink" href="#which-license-is-mathjax-distributed-under" title="Permalink to this heading"></a></h2>
+<p>MathJax is distributed under the <a class="reference external" href="https://github.com/mathjax/MathJax/blob/master/LICENSE">Apache License, Version
+2.0</a>.</p>
+</section>
+<section id="will-mathjax-make-my-page-load-slower-even-if-there-s-no-math">
+<span id="faq-slow-no-math"></span><h2>Will MathJax make my page load slower even if there’s no math?<a class="headerlink" href="#will-mathjax-make-my-page-load-slower-even-if-there-s-no-math" title="Permalink to this heading"></a></h2>
+<p>It depends on how you have configured and loaded MathJax.  The
+combined component files like <cite>tex-chtml.js</cite> contain a full copy of
+MathJax and all the components needed for it to process the given
+input and output format, including all the font data (but not the
+actual fonts themselves).  So these files can be quite large, and can
+take some time to download.  On the other hand, it is a single file
+(unlike in version 2, where multiple files needed to be loaded), so
+there should not be the delays associated with establishing multiple
+connections to a server.  If you use the <cite>async</cite> attribute on the
+script that loads MathJax, that allows the browser to put off loading
+MathJax until the rest of the page is ready, so that can help speed up
+your initial page loading as well.</p>
+</section>
+<section id="mathematics-is-not-rendering-properly-in-ie-how-do-i-fix-that">
+<span id="faq-ie-support"></span><h2>Mathematics is not rendering properly in IE. How do I fix that?<a class="headerlink" href="#mathematics-is-not-rendering-properly-in-ie-how-do-i-fix-that" title="Permalink to this heading"></a></h2>
+<p>Currently, MathJax version 3 only supports IE11, so if you are using
+an earlier version, you will need to update your copy, or use a
+different browser.</p>
+<p>If you are using IE11, then please open the MathJax homepage at
+<a class="reference external" href="https://www.mathjax.org/#samples">www.mathjax.org</a> in IE to see if
+that loads correctly.  If the MathJax website does not display
+mathematics properly, there may be an issue with your security
+settings in Internet Explorer. Please check the following settings:</p>
+<ul class="simple">
+<li><p>“Active Scripting” under the Scripting section should be enabled, as
+it allows JavaScript to run.</p></li>
+<li><p>“Run ActiveX controls and Plugins” should be enabled (or prompted) in
+the “ActiveX Controls and Plugins” section.</p></li>
+<li><p>“Script ActiveX controls marked safe for scripting” needs to be
+enabled (or prompted) in the same “ActiveX Controls and Plugins”
+section. Note that it requires a restart of IE if you change this
+setting.</p></li>
+<li><p>“Font Download” has to be enabled (or prompted) in the “Downloads”
+section. This is required for MathJax to use web-based fonts for
+optimal viewing experience.</p></li>
+</ul>
+<p>You may need to select Custom Level security to make these changes. If
+you have verified that the above settings are correct, tried clearing
+your cache and restarting IE.  If you are still experiencing problems
+with displaying mathematics on <code class="docutils literal notranslate"><span class="pre">www.mathjax.org</span></code>, we would
+appreciate it if you reported the problem to the <a class="reference external" href="https://github.com/mathjax/MathJax/issues">MathJax issue
+tracker</a> so we can look
+into it.  See the section on <a class="reference external" href="#issue-tracking">issue tracking</a> for
+details.</p>
+<p>If the MathJax site <em>does</em> render properly, this indicates that there
+may be something wrong with the webpage you were trying to view
+initially.  If you manage that website, then make sure that it is
+using <a class="reference internal" href="../web/start.html#mathjax-cdn"><span class="std std-ref">the latest version of MathJax</span></a>, and that you have
+included the line</p>
+<blockquote>
+<div><p>&lt;script src=”<a class="reference external" href="https://polyfill.io/v3/polyfill.min.js?features=es6">https://polyfill.io/v3/polyfill.min.js?features=es6</a>”&gt;&lt;/script&gt;</p>
+</div></blockquote>
+<p>before the script that loads MathJax itself.  If you <em>don’t</em> manage
+the website yourself, you may have to report the issue to the
+maintainers of the site in order to have it resolved.</p>
+</section>
+<section id="what-should-ie-s-x-ua-compatible-meta-tag-be-set-to">
+<span id="faq-ie-meta"></span><h2>What should IE’s X-UA-Compatible meta tag be set to?<a class="headerlink" href="#what-should-ie-s-x-ua-compatible-meta-tag-be-set-to" title="Permalink to this heading"></a></h2>
+<p>We strongly suggest to follow Microsoft’s suggestion to use <code class="docutils literal notranslate"><span class="pre">IE=edge</span></code>. That
+is, in the document <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> include</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>before any other tags in the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code>.  This will force all IE
+versions to use their latest engine which is the optimal setting for
+MathJax. For more information, see the <a class="reference external" href="https://msdn.microsoft.com/en-us/library/dn384051(v=vs.85).aspx">Microsoft documentation on
+compatibility modes</a>.</p>
+</section>
+<section id="some-of-my-mathematics-is-too-large-or-too-small-how-do-i-get-it-right">
+<span id="faq-size-issues"></span><h2>Some of my mathematics is too large or too small. How do I get it right?<a class="headerlink" href="#some-of-my-mathematics-is-too-large-or-too-small-how-do-i-get-it-right" title="Permalink to this heading"></a></h2>
+<p>MathJax renders mathematics dynamically so that formulas and symbols
+are nicely integrated into the surrounding text — with matching font
+size, margins, and baseline.  In other words: it should look right. If
+your mathematics is too large or too small in comparison to its
+surroundings, you may be using the incorrect typesetting
+style. Following LaTeX conventions, MathJax supports two typesetting
+styles: in-line and “display” equations (one set off from the
+paragraph as a separate line). For in-line equations, MathJax tries
+hard to maintain the inter-line spacing. This means things like
+fractions and roots are vertically compressed, and smaller fonts are
+used. Display equations are shown as a separate paragraph and can be
+rendered with more space and slightly larger fonts. The standard
+delimiters for in-line equations in TeX notation are <code class="docutils literal notranslate"><span class="pre">\(...\)</span></code>,
+while those for display equations are <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code> or <code class="docutils literal notranslate"><span class="pre">\[...\]</span></code>, but
+both types of delimiters can be customized. For how to configure
+MathJax to scale all mathematics relative to the surrounding text,
+check our documentation for <a class="reference internal" href="../options/output/index.html#output-options"><span class="std std-ref">Output Processor Options</span></a>.</p>
+</section>
+<section id="my-mathematics-is-private-is-it-safe-to-use-mathjax">
+<span id="faq-safe"></span><h2>My mathematics is private. Is it safe to use MathJax?<a class="headerlink" href="#my-mathematics-is-private-is-it-safe-to-use-mathjax" title="Permalink to this heading"></a></h2>
+<p>Yes. MathJax is JavaScript code that is runs within the user’s
+browser, so your site’s actual content never leaves the browser while
+MathJax is rendering. If you are using MathJax from a CDN, it
+interacts with a web server to get font data and MathJax code, but
+this is all put together in the browser of the reader. If you have
+concerns about cross-site scripting, you can access the CDN service
+using the secure <code class="docutils literal notranslate"><span class="pre">https</span></code> protocol to prevent tampering with the code
+between the CDN and a browser; or, if you prefer, you can install
+MathJax on your own web server, or for off-line use. MathJax does not
+reference scripts from other websites. The MathJax code is, of course,
+open source which means that you can <a class="reference external" href="https://github.com/mathjax/MathJax-src">review it and inspect its
+integrity</a>.</p>
+</section>
+<section id="does-mathjax-support-presentation-and-or-content-mathml">
+<span id="faq-content-mml"></span><h2>Does MathJax support Presentation and/or Content MathML?<a class="headerlink" href="#does-mathjax-support-presentation-and-or-content-mathml" title="Permalink to this heading"></a></h2>
+<p>MathML comes in two types: Presentation MathML, which describes what
+an equation looks like, and Content MathML, which describes what an
+equation means. By default, MathJax works with Presentation MathML and
+offers an extension for Content MathML, see <a class="reference internal" href="../input/mathml.html#mathml-content-mathml"><span class="std std-ref">the documentation on
+MathML support</span></a>, which has not yet been converted to
+version 3.</p>
+<p>You can also convert your Content MathML expressions to Presentation
+MathML using <code class="docutils literal notranslate"><span class="pre">xslt</span></code>, see for example David Carlisle’s <a class="reference external" href="https://github.com/davidcarlisle/web-xslt">web-xslt
+collection</a>. A more
+detailed explanation of the difference between Content and
+Presentation MathML can be found in the module <a class="reference external" href="https://cnx.org/content/m31620/latest/">“Presentation MathML
+Versus Content MathML”</a> at
+<code class="docutils literal notranslate"><span class="pre">cnx.org</span></code>.</p>
+</section>
+<section id="how-do-i-create-mathematical-expressions-for-display-with-mathjax">
+<span id="faq-create-math"></span><h2>How do I create mathematical expressions for display with MathJax?<a class="headerlink" href="#how-do-i-create-mathematical-expressions-for-display-with-mathjax" title="Permalink to this heading"></a></h2>
+<p>MathJax is a method to display mathematics. It is not an authoring
+environment, and so you will need another program to create mathematical
+expressions. The most common languages for mathematics on the computer
+are (La)TeX and MathML, and there are many authoring tools for these
+languages.</p>
+<p>LaTeX code is essentially plain text, and so you do not need a special program
+to write it (although complete LaTeX authoring environments do exist). If
+you are not familiar with LaTeX, you will need some determination to
+learn and master the language due to its specialized nature and rich
+vocabulary of symbols. There are various good tutorials on the net, but
+there is no one-size-fits-all best one. A good starting point is the
+<a class="reference external" href="http://www.tug.org/begin.html">TeX User Group</a>, or have a look at
+the <a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX">LaTeX Wiki book</a>.</p>
+<p><a class="reference external" href="http://www.w3.org/Math/">MathML</a> is an XML-based web format for
+mathematical expressions. MathML3, the latest version, has been an
+official W3C recommendation since October 2010. MathML is widely
+supported by Computer Algebra Systems and can be created with a choice
+of authoring tools, including Microsoft Office with the
+<a class="reference external" href="http://www.dessci.com/en/products/MathType/">MathType</a> equation
+editor. A list of software the supports MathML may be found in <a class="reference external" href="http://www.w3.org/Math/wiki/Tools">The W3C
+MathML software list</a>.</p>
+</section>
+<section id="i-ran-into-a-problem-with-mathjax-how-do-i-report-it">
+<span id="faq-report-issue"></span><h2>I ran into a problem with MathJax. How do I report it?<a class="headerlink" href="#i-ran-into-a-problem-with-mathjax-how-do-i-report-it" title="Permalink to this heading"></a></h2>
+<p>See the section on <a class="reference internal" href="../basic/bugs.html#reporting-issues"><span class="std std-ref">Reporting Issues</span></a> for the
+steps to take when you think you have found a bug in MathJax.</p>
+</section>
+<section id="why-doesn-t-the-tex-macro-something-work">
+<span id="faq-missing-macro"></span><h2>Why doesn’t the TeX macro <code class="docutils literal notranslate"><span class="pre">\something</span></code> work?<a class="headerlink" href="#why-doesn-t-the-tex-macro-something-work" title="Permalink to this heading"></a></h2>
+<p>It really depends on what <code class="docutils literal notranslate"><span class="pre">\something</span></code> is. We have a full list of
+the <a class="reference internal" href="../input/tex/macros/index.html#tex-commands"><span class="std std-ref">Supported TeX/LaTeX commands</span></a>. If the command you want
+to use is not in this list, you may be able to define a TeX macro for
+it yourself, or if you want to get really advanced, you can define
+custom JavaScript that implements it (see the <a class="reference internal" href="../web/webpack.html#custom-extension"><span class="std std-ref">Custom Extensions</span></a> section for details).</p>
+<p>Keep in mind that MathJax is meant for typesetting <strong>math</strong> on the
+web. It only replicates the math functionality of LaTeX and not the
+text formatting capabilities.  Any text formatting on the web should
+be done in HTML and CSS, not TeX. If you would like to convert full
+TeX documents into HTML to publish online, you should use a TeX to
+HTML converter like <a class="reference external" href="http://dlmf.nist.gov/LaTeXML/">LaTeXML</a>,
+<a class="reference external" href="http://www-sop.inria.fr/apics/tralics/">Tralics</a>, or <a class="reference external" href="https://tug.org/tex4ht/">tex4ht</a>, but you should
+realize that TeX conversion tools are unlikely produce results as good
+as controlling the HTML and CSS source yourself.</p>
+</section>
+<section id="does-mathjax-support-user-defined-tex-macros">
+<span id="faq-user-macros"></span><h2>Does MathJax support user-defined TeX macros?<a class="headerlink" href="#does-mathjax-support-user-defined-tex-macros" title="Permalink to this heading"></a></h2>
+<p>Yes, you can define TeX macros in MathJax the same way you do in LaTeX
+with <code class="docutils literal notranslate"><span class="pre">\newcommand</span></code>, or <code class="docutils literal notranslate"><span class="pre">\def</span></code>.  An example is
+<code class="docutils literal notranslate"><span class="pre">\newcommand{\water}{{\rm</span> <span class="pre">H_{2}O}}</span></code>, which will output the chemical
+formula for water when you use the <code class="docutils literal notranslate"><span class="pre">\water</span></code> command. The
+<code class="docutils literal notranslate"><span class="pre">\renewcommand</span></code> command works as well. You can also store macros in
+the MathJax configuration. For more information, see <a class="reference internal" href="../input/tex/macros/index.html#tex-commands"><span class="std std-ref">the
+documentation</span></a>.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../api/direct.html" class="btn btn-neutral float-left" title="The Direct API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="badges.html" class="btn btn-neutral float-right" title="MathJax Badges" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

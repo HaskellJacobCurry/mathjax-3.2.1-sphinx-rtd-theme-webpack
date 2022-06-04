@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making a Custom Build of MathJax &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples in a Browser" href="examples.html" />
+    <link rel="prev" title="Hosting Your Own Copy of MathJax" href="hosting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> Making a Custom Build of MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-things-ready">Getting Things Ready</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-a-custom-component">Building a Custom Component</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-custom-combined-component">A Custom Combined Component</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-control-file">The Control File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-webpack-configuration">The Webpack Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-component">Building the Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-component">Configuring the Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fonts-for-commonhtml">Fonts for CommonHTML</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#a-custom-extension">A Custom Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-extension-file">The Extension File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">The Webpack Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-extension">Building the Extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-the-extension">Loading the Extension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-custom-mathjax-build">A Custom MathJax Build</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-custom-build-file">The Custom Build File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">The Webpack Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-custom-file">Building the Custom File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-file-in-a-web-page">Using the File in a Web Page</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Making a Custom Build of MathJax</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/web/webpack.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="making-a-custom-build-of-mathjax">
+<span id="web-custom-build"></span><h1>Making a Custom Build of MathJax<a class="headerlink" href="#making-a-custom-build-of-mathjax" title="Permalink to this heading"></a></h1>
+<p>MathJax provides a number of combined components that load everything
+you need to run MathJax with a given input and output format.  Still,
+you might find that none of the ones we provide fully suit your
+needs, and that you would like to include additional components in the
+build, or perhaps want to include customized configuration options.</p>
+<p>You can use the MathJax component build tools to make your own custom
+component that has exactly the pieces and configuration that you
+want. You can also use them to make a custom extension, for example a
+TeX input extension, that takes advantage of the components already
+loaded, but implements additional functionality.
+These possibilities are described in <a class="reference internal" href="#custom-component"><span class="std std-ref">Building a Custom Component</span></a> below.</p>
+<p>It is also possible to make a completely custom build of MathJax that
+doesn’t use the MathJax components at all, but includes direct calls
+to the MathJax source files.  This is described in <a class="reference internal" href="#custom-build"><span class="std std-ref">A Custom MathJax Build</span></a>
+below.</p>
+<p>If you wish to include MathJax as part of a larger project, you can
+use either of the techniques to do that, and make a webpacked file
+that includes your own project code as well as MathJax.</p>
+<section id="getting-things-ready">
+<span id="getting-ready"></span><h2>Getting Things Ready<a class="headerlink" href="#getting-things-ready" title="Permalink to this heading"></a></h2>
+<p>Your first step is to download a copy of MathJax via <code class="docutils literal notranslate"><span class="pre">npm</span></code> or
+<code class="docutils literal notranslate"><span class="pre">git</span></code>, as described in the section on <a class="reference internal" href="hosting.html#obtain-mathjax"><span class="std std-ref">Acquiring the MathJax Code</span></a>.</p>
+<ul class="simple">
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">npm</span></code>, you will want to install the <code class="docutils literal notranslate"><span class="pre">mathjax-full</span></code>
+package rather than the <code class="docutils literal notranslate"><span class="pre">mathjax</span></code> package, since the former
+includes all the source code, in both its original and compiled
+forms, along with the webpacked components.</p></li>
+</ul>
+<ul class="simple">
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">git</span></code>, be sure to run the commands to compile and make
+the components, as listed in <a class="reference internal" href="hosting.html#mathjax-git"><span class="std std-ref">Getting MathJax via git</span></a>.</p></li>
+</ul>
+<p>In either case, you should have a <code class="docutils literal notranslate"><span class="pre">js</span></code>, an <code class="docutils literal notranslate"><span class="pre">es5</span></code>, and a
+<code class="docutils literal notranslate"><span class="pre">components</span></code> directory, either in the <code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full</span></code>
+directory (for <code class="docutils literal notranslate"><span class="pre">npm</span></code> installations) or in the main directory (for
+<code class="docutils literal notranslate"><span class="pre">git</span></code> installations).</p>
+<p>Your second step is to obtain the tools needed to package your custom
+code using <code class="docutils literal notranslate"><span class="pre">webpack</span></code>.  Use the commands</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm install webpack
+npm install webpack-cli
+npm install terser-webpack-plugin
+npm install babel-loader
+npm install @babel/core
+npm install @babel/preset-env
+</pre></div>
+</div>
+<p>to install <code class="docutils literal notranslate"><span class="pre">webpack</span></code> and its needed libraries.  Once this is done,
+you should be able to make the components described below.  The
+building instructions assume you used <code class="docutils literal notranslate"><span class="pre">npm</span></code> to aquire MathJax; if
+you used <code class="docutils literal notranslate"><span class="pre">git</span></code>, then you will need to remove
+<code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full</span></code> from the paths that include them.</p>
+<hr class="docutils" />
+</section>
+<section id="building-a-custom-component">
+<span id="custom-component"></span><h2>Building a Custom Component<a class="headerlink" href="#building-a-custom-component" title="Permalink to this heading"></a></h2>
+<p>MathJax comes with a number of predefined components, and you can use
+<a class="reference external" href="https://github.com/mathjax/MathJax-src/tree/master/components/src">their definitions</a> as a starting
+point for your own custom component.  There are also custom component
+examples (with documentation) in the <a class="reference external" href="https://github.com/mathjax/MathJax-demos-web#customization">MathJax web demos repository</a>, which are
+similar to the ones described here.</p>
+<p>There are two kinds of components you could build:</p>
+<ul class="simple">
+<li><p>A <strong>combined component</strong> that brings together several other
+components (the <code class="docutils literal notranslate"><span class="pre">tex-chtml</span></code> component is a combined component)</p></li>
+</ul>
+<ul class="simple">
+<li><p>A <strong>extension component</strong> that contains what is needed for one
+feature and can be loaded along with other components to add
+that feature to MathJax.</p></li>
+</ul>
+<p>We describe how you can create each of these below.  In both cases,
+you should create a directory to hold your component’s support files.
+You will need the main control file for the component (that includes
+the code that defines the component), and a webpack control file that
+will tell MathJax’s build tools how to handle your component.  These
+will be discussed in the sections below.</p>
+<section id="a-custom-combined-component">
+<span id="custom-combined"></span><h3>A Custom Combined Component<a class="headerlink" href="#a-custom-combined-component" title="Permalink to this heading"></a></h3>
+<p>After downloading a copy of MathJax as described in the section on
+<a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a>, make the directory for your component and
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> to that directory.  We will assume the directory is called
+<code class="docutils literal notranslate"><span class="pre">custom-mathjax</span></code> for this discussion.</p>
+<p>For this example, we will create a custom build that has the TeX input
+jax and the SVG output jax, and we will load the <code class="docutils literal notranslate"><span class="pre">newcommand</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ams</span></code>, and <code class="docutils literal notranslate"><span class="pre">configmacros</span></code> extensions, but will not include
+<code class="docutils literal notranslate"><span class="pre">require</span></code> or <code class="docutils literal notranslate"><span class="pre">autoload</span></code>, so the user will not be able load any
+additional TeX extensions.  This component also includes the
+contextual menu.</p>
+<section id="the-control-file">
+<h4>The Control File<a class="headerlink" href="#the-control-file" title="Permalink to this heading"></a></h4>
+<p>Create a javascript file to house the component and call it
+<code class="docutils literal notranslate"><span class="pre">custom-mathjax.js</span></code>.  The file should contain the following code (we
+assume here that you used <code class="docutils literal notranslate"><span class="pre">npm</span></code> to install MathJax.  If not, you may
+need to adjust the locations in the <code class="xref js js-func docutils literal notranslate"><span class="pre">require()</span></code> commands).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Initialize the MathJax startup code</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/startup/lib/startup.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Get the loader module and indicate the modules that</span><span class="w"></span>
+<span class="c1">//  will be loaded by hand below</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">Loader</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/components/loader.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">Loader</span><span class="p">.</span><span class="nx">preLoad</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;loader&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;startup&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;core&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;input/tex-base&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;[tex]/ams&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;[tex]/newcommand&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;[tex]/configmacros&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;output/svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output/svg/fonts/tex.js&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;ui/menu&#39;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">// Load the components that we want to combine into one component</span><span class="w"></span>
+<span class="c1">//   (the ones listed in the preLoad() call above)</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/core/core.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/input/tex-base/tex-base.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/input/tex/extensions/ams/ams.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/input/tex/extensions/configmacros/configmacros.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/output/svg/svg.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/output/svg/fonts/tex/tex.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/ui/menu/menu.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">// Update the configuration to include any updated values</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">insert</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/util/Options.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">insert</span><span class="p">(</span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;ams&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;newcommand&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;configmacros&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">// Loading this component will cause all the normal startup</span><span class="w"></span>
+<span class="c1">//   operations to be performed</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/src/startup/startup.js&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This loads the various components that we want to include in the
+combined component, including the standard startup code so that the
+usual startup process is included.</p>
+</section>
+<section id="the-webpack-configuration">
+<h4>The Webpack Configuration<a class="headerlink" href="#the-webpack-configuration" title="Permalink to this heading"></a></h4>
+<p>Next, create the file <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> that includes the
+following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/webpack.common.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;custom-mathjax&#39;</span><span class="p">,</span><span class="w">                     </span><span class="c1">// the name of the package to build</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;../node_modules/mathjax-full/js&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// location of the mathjax library</span><span class="w"></span>
+<span class="w">  </span><span class="p">[],</span><span class="w">                                   </span><span class="c1">// packages to link to</span><span class="w"></span>
+<span class="w">  </span><span class="nx">__dirname</span><span class="p">,</span><span class="w">                            </span><span class="c1">// our directory</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;.&#39;</span><span class="w">                                   </span><span class="c1">// where to put the packaged component</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This file gives the name that will be used for this component
+(<code class="docutils literal notranslate"><span class="pre">custom-mathjax</span></code> in this case), a pointer to where the MathJax
+javascript code is to be found (adjust this to suit your setup), an
+array of components that we assume are already loaded when this one is
+loaded (none in this case), the directory name we are working in
+(always <code class="docutils literal notranslate"><span class="pre">__dirname</span></code>), and the directory where we want the final
+packaged component to go (the default is the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/es5</span></code> directory, but we set it to the directory
+containing the source files, and the component will end with
+<code class="docutils literal notranslate"><span class="pre">.min.js</span></code>).</p>
+<p>Most of the real work is done by the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/components/webpack.common.js</span></code> file, which is included in
+the first line here.</p>
+</section>
+<section id="building-the-component">
+<h4>Building the Component<a class="headerlink" href="#building-the-component" title="Permalink to this heading"></a></h4>
+<p>Once these two files are ready, you are ready to build the component.
+First, make sure that you have obtained the needed tools as described
+in <a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a> above.  Then you should be able to use the
+command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>node ../node_modules/mathjax-full/components/bin/makeAll
+</pre></div>
+</div>
+<p>to process your custom build.  You should end up with a file
+<code class="docutils literal notranslate"><span class="pre">custom-mathjax.min.js</span></code> in the directory with the other files.  If
+you put this on your web server, you can load it into your web pages
+in place of loading MathJax from a CDN.  This file will include all
+that you need to run MathJax on your pages.  Just add</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;custom-mathjax.min.js&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to your page and you should be in business (adjust the URL to point to
+wherever you have placed the <code class="docutils literal notranslate"><span class="pre">custom-mathjax.min.js</span></code> file).</p>
+</section>
+<section id="configuring-the-component">
+<h4>Configuring the Component<a class="headerlink" href="#configuring-the-component" title="Permalink to this heading"></a></h4>
+<p>Note that you can still include a  <code class="docutils literal notranslate"><span class="pre">MathJax</span> <span class="pre">=</span> <span class="pre">{...}</span></code> definition in
+your web page before loading this custom MathJax build if you want to
+customize the configuration for a specific page.  You could also
+include configuration within the component itself, as we did for the
+TeX <code class="docutils literal notranslate"><span class="pre">packages</span></code> array.  This will override any page-provided
+configuration, however, so if you want to provide non-standard
+defaults that can still be overridden in the page, use</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span><span class="w"></span>
+<span class="c1">// Update the configuration to include any updated values</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">insert</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/util/Options.js&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">insert</span><span class="p">(</span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;ams&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;newcommand&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;configmacros&#39;</span><span class="p">]}}},</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">insert</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// your default options here</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">config</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>which will update the TeX packages, and then merge the user’s
+configuration options into your defaults and set
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.config</span></code> to the combined options.</p>
+</section>
+<section id="fonts-for-commonhtml">
+<h4>Fonts for CommonHTML<a class="headerlink" href="#fonts-for-commonhtml" title="Permalink to this heading"></a></h4>
+<p>If you include the CommonHTML output jax in your custom build, the
+actual web fonts are not included in the webpacked file, so you will
+probably need to include <cite>fontURL</cite> in the <cite>chtml</cite>
+block of your configuration and have it provide a URL where the fonts
+can be found.  They are in the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/es5/output/chtml/fonts/woff-v2</span></code> directory, and
+you can put them on your server, or simply point <cite>fontURL</cite> to one of
+the CDN directories for the fonts.</p>
+</section>
+</section>
+<section id="a-custom-extension">
+<span id="custom-extension"></span><h3>A Custom Extension<a class="headerlink" href="#a-custom-extension" title="Permalink to this heading"></a></h3>
+<p>Making a custom extension is very similar to making a custom combined
+component.  The main difference is that the extension may rely on
+other components, so you need to tell the build system about that so
+that it doesn’t include the code from those other components.  You
+also don’t load the extension file directly (like you do the combined
+component above), but instead include it in the <cite>load</cite> array of the
+<cite>loader</cite> configuration block, and MathJax loads it itself, as
+discussed below.</p>
+<p>For this example, we make a custom TeX extension that defines new TeX
+commands implemented by javascript functions.</p>
+<p>The commands implemented here provide the ability to generate
+MathML token elements from within TeX by hand. This allows more
+control over the content and attributes of the elements produced. The
+macros are <code class="docutils literal notranslate"><span class="pre">\mi</span></code>, <code class="docutils literal notranslate"><span class="pre">\mo</span></code>, <code class="docutils literal notranslate"><span class="pre">\mn</span></code>, <code class="docutils literal notranslate"><span class="pre">\ms</span></code>, and <code class="docutils literal notranslate"><span class="pre">\mtext</span></code>, and
+they each take an argument that is the text to be used as the content
+of the corresponding MathML element. The text is not further processed
+by TeX, but the extension does convert sequences of the form
+<code class="docutils literal notranslate"><span class="pre">\uNNNN</span></code> (where the <code class="docutils literal notranslate"><span class="pre">N</span></code> are hexadecimal digits) into the
+corresponding unicode character; e.g., <code class="docutils literal notranslate"><span class="pre">\mi{\u2460}</span></code> would produce
+U+2460, a circled digit 1, as the content of an <code class="docutils literal notranslate"><span class="pre">mi</span></code> element.</p>
+<section id="the-extension-file">
+<h4>The Extension File<a class="headerlink" href="#the-extension-file" title="Permalink to this heading"></a></h4>
+<p>After downloading a copy of MathJax as described in the section on
+<a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a>, create a directory for the extension named
+<code class="docutils literal notranslate"><span class="pre">custom-extension</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to it.  Then create the file <code class="docutils literal notranslate"><span class="pre">mml.js</span></code>
+containing the following text:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">Configuration</span><span class="p">}</span><span class="w">  </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../node_modules/mathjax-full/js/input/tex/Configuration.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">CommandMap</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../node_modules/mathjax-full/js/input/tex/SymbolMap.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nx">TexError</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../node_modules/mathjax-full/js/input/tex/TexError.js&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This function prevents multi-letter mi elements from being</span>
+<span class="cm"> *   interpreted as TEXCLASS.OP</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">classORD</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">this</span><span class="p">.</span><span class="nx">getPrevClass</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  Convert \uXXXX to corresponding unicode characters within a string</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">convertEscapes</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\\u([0-9A-F]{4})/gi</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="p">,</span><span class="w"> </span><span class="nx">hex</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">hex</span><span class="p">,</span><span class="mf">16</span><span class="p">)));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Allowed attributes on any token element other than the ones with default values</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ALLOWED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">href</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="kd">class</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Parse a string as a set of attribute=&quot;value&quot; pairs.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">parseAttributes</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">attr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">match</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^\s*((?:data-)?[a-z][-a-z]*)\s*=\s*(?:&quot;([^&quot;]*)&quot;|(.*?))(?:\s+|,\s*|$)/i</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">type</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">ALLOWED</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">name</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;data-&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">attr</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">convertEscapes</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TexError</span><span class="p">(</span><span class="s1">&#39;BadAttribute&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Unknown attribute &quot;%1&quot;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">         </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">match</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">length</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TexError</span><span class="p">(</span><span class="s1">&#39;BadAttributeList&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Can\&#39;t parse as attributes: %1&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">attr</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  The mapping of control sequence to function calls</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MmlMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CommandMap</span><span class="p">(</span><span class="s1">&#39;mmlMap&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">mi</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mi&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">   </span><span class="nx">mo</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mo&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">   </span><span class="nx">mn</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mn&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">   </span><span class="nx">ms</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ms&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">   </span><span class="nx">mtext</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mtext&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">mmlToken</span><span class="p">(</span><span class="nx">parser</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">typeClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">configuration</span><span class="p">.</span><span class="nx">nodeFactory</span><span class="p">.</span><span class="nx">mmlFactory</span><span class="p">.</span><span class="nx">getNodeClass</span><span class="p">(</span><span class="nx">type</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">def</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseAttributes</span><span class="p">(</span><span class="nx">parser</span><span class="p">.</span><span class="nx">GetBrackets</span><span class="p">(</span><span class="nx">name</span><span class="p">),</span><span class="w"> </span><span class="nx">typeClass</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">convertEscapes</span><span class="p">(</span><span class="nx">parser</span><span class="p">.</span><span class="nx">GetArgument</span><span class="p">(</span><span class="nx">name</span><span class="p">));</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">mml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">parser</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">)],</span><span class="w"> </span><span class="nx">def</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;mi&#39;</span><span class="p">)</span><span class="w"> </span><span class="nx">mml</span><span class="p">.</span><span class="nx">setTeXclass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">classORD</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="nx">parser</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="nx">mml</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * The configuration used to enable the MathML macros</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MmlConfiguration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Configuration</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="w"></span>
+<span class="w">   </span><span class="s1">&#39;mml&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">handler</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">macro</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mmlMap&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The comments explain what this code is doing.  The main piece needed
+to make it a TeX extension is the <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> created in the
+last few lines.  It creates a TeX package named <code class="docutils literal notranslate"><span class="pre">mml</span></code> that handles
+macros through a <code class="docutils literal notranslate"><span class="pre">CommandMap</span></code> named <code class="docutils literal notranslate"><span class="pre">mmlMap</span></code> that is defined just
+above it. That command map defines five macros described at the
+beginning of this section, each of which is tied to a method named
+<code class="docutils literal notranslate"><span class="pre">mmlToken</span></code> in the object that follows, passing it the name of the
+MathML token element to create.  The <code class="docutils literal notranslate"><span class="pre">mmlToken</span></code> method is the one
+that is called by the TeX parser when the <code class="docutils literal notranslate"><span class="pre">\mi</span></code> and other macros are
+called.  It gets the argument to the macro, and any optional
+attributes, and creates the MathML element with the attributes, using
+the argument as the text of the element.</p>
+</section>
+<section id="id1">
+<h4>The Webpack Configuration<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<p>Next, create the file <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> that includes the
+following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/webpack.common.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;mml&#39;</span><span class="p">,</span><span class="w">                                </span><span class="c1">// the name of the package to build</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;../node_modules/mathjax-full/js&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// location of the mathjax library</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="w">                                     </span><span class="c1">// packages to link to</span><span class="w"></span>
+<span class="w">     </span><span class="s1">&#39;components/src/core/lib&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="s1">&#39;components/src/input/tex-base/lib&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">__dirname</span><span class="p">,</span><span class="w">                            </span><span class="c1">// our directory</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;.&#39;</span><span class="w">                                   </span><span class="c1">// where to put the packaged component</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This file gives the name that will be used for this component (<code class="docutils literal notranslate"><span class="pre">mml</span></code>
+in this case), a pointer to where the MathJax javascript code is to be
+found (adjust this to suit your setup), an array of components that we
+assume are already loaded when this one is loaded (the <code class="docutils literal notranslate"><span class="pre">core</span></code> and
+<code class="docutils literal notranslate"><span class="pre">tex-base</span></code> components in this case), the directory name we are
+working in (always <code class="docutils literal notranslate"><span class="pre">__dirname</span></code>), and the directory where we want the
+final packaged component to go (the default is the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/es5</span></code> directory, but we set it to the directory
+containing the source files, and the component will end with
+<code class="docutils literal notranslate"><span class="pre">.min.js</span></code>).</p>
+<p>Most of the real work is done by the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/components/webpack.common.js</span></code> file, which is included in
+the first line here.</p>
+</section>
+<section id="building-the-extension">
+<h4>Building the Extension<a class="headerlink" href="#building-the-extension" title="Permalink to this heading"></a></h4>
+<p>Once these two files are ready, you are ready to build the component.
+First, make sure that you have obtained the needed tools as described
+in <a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a> above.  Then you should be able to use the
+command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>node ../node_modules/mathjax-full/components/bin/makeAll
+</pre></div>
+</div>
+<p>to process your custom build.  You should end up with a file
+<code class="docutils literal notranslate"><span class="pre">mml.min.js</span></code> in the directory with the other files.  If
+you put this on your web server, you can load it as a component by
+putting it in the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your
+configuration, as descrinbed below.</p>
+</section>
+<section id="loading-the-extension">
+<h4>Loading the Extension<a class="headerlink" href="#loading-the-extension" title="Permalink to this heading"></a></h4>
+<p>To load your custom extension, you will need to tell MathJax where it
+is located, and include it in the file to be loaded on startup.
+MathJax allows you to define paths to locations where your extensions
+are stored, and then you can refer to the extensions in that location
+by using a prefix that represents that location.  MathJax has a
+pre-defined prefix, <code class="docutils literal notranslate"><span class="pre">mathjax</span></code> that is the default prefix when none
+is specified explicitly, and it refers to the location where the main
+MathJax file was loaded (e.g., the file <code class="docutils literal notranslate"><span class="pre">tex-svg.js</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">startup.js</span></code>).</p>
+<p>You can define your own prefix to point to the location of your
+extensions by using the <code class="docutils literal notranslate"><span class="pre">paths</span></code> object in the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of
+your configuration.  In our case (see code below), we add a <code class="docutils literal notranslate"><span class="pre">custom</span></code>
+prefix, and have it point to the URL of our extension (in this case,
+the same directory as the HTML file that loads it, represented by the
+URL <code class="docutils literal notranslate"><span class="pre">.</span></code>).  We use the <code class="docutils literal notranslate"><span class="pre">custom</span></code> prefix to specify
+<code class="docutils literal notranslate"><span class="pre">[custom]/mml.min.js</span></code> in the <code class="docutils literal notranslate"><span class="pre">load</span></code> array so that our extension
+will be loaded.</p>
+<p>Finally, we add the <code class="docutils literal notranslate"><span class="pre">mml</span></code> extension to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array in the
+<code class="docutils literal notranslate"><span class="pre">tex</span></code> block of our configuration via the special notation <code class="docutils literal notranslate"><span class="pre">{'[+]':</span>
+<span class="pre">[...]}</span></code> that tells MathJax to append the given array to the existing
+<code class="docutils literal notranslate"><span class="pre">packages</span></code> array that is already in the configuration by default.
+So this uses all the packages that were already specified, plus our
+new <code class="docutils literal notranslate"><span class="pre">mml</span></code> package that is defined in our extension.</p>
+<p>The configuration and loading of MathJax now looks something like this:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[custom]/mml.min.js&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nx">paths</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">custom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">},</span><span class="w"></span>
+<span class="w">   </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mml&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You should change the <code class="docutils literal notranslate"><span class="pre">custom:</span> <span class="pre">'.'</span></code> line to point to the actual URL for
+your server.</p>
+<p>This example loads the <code class="docutils literal notranslate"><span class="pre">tex-chtml.js</span></code> combined component, so the TeX
+input is already loaded when our extension is loaded.  If you are
+using <code class="docutils literal notranslate"><span class="pre">startup.js</span></code> instead, and including <code class="docutils literal notranslate"><span class="pre">input/tex</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">load</span></code> array, you will need to tell MathJax that your extension
+depends on the <code class="docutils literal notranslate"><span class="pre">input/tex</span></code> extension so that it waits to load your
+extension until after the TeX input jax is loaded.  To do that, add a
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> block to your configuration like the following:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/tex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output/chtml&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[custom]/mml.min.js&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nx">paths</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">custom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dependencies</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[custom]/mml.min.js&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/tex&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">   </span><span class="p">},</span><span class="w"></span>
+<span class="w">   </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mml&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This example can be seen live in the <a class="reference external" href="https://github.com/mathjax/MathJax-demos-web/blob/master/custom-tex-extension/mml.md">MathJax 3 demos</a>
+repository.</p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+<section id="a-custom-mathjax-build">
+<span id="custom-build"></span><h2>A Custom MathJax Build<a class="headerlink" href="#a-custom-mathjax-build" title="Permalink to this heading"></a></h2>
+<p>It is possible to make a completely custom build of MathJax that is
+not based on other MathJax components at all.  The following example
+shows how to make a custom build that provides a function for
+obtaining the speech string for a given TeX math string.  This example
+is similar to one in the <a class="reference external" href="https://github.com/mathjax/MathJax-demos-web/blob/master/custom-build/custom-mathjax.md">MathJax3 demos</a>
+repository.</p>
+<p>After downloading a copy of MathJax as described in the section on
+<a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a>, create a directory called <code class="docutils literal notranslate"><span class="pre">mathjax-speech</span></code> and
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> into it.</p>
+<section id="the-custom-build-file">
+<h3>The Custom Build File<a class="headerlink" href="#the-custom-build-file" title="Permalink to this heading"></a></h3>
+<p>Create the custom MathJax file named <code class="docutils literal notranslate"><span class="pre">mathjax-speech.js</span></code> containing
+the following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Load the desired components</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mathjax</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/mathjax.js&#39;</span><span class="p">).</span><span class="nx">mathjax</span><span class="p">;</span><span class="w">      </span><span class="c1">// MathJax core</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">TeX</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/input/tex.js&#39;</span><span class="p">).</span><span class="nx">TeX</span><span class="p">;</span><span class="w">        </span><span class="c1">// TeX input</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">MathML</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/input/mathml.js&#39;</span><span class="p">).</span><span class="nx">MathML</span><span class="p">;</span><span class="w">  </span><span class="c1">// MathML input</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">browser</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/adaptors/browserAdaptor.js&#39;</span><span class="p">).</span><span class="nx">browserAdaptor</span><span class="p">;</span><span class="w"> </span><span class="c1">// browser DOM</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Enrich</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/a11y/semantic-enrich.js&#39;</span><span class="p">).</span><span class="nx">EnrichHandler</span><span class="p">;</span><span class="w">     </span><span class="c1">// semantic enrichment</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Register</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/handlers/html.js&#39;</span><span class="p">).</span><span class="nx">RegisterHTMLHandler</span><span class="p">;</span><span class="w">      </span><span class="c1">// the HTML handler</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">AllPackages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/input/tex/AllPackages&#39;</span><span class="p">).</span><span class="nx">AllPackages</span><span class="p">;</span><span class="w">         </span><span class="c1">// all TeX packages</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">STATE</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/core/MathItem.js&#39;</span><span class="p">).</span><span class="nx">STATE</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">sreReady</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/js/a11y/sre.js&#39;</span><span class="p">).</span><span class="nx">sreReady</span><span class="p">();</span><span class="w">    </span><span class="c1">// SRE promise;</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Register the HTML handler with the browser adaptor and add the semantic enrichment</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nx">Enrich</span><span class="p">(</span><span class="nx">Register</span><span class="p">(</span><span class="nx">browser</span><span class="p">()),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MathML</span><span class="p">());</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  Initialize mathjax with a blank DOM.</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mathjax</span><span class="p">.</span><span class="nb">document</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">sre</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">speech</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shallow&#39;</span><span class="p">,</span><span class="w">           </span><span class="c1">// add speech to the enriched MathML</span><span class="w"></span>
+<span class="w">   </span><span class="p">},</span><span class="w"></span>
+<span class="w">   </span><span class="nx">InputJax</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TeX</span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="nx">AllPackages</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;bussproofs&#39;</span><span class="p">),</span><span class="w">  </span><span class="c1">// Bussproofs needs an output jax</span><span class="w"></span>
+<span class="w">      </span><span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">require</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]}</span><span class="w">      </span><span class="c1">// Make \require a no-op since all packages are loaded</span><span class="w"></span>
+<span class="w">   </span><span class="p">})</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  The user&#39;s configuration object</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">//  The global MathJax object</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="nx">mathjax</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="nx">html</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">sreReady</span><span class="o">:</span><span class="w"> </span><span class="nx">sreReady</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">   </span><span class="nx">tex2speech</span><span class="p">(</span><span class="nx">tex</span><span class="p">,</span><span class="w"> </span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kd">const</span><span class="w"> </span><span class="nx">math</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">MathItem</span><span class="p">(</span><span class="nx">tex</span><span class="p">,</span><span class="w"> </span><span class="nx">html</span><span class="p">.</span><span class="nx">inputJax</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">display</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="nx">mathjax</span><span class="p">.</span><span class="nx">handleRetriesFor</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span><span class="w"> </span><span class="nx">STATE</span><span class="p">.</span><span class="nx">CONVERT</span><span class="p">)).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="nx">speech</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="nx">math</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">walkTree</span><span class="p">(</span><span class="nx">node</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="kd">const</span><span class="w"> </span><span class="nx">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">node</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">getAllAttributes</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">attributes</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">speech</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">attributes</span><span class="p">[</span><span class="s1">&#39;data-semantic-speech&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="w">             </span><span class="o">!</span><span class="nx">attributes</span><span class="p">[</span><span class="s1">&#39;data-semantic-parent&#39;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">           </span><span class="nx">speech</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">attributes</span><span class="p">[</span><span class="s1">&#39;data-semantic-speech&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">       </span><span class="p">});</span><span class="w"></span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="nx">speech</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;no speech text generated&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="p">});</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">//</span><span class="w"></span>
+<span class="c1">// Perform ready function, if there is one</span><span class="w"></span>
+<span class="c1">//</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">ready</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">sreReady</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">ready</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Unlike the component-based example above, this custom build calls on
+the MathJax source files directly.  The <code class="docutils literal notranslate"><span class="pre">require</span></code> commands at the
+beginning of the file load the needed objects, and the rest of the
+code instructs MathJax to create a <code class="docutils literal notranslate"><span class="pre">MathDocument</span></code> object for
+handling the conversions that we will be doing (using a TeX input
+jax), and then defines a global <code class="docutils literal notranslate"><span class="pre">MathJax</span></code> object that has the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">tex2speech()</span></code> function that our custom build offers.</p>
+</section>
+<section id="id2">
+<h3>The Webpack Configuration<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>Next, create the file <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> that includes the
+following:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mathjax-full/components/webpack.common.js&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PACKAGE</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;mathjax-speech&#39;</span><span class="p">,</span><span class="w">                     </span><span class="c1">// the name of the package to build</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;../node_modules/mathjax-full/js&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// location of the mathjax library</span><span class="w"></span>
+<span class="w">  </span><span class="p">[],</span><span class="w">                                   </span><span class="c1">// packages to link to</span><span class="w"></span>
+<span class="w">  </span><span class="nx">__dirname</span><span class="p">,</span><span class="w">                            </span><span class="c1">// our directory</span><span class="w"></span>
+<span class="w">  </span><span class="s1">&#39;.&#39;</span><span class="w">                                   </span><span class="c1">// where to put the packaged component</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This file gives the name that will be used for this component
+(<code class="docutils literal notranslate"><span class="pre">mathjax-speech</span></code> in this case), a pointer to where the MathJax
+javascript code is to be found (adjust this to suit your setup), an
+array of components that we assume are already loaded when this one is
+loaded (none, since this is a self-contained build), the directory
+name we are working in (always <code class="docutils literal notranslate"><span class="pre">__dirname</span></code>), and the directory where
+we want the final packaged component to go (the default is the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/es5</span></code> directory, but we set it to the directory
+containing the source files, and the component will end with
+<code class="docutils literal notranslate"><span class="pre">.min.js</span></code>).</p>
+<p>Most of the real work is done by the
+<code class="docutils literal notranslate"><span class="pre">mathjax-full/components/webpack.common.js</span></code> file, which is included in
+the first line here.</p>
+</section>
+<section id="building-the-custom-file">
+<h3>Building the Custom File<a class="headerlink" href="#building-the-custom-file" title="Permalink to this heading"></a></h3>
+<p>Once these two files are ready, you are ready to make your custom
+build.  First, make sure that you have obtained the needed tools as
+described in <a class="reference internal" href="#getting-ready"><span class="std std-ref">Getting Things Ready</span></a> above.  Then you should be able to
+use the command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>node ../node_modules/mathjax-full/components/bin/makeAll
+</pre></div>
+</div>
+<p>to process your custom build.  You should end up with a file
+<code class="docutils literal notranslate"><span class="pre">mathjax-speech.min.js</span></code> in the directory with the other files.  it
+will contain just the parts of MathJax that are needed to implement
+the <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.tex2speech()</span></code> command defined in the file above.
+Note that this is not enough to do normal typesetting (for example, no
+output jax has been included), so this is a minimal file for producing
+the speech strings from TeX input.</p>
+</section>
+<section id="using-the-file-in-a-web-page">
+<h3>Using the File in a Web Page<a class="headerlink" href="#using-the-file-in-a-web-page" title="Permalink to this heading"></a></h3>
+<p>If you put the <code class="docutils literal notranslate"><span class="pre">mathjax-speech.min.js</span></code> file on your web server, you
+can load it into your web pages in place of loading MathJax from a
+CDN.  This fill will include all that you need to use the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.tex2speech()</span></code> command in your pages.  Just add</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;mathjax-speech.min.js&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to your page (adjust the URL to point to wherever you have placed the
+<code class="docutils literal notranslate"><span class="pre">custom-mathjax.min.js</span></code> file).  Then you can use javascript calls
+like</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">speech</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">tex2speech</span><span class="p">(</span><span class="s1">&#39;\\sqrt{x^2+1}&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>to obtain a text string that contains the speech text for the square
+root given in the TeX string.</p>
+<p>Note, however, that the Speech-Rule Engine (SRE) that underlies the
+speech generation loads asynchronously, so you have to be sure that
+SRE is ready before you make such a call.  The <code class="docutils literal notranslate"><span class="pre">mathjax-speech.js</span></code>
+file provides two ways of handling the synchronization with SRE.  The
+first is to use the global <code class="docutils literal notranslate"><span class="pre">MathJax</span></code> variable to include a
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">ready()</span></code> function that is called when SRE is ready.  For
+example,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">speechReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">ready</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nb">window</span><span class="p">.</span><span class="nx">speechReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>would set the global variable <code class="xref js js-data docutils literal notranslate"><span class="pre">speechReady</span></code> to true when SRE is
+ready to run (so you can check that value to see if speech can be
+generated yet).  A more sophisticated <code class="xref js js-meth docutils literal notranslate"><span class="pre">ready()</span></code> function could
+allow you to queue translations to be performed, and when SRE is ready,
+it performs them.  Alternatively, if you have a user interface that
+allows users to transform TeX expressions, for example, then you could
+initially disable to buttons that trigger speech generation, and use
+the <code class="xref js js-meth docutils literal notranslate"><span class="pre">ready()</span></code> function to enable them.  That way, the user can’t
+ask for speech translation until it can be produced.</p>
+<p>The second method of synchronizing with SRE is through the fact that
+the code sets <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.sreReady</span></code> to a promise that is resolves
+when SRE is ready, which you can use to make sure SRE is ready when you
+want to do speech generation.  For example</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">showSpeech</span><span class="p">(</span><span class="nx">tex</span><span class="p">,</span><span class="w"> </span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">sreReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">sreReady</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kd">const</span><span class="w"> </span><span class="nx">speech</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">tex2speech</span><span class="p">(</span><span class="nx">tex</span><span class="p">,</span><span class="w"> </span><span class="nx">display</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;speech&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="nx">output</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">speech</span><span class="p">));</span><span class="w"></span>
+<span class="w">   </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>provides a function that lets you specify a TeX string to translate,
+and then (asynchronously) generates the speech for it and displays it
+as the contents of the DOM element with <code class="docutils literal notranslate"><span class="pre">id=&quot;speech&quot;</span></code> in the page.</p>
+<p><hr></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hosting.html" class="btn btn-neutral float-left" title="Hosting Your Own Copy of MathJax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples in a Browser" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

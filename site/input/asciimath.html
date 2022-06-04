@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AsciiMath Support &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MathJax Output Formats" href="../output/index.html" />
+    <link rel="prev" title="MathML Support" href="mathml.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathml.html">MathML Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AsciiMath Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-asciimath-component">Loading the AsciiMath Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asciimath-delimiters">AsciiMath delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asciimath-in-html-documents">AsciiMath in HTML documents</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>AsciiMath Support</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/input/asciimath.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="asciimath-support">
+<span id="id1"></span><h1>AsciiMath Support<a class="headerlink" href="#asciimath-support" title="Permalink to this heading"></a></h1>
+<p>The support for AsciiMath in MathJax involves two functions: the first
+looks for mathematics within your web page (indicated by delimiters
+like <code class="docutils literal notranslate"><span class="pre">`...`</span></code>) and marks the mathematics for later processing by
+MathJax, and the second is what converts the AsciiMath notation into
+MathJax’s internal format, where one of MathJax’s output processors
+then displays it in the web page.  In MathJax version 2, these were
+separated into distinct components (the <code class="docutils literal notranslate"><span class="pre">asciimath2jax</span></code> preprocessor
+and the AsciiMath input jax), but in version 3, the <code class="docutils literal notranslate"><span class="pre">asciimath2jax</span></code>
+functions have been folded into the AsciiMath input jax.</p>
+<p>The AsciiMath input jax actually includes a copy of <code class="docutils literal notranslate"><span class="pre">ASCIIMathML.js</span></code>
+itself (see the <a class="reference external" href="http://asciimath.org">AsciiMath home page</a> for
+details).  This means that the results of MathJax’s AsciiMath
+processing should be the same as using the actual <code class="docutils literal notranslate"><span class="pre">ASCIIMathML.js</span></code>
+package (at least as far as the MathML that it generates is
+concerned).  Thanks go to David Lippman for writing the initial
+version of the AsciiMath preprocessor and input jax and for the
+ongoing improvements from the AsciiMath community.</p>
+<p>The AsciiMath input jax handles only the original ASCIIMathML notation
+(from ASCIIMathML v1.4.7), not the extended LaTeXMathML notation added
+in version 2.0 of ASCIIMathML, though the AsciiMath input jax does
+expose the tables that define the symbols that AsciiMath processes,
+and so it would be possible to extend them to include additional
+symbols.  In general, it is probably better to use MathJax’s <a class="reference internal" href="tex/index.html#tex-support"><span class="std std-ref">TeX
+input jax</span></a> to handle LaTeX notation.</p>
+<p>AsciiMath can be configured to look for whatever markers you want to
+use for your math delimiters.  See the <a class="reference internal" href="../options/input/asciimath.html#asciimath-options"><span class="std std-ref">AsciiMath
+configuration options</span></a> section for details
+on how to customize the action of the AsciiMath input jax.</p>
+<section id="loading-the-asciimath-component">
+<span id="loading-asciimath"></span><h2>Loading the AsciiMath Component<a class="headerlink" href="#loading-the-asciimath-component" title="Permalink to this heading"></a></h2>
+<p>The AsciiMath input jax has not yet been fully ported to version 3.
+Instead, the AsciiMath component uses the version 2 AsciiMath
+input jax together with some of the legacy version 2 code patched into
+the version 3 framework.  This is less efficient, and somewhat larger,
+than a pure version-3 solution would be, and it can complicate
+the configuration process.  A full version-3 port of AsciiMath is
+planned for a future release.</p>
+<p>Because AsciiMath hasn’t been fully ported to version 3, none of the
+combined components include it.  So in order to use AsciiMath
+notation, you will need to configure MathJax to load it yourself by
+adding <code class="docutils literal notranslate"><span class="pre">input/asciimath</span></code> to the <code class="docutils literal notranslate"><span class="pre">load</span></code> array in the <code class="docutils literal notranslate"><span class="pre">loader</span></code>
+block of your MathJax configuration.  For example,</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/asciimath&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output/chtml&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ui/menu&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>would load the AsciiMath input jax, the CommonHTML output jax, and the
+contextual menu component.</p>
+</section>
+<section id="asciimath-delimiters">
+<span id="id2"></span><h2>AsciiMath delimiters<a class="headerlink" href="#asciimath-delimiters" title="Permalink to this heading"></a></h2>
+<p>By default, the AsciiMath processor defines the back-tick
+(<code class="docutils literal notranslate"><span class="pre">`</span></code>) as the delimiters for mathematics in AsciiMath format.  It
+does <strong>not</strong> define <code class="docutils literal notranslate"><span class="pre">$...$</span></code> as math delimiters.  That is because
+dollar signs appear too often in non-mathematical settings, which
+could cause some text to be treated as mathematics unexpectedly.  For
+example, with single-dollar delimiters, “… the cost is $2.50 for the
+first one, and $2.00 for each additional one …” would cause the
+phrase “2.50 for the first one, and” to be treated as mathematics
+since it falls between dollar signs.  For this reason, if you want to
+use single-dollars for AsciiMath notation, you must enable that
+explicitly in your configuration:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/asciimath&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">asciimath</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;`&#39;</span><span class="p">,</span><span class="s1">&#39;`&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that the dollar signs are frequently used as a delimiter for
+mathematics in the TeX format, and you can not enable the dollar-sign
+delimiter for both.  It is probably best to leave dollar signs for TeX
+notation.</p>
+<p>See the <a class="reference internal" href="../options/input/asciimath.html#asciimath-options"><span class="std std-ref">AsciiMath Input Processor Options</span></a> page, for additional configuration
+parameters that you can specify for the AsciiMath input processor.</p>
+</section>
+<section id="asciimath-in-html-documents">
+<span id="asciimath-in-html"></span><h2>AsciiMath in HTML documents<a class="headerlink" href="#asciimath-in-html-documents" title="Permalink to this heading"></a></h2>
+<p>The AsciiMath syntax is described on the official <a class="reference external" href="http://asciimath.org">AsciiMath homepage</a>.</p>
+<p>Keep in mind that your mathematics is part of an HTML document, so you
+need to be aware of the special characters used by HTML as part of its
+markup.  There cannot be HTML tags within the math delimiters (other
+than <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;wbr&gt;</span></code>, and HTML comments) as AsciiMath-formatted
+math does not include HTML tags.  Also, since the mathematics is
+initially given as text in the page, you need to be careful that your
+mathematics doesn’t look like HTML tags to the browser, which parses
+the page before MathJax gets to see it.  In particular, that means
+that you have to be careful about things like less-than and
+greater-than signs (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), and ampersands (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>), which
+have special meaning to web browsers.  For example,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>... when `x&lt;y` we have ...
+</pre></div>
+</div>
+<p>will cause a problem, because the browser will think <code class="docutils literal notranslate"><span class="pre">&lt;y</span></code> is the
+beginning of a tag named <code class="docutils literal notranslate"><span class="pre">y</span></code> (even though there is no such tag in
+HTML).  When this happens, the browser will think the tag continues up
+to the next <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> in the document (typically the end of the next
+actual tag in the HTML file), and you may notice that you are missing
+part of the text of the document.  In the example above, the “<code class="docutils literal notranslate"><span class="pre">&lt;y</span></code>”
+and “<code class="docutils literal notranslate"><span class="pre">we</span> <span class="pre">have</span> <span class="pre">...</span></code>” will not be displayed because the browser thinks
+it is part of the tag starting at <code class="docutils literal notranslate"><span class="pre">&lt;y</span></code>.  This is one indication you
+can use to spot this problem; it is a common error and should be
+avoided.</p>
+<p>Usually, it is sufficient simply to put spaces around these symbols to
+cause the browser to avoid them, so</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>... when `x &lt; y` we have ...
+</pre></div>
+</div>
+<p>should work.  Alternatively, you can use the HTML entities <code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&amp;amp;</span></code> to encode these characters so that the browser
+will not interpret them, but MathJax will.  E.g.,</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>... when `x <span class="ni">&amp;lt;</span> y` we have ...
+</pre></div>
+</div>
+<p>Keep in mind that the browser interprets your text before MathJax
+does.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mathml.html" class="btn btn-neutral float-left" title="MathML Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../output/index.html" class="btn btn-neutral float-right" title="MathJax Output Formats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

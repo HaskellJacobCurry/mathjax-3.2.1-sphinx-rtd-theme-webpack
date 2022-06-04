@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazy Typesetting &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Automatic Line Breaking" href="linebreaks.html" />
+    <link rel="prev" title="MathML Support" href="mathml.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Output Formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Lazy Typesetting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/output/lazy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lazy-typesetting">
+<span id="id1"></span><h1>Lazy Typesetting<a class="headerlink" href="#lazy-typesetting" title="Permalink to this heading"></a></h1>
+<p>MathJax offers an extension that is designed to improve the
+performance of pages with large numbers of equations. It implements a
+“lazy typesetting” approach that only processes an expression when it
+comes into view.  This means that expressions will not be typeset when
+they are not visible, and your readers will not have to wait for the
+entire document to typeset, speeding up their initial view of the
+page. Furthermore, any expressions that are never seen will not be
+typeset, saving the processing time that would normally have been
+spent on those expressions.</p>
+<p>This also helps with the situation where you may link to a particular
+location in your page (via a URL with a hash); typesetting the
+material above that point can cause the browser to change the scroll
+position, and so the user may not end up at the proper location in the
+page. With the lazy extension, the material above that point is not
+typeset until the user scrolls upwards, and so there is no position
+change.</p>
+<p>To use the lazy typesetting extension, simply add it to your
+configuration as follows:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>MathJax = <span class="nb">{</span>
+  loader: <span class="nb">{</span>load: [&#39;ui/lazy&#39;]<span class="nb">}</span>
+<span class="nb">}</span>;
+</pre></div>
+</div>
+<p>This will adjust the typesetting pipeline to implement the
+lazy-typesetting functionality.</p>
+<p>Lazy typesetting works best with SVG output, but changes with the way
+the CommonHTML output handles its stylesheet updates make the CHTML
+output nearly as fast. With TeX input, the lazy extension makes sure
+that previous expressions are processed by TeX (though not output to
+the page) so that any macro definitions or automatic equation numbers
+are in place when the visible expressions are processed. Currently,
+documents that contain <code class="docutils literal notranslate"><span class="pre">\ref</span></code> or <code class="docutils literal notranslate"><span class="pre">\eqref</span></code> links may not yet work
+properly, since target equations may not have been typeset, and so the
+link location may not be marked in the document. In particular,
+forward references are unlikely to work, and backward references will
+work only if the target expression has already been typeset. We hope
+to improve this situation in a future release.</p>
+<section id="lazy-typesetting-options">
+<span id="lazy-options"></span><h2>Lazy Typesetting Options<a class="headerlink" href="#lazy-typesetting-options" title="Permalink to this heading"></a></h2>
+<p>Adding the <cite>ui/lazy</cite> extension to the <cite>loader.load</cite> array adds the
+following options to the MathJax configuration:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lazyMargin</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;200px&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lazyAlwaysTypeset</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<span class="target" id="lazy-lazymargin"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">lazyMargin:</span> <span class="pre">'200px'</span></span></dt>
+<dd><p>This gives the extent of the typesetting margin outside the visible
+viewport.  When mathematics appears within this range of the
+viewport, it will be typeset.  This allows typesetting to occur
+slightly before the math appears in the window, for a smoother
+effect.</p>
+</dd></dl>
+
+<span class="target" id="lazy-lazyalwaystypeset"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">lazyAlwaysTypeset:</span> <span class="pre">null</span></span></dt>
+<dd><p>This gives an array of containers whose math expressions should
+always be typset during the initial typesetting pass, rather than
+waiting for them to scroll into view.  This may be useful if
+MathJax output appears in diagrams or other layout that must be
+sized and placed during initial page layout.</p>
+</dd></dl>
+
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mathml.html" class="btn btn-neutral float-left" title="MathML Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linebreaks.html" class="btn btn-neutral float-right" title="Automatic Line Breaking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

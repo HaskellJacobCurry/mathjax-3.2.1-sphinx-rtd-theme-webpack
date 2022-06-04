@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>physics &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="require" href="require.html" />
+    <link rel="prev" title="noundefined" href="noundefined.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The TeX/LaTeX Extension List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="action.html">action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ams.html">ams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amscd.html">amscd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload.html">autoload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boldsymbol.html">boldsymbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braket.html">braket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bussproofs.html">bussproofs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cancel.html">cancel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cases.html">cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centernot.html">centernot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colortbl.html">colortbl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorv2.html">colorv2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configmacros.html">configmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="empheq.html">empheq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enclose.html">enclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extpfeil.html">extpfeil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gensymb.html">gensymb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mathtools.html">mathtools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mhchem.html">mhchem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newcommand.html">newcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noerrors.html">noerrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noundefined.html">noundefined</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">physics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#physics-options">physics Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physics-commands">physics Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setoptions.html">setoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagformat.html">tagformat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textcomp.html">textcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textmacros.html">textmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgreek.html">upgreek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verb.html">verb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autobold.html">autobold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload-all.html">autoload-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="begingroup.html">begingroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mediawiki-texvc.html">mediawiki-texvc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">TeX and LaTeX Support</a> &raquo;</li>
+          <li><a href="index.html">The TeX/LaTeX Extension List</a> &raquo;</li>
+      <li>physics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/input/tex/extensions/physics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="physics">
+<span id="tex-physics"></span><h1>physics<a class="headerlink" href="#physics" title="Permalink to this heading"></a></h1>
+<p>The <cite>physics</cite> extension implements much of the LaTeX <a class="reference external" href="https://ctan.org/pkg/physics?lang=en">physics package</a>, which defines simple, yet
+flexible macros for typesetting equations via:</p>
+<ul class="simple">
+<li><p>Automatic bracing</p></li>
+<li><p>Vector notation</p></li>
+<li><p>Derivatives</p></li>
+<li><p>Dirac bra-ket notation</p></li>
+<li><p>Matrix macros</p></li>
+<li><p>Additional trig functions and other convenient operators</p></li>
+<li><p>Flat fractions and other useful miscellaneous math macros</p></li>
+</ul>
+<p>See the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/physics/physics.pdf">documentation</a>
+for the LaTeX package for more information.</p>
+<p>This package is not autoloaded, due to the fact that it redefines many
+standard macros, so you must request it explicitly if you want to use
+it.  To load the <cite>physics</cite> extension, add <code class="docutils literal notranslate"><span class="pre">'[tex]/physics'</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your MathJax configuration,
+and add <code class="docutils literal notranslate"><span class="pre">'physics'</span></code> to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/physics&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively, use <code class="docutils literal notranslate"><span class="pre">\require{physics}</span></code> in a TeX expression to load it
+dynamically from within the math on the page, if the <cite>require</cite>
+package is loaded.</p>
+<hr class="docutils" />
+<section id="physics-options">
+<span id="tex-physics-options"></span><h2>physics Options<a class="headerlink" href="#physics-options" title="Permalink to this heading"></a></h2>
+<p>Adding the <cite>physics</cite> extension to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array defines an
+<code class="docutils literal notranslate"><span class="pre">physics</span></code> sub-block of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> configuration block with the
+following values:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">italicdiff</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">arrowdel</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<span class="target" id="tex-physics-italicdiff"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">italicdiff:</span> <span class="pre">false</span></span></dt>
+<dd></dd></dl>
+
+<p>This corresponds to the <code class="docutils literal notranslate"><span class="pre">italicdiff</span></code> option of the <cite>physics</cite> LaTeX package to
+use italic form for the <cite>d</cite> in the <code class="docutils literal notranslate"><span class="pre">\differential</span></code> and <code class="docutils literal notranslate"><span class="pre">\derivative`</span></code>
+commands.</p>
+<span class="target" id="tex-physics-arrowdel"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">arrowdel:</span> <span class="pre">false</span></span></dt>
+<dd></dd></dl>
+
+<p>This corresponds to the <code class="docutils literal notranslate"><span class="pre">arrowdel</span></code> option of the <cite>physics</cite> LaTeX package to
+use vector notation over the nabla symbol.</p>
+<p>Note, that the <cite>physics</cite> extension does not implement the <cite>notrig</cite> option.</p>
+<hr class="docutils" />
+</section>
+<section id="physics-commands">
+<span id="tex-physics-commands"></span><h2>physics Commands<a class="headerlink" href="#physics-commands" title="Permalink to this heading"></a></h2>
+<p>The <cite>physics</cite> extension implements the following macros:
+<code class="docutils literal notranslate"><span class="pre">\abs</span></code>, <code class="docutils literal notranslate"><span class="pre">\absolutevalue</span></code>, <code class="docutils literal notranslate"><span class="pre">\acomm</span></code>, <code class="docutils literal notranslate"><span class="pre">\acos</span></code>, <code class="docutils literal notranslate"><span class="pre">\acosecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\acosine</span></code>, <code class="docutils literal notranslate"><span class="pre">\acot</span></code>, <code class="docutils literal notranslate"><span class="pre">\acotangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\acsc</span></code>, <code class="docutils literal notranslate"><span class="pre">\admat</span></code>, <code class="docutils literal notranslate"><span class="pre">\anticommutator</span></code>, <code class="docutils literal notranslate"><span class="pre">\antidiagonalmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccos</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccosecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccosine</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccot</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccotangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\arccsc</span></code>, <code class="docutils literal notranslate"><span class="pre">\arcsec</span></code>, <code class="docutils literal notranslate"><span class="pre">\arcsecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\arcsin</span></code>, <code class="docutils literal notranslate"><span class="pre">\arcsine</span></code>, <code class="docutils literal notranslate"><span class="pre">\arctan</span></code>, <code class="docutils literal notranslate"><span class="pre">\arctangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\asec</span></code>, <code class="docutils literal notranslate"><span class="pre">\asecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\asin</span></code>, <code class="docutils literal notranslate"><span class="pre">\asine</span></code>, <code class="docutils literal notranslate"><span class="pre">\atan</span></code>, <code class="docutils literal notranslate"><span class="pre">\atangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\bmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\bqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\Bqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\bra</span></code>, <code class="docutils literal notranslate"><span class="pre">\braket</span></code>, <code class="docutils literal notranslate"><span class="pre">\comm</span></code>, <code class="docutils literal notranslate"><span class="pre">\commutator</span></code>, <code class="docutils literal notranslate"><span class="pre">\cos</span></code>, <code class="docutils literal notranslate"><span class="pre">\cosecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\cosh</span></code>, <code class="docutils literal notranslate"><span class="pre">\cosine</span></code>, <code class="docutils literal notranslate"><span class="pre">\cot</span></code>, <code class="docutils literal notranslate"><span class="pre">\cotangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\coth</span></code>, <code class="docutils literal notranslate"><span class="pre">\cp</span></code>, <code class="docutils literal notranslate"><span class="pre">\cross</span></code>, <code class="docutils literal notranslate"><span class="pre">\crossproduct</span></code>, <code class="docutils literal notranslate"><span class="pre">\csc</span></code>, <code class="docutils literal notranslate"><span class="pre">\csch</span></code>, <code class="docutils literal notranslate"><span class="pre">\curl</span></code>, <code class="docutils literal notranslate"><span class="pre">\dd</span></code>, <code class="docutils literal notranslate"><span class="pre">\derivative</span></code>, <code class="docutils literal notranslate"><span class="pre">\det</span></code>, <code class="docutils literal notranslate"><span class="pre">\determinant</span></code>, <code class="docutils literal notranslate"><span class="pre">\diagonalmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\diffd</span></code>, <code class="docutils literal notranslate"><span class="pre">\differential</span></code>, <code class="docutils literal notranslate"><span class="pre">\div</span></code>, <code class="docutils literal notranslate"><span class="pre">\divergence</span></code>, <code class="docutils literal notranslate"><span class="pre">\dmat</span></code>, <code class="docutils literal notranslate"><span class="pre">\dotproduct</span></code>, <code class="docutils literal notranslate"><span class="pre">\dv</span></code>, <code class="docutils literal notranslate"><span class="pre">\dyad</span></code>, <code class="docutils literal notranslate"><span class="pre">\erf</span></code>, <code class="docutils literal notranslate"><span class="pre">\ev</span></code>, <code class="docutils literal notranslate"><span class="pre">\eval</span></code>, <code class="docutils literal notranslate"><span class="pre">\evaluated</span></code>, <code class="docutils literal notranslate"><span class="pre">\exp</span></code>, <code class="docutils literal notranslate"><span class="pre">\expectationvalue</span></code>, <code class="docutils literal notranslate"><span class="pre">\exponential</span></code>, <code class="docutils literal notranslate"><span class="pre">\expval</span></code>, <code class="docutils literal notranslate"><span class="pre">\fderivative</span></code>, <code class="docutils literal notranslate"><span class="pre">\fdv</span></code>, <code class="docutils literal notranslate"><span class="pre">\flatfrac</span></code>, <code class="docutils literal notranslate"><span class="pre">\functionalderivative</span></code>, <code class="docutils literal notranslate"><span class="pre">\grad</span></code>, <code class="docutils literal notranslate"><span class="pre">\gradient</span></code>, <code class="docutils literal notranslate"><span class="pre">\gradientnabla</span></code>, <code class="docutils literal notranslate"><span class="pre">\hypcosecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\hypcosine</span></code>, <code class="docutils literal notranslate"><span class="pre">\hypcotangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\hypsecant</span></code>, <code class="docutils literal notranslate"><span class="pre">\hypsine</span></code>, <code class="docutils literal notranslate"><span class="pre">\hyptangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\identitymatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\Im</span></code>, <code class="docutils literal notranslate"><span class="pre">\imaginary</span></code>, <code class="docutils literal notranslate"><span class="pre">\imat</span></code>, <code class="docutils literal notranslate"><span class="pre">\innerproduct</span></code>, <code class="docutils literal notranslate"><span class="pre">\ip</span></code>, <code class="docutils literal notranslate"><span class="pre">\ket</span></code>, <code class="docutils literal notranslate"><span class="pre">\ketbra</span></code>, <code class="docutils literal notranslate"><span class="pre">\laplacian</span></code>, <code class="docutils literal notranslate"><span class="pre">\ln</span></code>, <code class="docutils literal notranslate"><span class="pre">\log</span></code>, <code class="docutils literal notranslate"><span class="pre">\logarithm</span></code>, <code class="docutils literal notranslate"><span class="pre">\matrixdeterminant</span></code>, <code class="docutils literal notranslate"><span class="pre">\matrixel</span></code>, <code class="docutils literal notranslate"><span class="pre">\matrixelement</span></code>, <code class="docutils literal notranslate"><span class="pre">\matrixquantity</span></code>, <code class="docutils literal notranslate"><span class="pre">\mdet</span></code>, <code class="docutils literal notranslate"><span class="pre">\mel</span></code>, <code class="docutils literal notranslate"><span class="pre">\mqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\naturallogarithm</span></code>, <code class="docutils literal notranslate"><span class="pre">\norm</span></code>, <code class="docutils literal notranslate"><span class="pre">\op</span></code>, <code class="docutils literal notranslate"><span class="pre">\order</span></code>, <code class="docutils literal notranslate"><span class="pre">\outerproduct</span></code>, <code class="docutils literal notranslate"><span class="pre">\partialderivative</span></code>, <code class="docutils literal notranslate"><span class="pre">\paulimatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\pb</span></code>, <code class="docutils literal notranslate"><span class="pre">\pderivative</span></code>, <code class="docutils literal notranslate"><span class="pre">\pdv</span></code>, <code class="docutils literal notranslate"><span class="pre">\pmat</span></code>, <code class="docutils literal notranslate"><span class="pre">\pmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\Pmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\poissonbracket</span></code>, <code class="docutils literal notranslate"><span class="pre">\pqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\Pr</span></code>, <code class="docutils literal notranslate"><span class="pre">\principalvalue</span></code>, <code class="docutils literal notranslate"><span class="pre">\Probability</span></code>, <code class="docutils literal notranslate"><span class="pre">\pv</span></code>, <code class="docutils literal notranslate"><span class="pre">\PV</span></code>, <code class="docutils literal notranslate"><span class="pre">\qall</span></code>, <code class="docutils literal notranslate"><span class="pre">\qand</span></code>, <code class="docutils literal notranslate"><span class="pre">\qas</span></code>, <code class="docutils literal notranslate"><span class="pre">\qassume</span></code>, <code class="docutils literal notranslate"><span class="pre">\qc</span></code>, <code class="docutils literal notranslate"><span class="pre">\qcc</span></code>, <code class="docutils literal notranslate"><span class="pre">\qcomma</span></code>, <code class="docutils literal notranslate"><span class="pre">\qelse</span></code>, <code class="docutils literal notranslate"><span class="pre">\qeven</span></code>, <code class="docutils literal notranslate"><span class="pre">\qfor</span></code>, <code class="docutils literal notranslate"><span class="pre">\qgiven</span></code>, <code class="docutils literal notranslate"><span class="pre">\qif</span></code>, <code class="docutils literal notranslate"><span class="pre">\qin</span></code>, <code class="docutils literal notranslate"><span class="pre">\qinteger</span></code>, <code class="docutils literal notranslate"><span class="pre">\qlet</span></code>, <code class="docutils literal notranslate"><span class="pre">\qodd</span></code>, <code class="docutils literal notranslate"><span class="pre">\qor</span></code>, <code class="docutils literal notranslate"><span class="pre">\qotherwise</span></code>, <code class="docutils literal notranslate"><span class="pre">\qq</span></code>, <code class="docutils literal notranslate"><span class="pre">\qqtext</span></code>, <code class="docutils literal notranslate"><span class="pre">\qsince</span></code>, <code class="docutils literal notranslate"><span class="pre">\qthen</span></code>, <code class="docutils literal notranslate"><span class="pre">\qty</span></code>, <code class="docutils literal notranslate"><span class="pre">\quantity</span></code>, <code class="docutils literal notranslate"><span class="pre">\qunless</span></code>, <code class="docutils literal notranslate"><span class="pre">\qusing</span></code>, <code class="docutils literal notranslate"><span class="pre">\rank</span></code>, <code class="docutils literal notranslate"><span class="pre">\Re</span></code>, <code class="docutils literal notranslate"><span class="pre">\real</span></code>, <code class="docutils literal notranslate"><span class="pre">\Res</span></code>, <code class="docutils literal notranslate"><span class="pre">\Residue</span></code>, <code class="docutils literal notranslate"><span class="pre">\sbmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\sec</span></code>, <code class="docutils literal notranslate"><span class="pre">\secant</span></code>, <code class="docutils literal notranslate"><span class="pre">\sech</span></code>, <code class="docutils literal notranslate"><span class="pre">\sin</span></code>, <code class="docutils literal notranslate"><span class="pre">\sine</span></code>, <code class="docutils literal notranslate"><span class="pre">\sinh</span></code>, <code class="docutils literal notranslate"><span class="pre">\smallmatrixquantity</span></code>, <code class="docutils literal notranslate"><span class="pre">\smdet</span></code>, <code class="docutils literal notranslate"><span class="pre">\smqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\spmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\sPmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\svmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\tan</span></code>, <code class="docutils literal notranslate"><span class="pre">\tangent</span></code>, <code class="docutils literal notranslate"><span class="pre">\tanh</span></code>, <code class="docutils literal notranslate"><span class="pre">\tr</span></code>, <code class="docutils literal notranslate"><span class="pre">\Tr</span></code>, <code class="docutils literal notranslate"><span class="pre">\trace</span></code>, <code class="docutils literal notranslate"><span class="pre">\Trace</span></code>, <code class="docutils literal notranslate"><span class="pre">\va</span></code>, <code class="docutils literal notranslate"><span class="pre">\var</span></code>, <code class="docutils literal notranslate"><span class="pre">\variation</span></code>, <code class="docutils literal notranslate"><span class="pre">\vb</span></code>, <code class="docutils literal notranslate"><span class="pre">\vdot</span></code>, <code class="docutils literal notranslate"><span class="pre">\vectorarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\vectorbold</span></code>, <code class="docutils literal notranslate"><span class="pre">\vectorunit</span></code>, <code class="docutils literal notranslate"><span class="pre">\vmqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\vnabla</span></code>, <code class="docutils literal notranslate"><span class="pre">\vqty</span></code>, <code class="docutils literal notranslate"><span class="pre">\vu</span></code>, <code class="docutils literal notranslate"><span class="pre">\xmat</span></code>, <code class="docutils literal notranslate"><span class="pre">\xmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\zeromatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">\zmat</span></code></p>
+<p>And the following environments:
+<code class="docutils literal notranslate"><span class="pre">smallmatrix</span></code></p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="noundefined.html" class="btn btn-neutral float-left" title="noundefined" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="require.html" class="btn btn-neutral float-right" title="require" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

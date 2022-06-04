@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What’s New in MathJax v3.0 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What’s New inEarlier Versions" href="earlier/index.html" />
+    <link rel="prev" title="What’s New in MathJax v3.1" href="whats-new-3.1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">What's New</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="whats-new-3.2.html">In MathJax v3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats-new-3.1.html">In MathJax v3.1</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">In MathJax v3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earlier/index.html">In Earlier Versions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">What’s New in MathJax</a> &raquo;</li>
+      <li>What’s New in MathJax v3.0</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/upgrading/whats-new-3.0.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-s-new-in-mathjax-v3-0">
+<span id="whats-new-3-0"></span><h1>What’s New in MathJax v3.0<a class="headerlink" href="#what-s-new-in-mathjax-v3-0" title="Permalink to this heading"></a></h1>
+<p>MathJax version 3 is a complete rewrite from the ground up, with the
+goal of modernizing MathJax’s internal infrastructure, bringing it
+more flexibility for use with contemporary web technologies, making it
+easier to use with NodeJS for pre-processing and server-side support,
+and making it faster to render your mathematics.</p>
+<section id="improved-speed">
+<span id="id1"></span><h2>Improved Speed<a class="headerlink" href="#improved-speed" title="Permalink to this heading"></a></h2>
+<p>There were a number of design goals to the version 3 rewrite.  A
+primary one was to improve the rendering speed of MathJax, and we feel
+we have accomplished that.  Because the two versions operate so
+differently, it is difficult to make precise comparisons, but in tests
+that render a complete page with several hundred expressions, we see
+a reduction in rendering time of between 60 and 80 percent, depending
+on the browser and type of computer.</p>
+</section>
+<section id="more-flexibility">
+<span id="id2"></span><h2>More Flexibility<a class="headerlink" href="#more-flexibility" title="Permalink to this heading"></a></h2>
+<p>Another goal was to make MathJax 3 more flexible for web developers
+using MathJax as part of a larger framework, while still keeping it
+easy to use in simple settings.  To that end, we have broken down the
+actions that MathJax takes into smaller units than in version 2, and
+made it possible to call on them individually, or replace them with
+alternative versions of your own.  For example, the typesetting
+process has been broken into a number of pieces, including finding the
+math in the page, compiling it into the internal format (MathML),
+getting metric data for the location of the math, converting the math
+into the output format, inserting it into the page, adding menu event
+handlers, and so on.  You have control over which of these to perform,
+and can modify or remove the existing actions, or add new ones of your
+own.  See the <a class="reference internal" href="../options/document.html#document-renderactions"><span class="std std-ref">renderActions</span></a>
+documentation for details.</p>
+</section>
+<section id="synchronous-conversion">
+<span id="synhronous-conversion"></span><h2>Synchronous Conversion<a class="headerlink" href="#synchronous-conversion" title="Permalink to this heading"></a></h2>
+<p>A key feature that we wanted to include in version 3 is the ability to
+run MathJax synchronously, and in particular, to provide a function
+that can translate an input string (say a TeX expression) into an
+output DOM tree (say an SVG image).  This was not really possible in
+version 2, since its operation was inherently asynchronous at a
+fundamental level.  With MathJax version 3, this is straight-forward,
+as we provide a synchronous typesetting path, both within the page,
+and for individual expressions, provided you load all the components
+you need ahead of time.  See <a class="reference internal" href="../web/typeset.html#web-typeset"><span class="std std-ref">Typesetting and Converting Mathematics</span></a> for details.</p>
+</section>
+<section id="no-queues-signals-callbacks">
+<span id="id3"></span><h2>No Queues, Signals, Callbacks<a class="headerlink" href="#no-queues-signals-callbacks" title="Permalink to this heading"></a></h2>
+<p>One of the more difficult aspects of working with MathJax version 2
+was having to synchronize your actions with those of MathJax.  This
+involved using <cite>queues</cite>, <cite>callbacks</cite>, and <cite>signals</cite> to mediate the
+asynchronous actions of MathJax.  Since these were not standard
+javascript paradigms, they caused confusion (and headaches) for many
+developers trying to use MathJax.  With version 3, MathJax has the
+option of working synchronously (as described above), but it still
+allows for asynchronous operation (e.g., to allow TeX’s <code class="docutils literal notranslate"><span class="pre">\require</span></code>
+command to load extensions dynamically) if you wish.  This no longer
+relies on queues, callbacks, and signals, however.  Instead, these
+actions are managed through the ES6 <a class="reference external" href="https://developers.google.com/web/fundamentals/primers/promises">promise</a>,
+which is a javascript standard, and should make integrating MathJax
+into your own applications more straight-forward.</p>
+</section>
+<section id="package-manager-support">
+<span id="package-managers"></span><h2>Package Manager Support<a class="headerlink" href="#package-manager-support" title="Permalink to this heading"></a></h2>
+<p>Because MathJax version 2 used its own loading mechanism for accessing
+its components, and because there was no method for combining all the
+pieces needed by MathJax into one file, MathJax did not work well with
+javascript packaging systems like <code class="docutils literal notranslate"><span class="pre">webpack</span></code>.  Version 3 resolves
+that problem, so it should interoperate better with modern web
+workflows.  You can make your own custom single-file builds of MathJax
+(see <a class="reference internal" href="../web/webpack.html#web-custom-build"><span class="std std-ref">Making a Custom Build of MathJax</span></a>) or can include it as one component of a
+larger asset file.</p>
+</section>
+<section id="mathjax-components">
+<span id="introducing-components"></span><h2>MathJax Components<a class="headerlink" href="#mathjax-components" title="Permalink to this heading"></a></h2>
+<p>MathJax 3 still provides a loading mechanism similar to the one from
+version 2, however, so you can still customize the extensions that is
+loads, so that you only load the ones you need (though this does
+require that you use MathJax in its asynchronous mode).  The various
+pieces of MathJax have been packaged into “components” that can be
+mixed and matched as needed, and which you configure through a global
+<code class="xref js js-data docutils literal notranslate"><span class="pre">MathJax</span></code> variable (see <a class="reference internal" href="../web/examples.html#web-examples"><span class="std std-ref">Examples in a Browser</span></a>).  This
+is how MathJax is being distributed through the various CDNs that host
+it.  When loaded this way, MathJax will automatically set up all the
+objects and functions that you need to use the components you have
+loaded, giving you easy access to typesetting and conversion functions
+for the input and output formats you have selected.  See the section
+on <a class="reference internal" href="../web/components/index.html#web-components"><span class="std std-ref">The MathJax Components</span></a> for more information.  You can also create
+your own custom components to complement or replace the ones provided
+on the CDN (see <a class="reference internal" href="../web/webpack.html#custom-extension"><span class="std std-ref">A Custom Extension</span></a> for more).</p>
+</section>
+<section id="startup-actions">
+<span id="id4"></span><h2>Startup Actions<a class="headerlink" href="#startup-actions" title="Permalink to this heading"></a></h2>
+<p>If you use any of the <a class="reference internal" href="../web/components/combined.html#combined-components"><span class="std std-ref">combined component</span></a>
+files, MathJax will perform a number of actions during its startup
+process.  In particular, it will create the input and output jax, math
+document, DOM adaptor, and other objects that are needed in order to
+perform typesetting in your document.  You can access these through
+the <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup</span></code> object, if you need to.  MathJax will also
+set up functions that perform typesetting for you, and conversion
+between the various input and output formats that you have loaded.
+This should make it easy to perform the most important actions
+available in MathJax.  See <a class="reference internal" href="../web/typeset.html#web-typeset"><span class="std std-ref">Typesetting and Converting Mathematics</span></a> for more details.</p>
+</section>
+<section id="server-side-mathjax">
+<span id="server-side-use"></span><h2>Server-Side MathJax<a class="headerlink" href="#server-side-mathjax" title="Permalink to this heading"></a></h2>
+<p>While MathJax 2 was designed for use in a web browser, an important
+use case that this left unaddressed is pre-processing mathematics on a
+server.  For version 2, we provided <a class="reference external" href="https://github.com/mathjax/mathjax-node">mathjax-node</a> to fill this gap, but it
+is not as flexible or easy to use as many would have liked.  MathJax 3
+resolves this problem by being designed to work with <cite>node</cite>
+applications in essentially the same way as in a browser.  That is,
+you can load MathJax components, configure them through the
+<code class="xref js js-data docutils literal notranslate"><span class="pre">MathJax</span></code> global variable, and call the same functions for
+typesetting and conversion as you do within a browser.  This makes
+parallel development for both the browser and server much easier.</p>
+<p>Moreover, node applications can access MathJax modules directly
+(without the packaging used for MathJax components). This gives you
+the most direct access to MathJax’s features, and the most flexibility
+in modifying MathJax’s actions.  See <a class="reference internal" href="../server/examples.html#node-examples"><span class="std std-ref">Examples of MathJax in Node</span></a> for
+examples of how this is done.</p>
+</section>
+<section id="es6-and-typescript">
+<span id="es6-typescript"></span><h2>ES6 and Typescript<a class="headerlink" href="#es6-and-typescript" title="Permalink to this heading"></a></h2>
+<p>MathJax 3 is written using ES6 modules and the <a class="reference external" href="https://www.typescriptlang.org">Typescript</a> language.  This means the source
+code includes type information (which improves the code reliability),
+and allows MathJax to be down-compiled to ES5 for older browsers while
+still taking advantage of modern javascript programming techniques.
+It also means that you can produce pure ES6 versions of MathJax
+(rather than ES5) if you wish; these should be smaller and faster than
+their ES5 equivalents, though they will only run in modern browsers
+that support ES6, and so limit your readership.  We may provide both
+ES6 and ES5 versions on the CDN in the future.</p>
+</section>
+<hr class="docutils" />
+<section id="new-features-for-existing-components">
+<h2>New Features for Existing Components<a class="headerlink" href="#new-features-for-existing-components" title="Permalink to this heading"></a></h2>
+<p>In addition to the new structure for MathJax described above, some new
+features have been added to existing pieces of MathJax.</p>
+<section id="tex-input-extensions">
+<h3>TeX Input Extensions<a class="headerlink" href="#tex-input-extensions" title="Permalink to this heading"></a></h3>
+<p>There are two new TeX input extensions: <a class="reference internal" href="../input/tex/extensions/braket.html#tex-braket"><span class="std std-ref">braket</span></a> and
+<a class="reference internal" href="../input/tex/extensions/physics.html#tex-physics"><span class="std std-ref">physics</span></a>.  Also, some functionality that was built into the TeX
+input jax in version 2 has been moved into extensions in version 3.
+This includes the <a class="reference internal" href="../input/tex/extensions/configmacros.html#tex-configmacros"><span class="std std-ref">macros</span></a> configuration
+option, the <a class="reference internal" href="../input/tex/extensions/tagformat.html#tex-tagformat"><span class="std std-ref">tag formatting</span></a> configuration
+options, and the <a class="reference internal" href="../input/tex/extensions/require.html#tex-require"><span class="std std-ref">require</span></a> macro.  The new
+<a class="reference internal" href="../input/tex/extensions/autoload.html#tex-autoload"><span class="std std-ref">autoload</span></a> extension replaces the older <cite>autoload-all</cite>
+extension, is more configurable, and is included in the TeX input
+components by default.  There a several extensions that are not yet
+ported to version 3, including the <cite>autobold</cite>, <cite>mediawiki-texvc</cite>, and
+the third-party extensions.</p>
+</section>
+<section id="svg-output">
+<h3>SVG Output<a class="headerlink" href="#svg-output" title="Permalink to this heading"></a></h3>
+<p>The SVG output for equations with labels has been improved so that the
+positions of the labels now react to changes in the container width
+(just like they do in the HTML output formats).</p>
+</section>
+<section id="improved-expression-explorer">
+<h3>Improved Expression Explorer<a class="headerlink" href="#improved-expression-explorer" title="Permalink to this heading"></a></h3>
+<p>The interactive expression explorer has been improved in a number of
+ways.  It now includes better heuristics for creating the speech text
+for the expressions you explore, provides more keyboard control of the
+features in play during your exploration, adds support for braille
+output, adds support for zooming on subexpressions, and more.  See the
+<a class="reference internal" href="../basic/accessibility.html#accessibility"><span class="std std-ref">Accessibility Features</span></a> page for more details.</p>
+<p><hr></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whats-new-3.1.html" class="btn btn-neutral float-left" title="What’s New in MathJax v3.1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="earlier/index.html" class="btn btn-neutral float-right" title="What’s New inEarlier Versions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

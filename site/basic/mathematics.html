@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Mathematics for MathJax &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The MathJax Community" href="community.html" />
+    <link rel="prev" title="Legacy Assistive Support in v2" href="legacy-accessibility.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Writing Mathematics for MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#putting-mathematics-in-a-web-page">Putting mathematics in a web page</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tex-and-latex-input">TeX and LaTeX input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mathml-input">MathML input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asciimath-input">AsciiMath input</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#putting-math-in-javascript-strings">Putting Math in Javascript Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Writing Mathematics for MathJax</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basic/mathematics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="writing-mathematics-for-mathjax">
+<span id="basic-mathematics"></span><h1>Writing Mathematics for MathJax<a class="headerlink" href="#writing-mathematics-for-mathjax" title="Permalink to this heading"></a></h1>
+<section id="putting-mathematics-in-a-web-page">
+<span id="math-in-html"></span><h2>Putting mathematics in a web page<a class="headerlink" href="#putting-mathematics-in-a-web-page" title="Permalink to this heading"></a></h2>
+<p>To put mathematics in your web page, you can use TeX and LaTeX
+notation, MathML notation, AsciiMath notation, or a combination of all
+three within the same page; the MathJax configuration tells MathJax
+which you want to use, and how you plan to indicate the mathematics
+when you are using TeX/LaTeX or AsciiMath notation.  These three
+formats are described in more detail below.</p>
+<section id="tex-and-latex-input">
+<span id="tex-input"></span><h3>TeX and LaTeX input<a class="headerlink" href="#tex-and-latex-input" title="Permalink to this heading"></a></h3>
+<p>Mathematics that is written in TeX or LaTeX format is indicated using
+<em>math delimiters</em> that surround the mathematics, telling MathJax what
+part of your page represents mathematics and what is normal text.
+There are two types of equations: ones that occur within a paragraph
+(in-line mathematics), and larger equations that appear separated from
+the rest of the text on lines by themselves (displayed mathematics).</p>
+<p>The default math delimiters are <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code> and <code class="docutils literal notranslate"><span class="pre">\[...\]</span></code> for
+displayed mathematics, and <code class="docutils literal notranslate"><span class="pre">\(...\)</span></code> for in-line mathematics.  Note
+in particular that the <code class="docutils literal notranslate"><span class="pre">$...$</span></code> in-line delimiters are <strong>not</strong> used
+by default.  That is because dollar signs appear too often in
+non-mathematical settings, which could cause some text to be treated
+as mathematics unexpectedly.  For example, with single-dollar
+delimiters, “… the cost is $2.50 for the first one, and $2.00 for
+each additional one …” would cause the phrase “2.50 for the first
+one, and” to be treated as mathematics since it falls between dollar
+signs.  See the section on <a class="reference internal" href="../input/tex/delimiters.html#tex-delimiters"><span class="std std-ref">TeX and LaTeX Math Delimiters</span></a> for more information on using dollar signs as
+delimiters.</p>
+<p>Here is a complete sample page containing TeX mathematics (see the
+<a class="reference external" href="https://github.com/mathjax/MathJax-demos-web">MathJax Web Demos Repository</a>
+for more).</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>MathJax TeX Test Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Since the TeX notation is part of the text of the page, there are some
+caveats that you must keep in mind when you enter your mathematics. In
+particular, you need to be careful about the use of less-than signs,
+since those are what the browser uses to indicate the start of a tag
+in HTML. Putting a space on both sides of the less-than sign should be
+sufficient, but see <a class="reference internal" href="../input/tex/index.html#tex-support"><span class="std std-ref">TeX and LaTeX support</span></a> for
+more details.</p>
+<p>If you are using MathJax within a blog, wiki, or other content
+management system, the markup language used by that system may
+interfere with the TeX notation used by MathJax.  For example, if your
+blog uses Markdown notation for authoring your pages, the underscores
+used by TeX to indicate subscripts may be confused with the use of
+underscores by Markdown to indicate italics, and the two uses may
+prevent your mathematics from being displayed.  See <a class="reference internal" href="../input/tex/index.html#tex-support"><span class="std std-ref">TeX and
+LaTeX support</span></a> for some suggestions about how to deal
+with the problem.</p>
+<p>There are a number of extensions for the TeX input processor that are
+loaded by combined components that include the TeX input format (e.g.,
+<code class="docutils literal notranslate"><span class="pre">tex-chtml.js</span></code>), and others that are loaded automatically when
+needed.  See <a class="reference internal" href="../input/tex/extensions.html#tex-extensions"><span class="std std-ref">TeX and LaTeX Extensions</span></a> for
+details on TeX extensions that are available.</p>
+</section>
+<section id="mathml-input">
+<span id="id1"></span><h3>MathML input<a class="headerlink" href="#mathml-input" title="Permalink to this heading"></a></h3>
+<p>For mathematics written in MathML notation, you mark your mathematics
+using standard <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> tags, where <code class="docutils literal notranslate"><span class="pre">&lt;math</span> <span class="pre">display=&quot;block&quot;&gt;</span></code>
+represents displayed mathematics and <code class="docutils literal notranslate"><span class="pre">&lt;math</span> <span class="pre">display=&quot;inline&quot;&gt;</span></code> or
+just <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> represents in-line mathematics.</p>
+<p>MathML notation will work with MathJax in HTML files, not just XHTML
+files, even in older browsers and that the web page need not be served
+with any special MIME-type.  Note, however, that in HTML (as opposed to
+XHTML), you should <strong>not</strong> include a namespace prefix for your <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code>
+tags; for example, you should not use <code class="docutils literal notranslate"><span class="pre">&lt;m:math&gt;</span></code> except in an XHTML file
+where you have tied the <code class="docutils literal notranslate"><span class="pre">m</span></code> namespace to the MathML DTD by adding the
+<code class="docutils literal notranslate"><span class="pre">xmlns:m=&quot;http://www.w3.org/1998/Math/MathML&quot;</span></code> attribute to your file’s
+<code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> tag.</p>
+<p>In order to make your MathML work in the widest range of situations,
+it is recommended that you include the
+<code class="docutils literal notranslate"><span class="pre">xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;</span></code> attribute on all
+<code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> tags in your document (and this is preferred to the use of
+a namespace prefix like <code class="docutils literal notranslate"><span class="pre">m:</span></code> above, since those are deprecated in
+HTML5), although this is not strictly required.</p>
+<p>Here is a complete sample page containing MathML mathematics (see the
+<a class="reference external" href="https://github.com/mathjax/MathJax-demos-web">MathJax Web Demos Repository</a>
+for more).</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>MathJax MathML Test Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+When
+<span class="p">&lt;</span><span class="nt">math</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1998/Math/MathML&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>a<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">mo</span><span class="p">&gt;</span><span class="ni">&amp;#x2260;</span><span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">math</span><span class="p">&gt;</span>,
+there are two solutions to
+<span class="p">&lt;</span><span class="nt">math</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1998/Math/MathML&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>a<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">msup</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>x<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;&lt;/</span><span class="nt">msup</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span>+<span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>b<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>x<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span>+<span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>c<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span>=<span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">math</span><span class="p">&gt;</span>
+and they are
+<span class="p">&lt;</span><span class="nt">math</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1998/Math/MathML&quot;</span> <span class="na">display</span><span class="o">=</span><span class="s">&quot;block&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>x<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span>=<span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mrow</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mfrac</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">mrow</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span><span class="ni">&amp;#x2212;</span><span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>b<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span><span class="ni">&amp;#x00B1;</span><span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">msqrt</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">msup</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>b<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;&lt;/</span><span class="nt">msup</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">mo</span><span class="p">&gt;</span><span class="ni">&amp;#x2212;</span><span class="p">&lt;/</span><span class="nt">mo</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>a<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>c<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">msqrt</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">mrow</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">mrow</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mn</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">mn</span><span class="p">&gt;&lt;</span><span class="nt">mi</span><span class="p">&gt;</span>a<span class="p">&lt;/</span><span class="nt">mi</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">mrow</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mfrac</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mrow</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mtext</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">mtext</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">math</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>When entering MathML notation in an HTML page (rather than an XHTML
+page), you should <strong>not</strong> use self-closing tags, as these are not part
+of HTML, but should use explicit open and close tags for all your math
+elements.  For example, you should use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">mspace</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;5pt&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mspace</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>rather than <code class="docutils literal notranslate"><span class="pre">&lt;mspace</span> <span class="pre">width=&quot;5pt&quot;</span> <span class="pre">/&gt;</span></code> in an HTML document.  If you
+use the self-closing form, some browsers will not build the math tree
+properly, and MathJax will receive a damaged math structure, which
+will not be rendered as the original notation would have been.
+Typically, this will cause parts of your expression to not be
+displayed.  Unfortunately, there is nothing MathJax can do about that,
+since the browser has incorrectly interpreted the tags long before
+MathJax has a chance to work with them.</p>
+<p>See the <a class="reference internal" href="../input/mathml.html#mathml-support"><span class="std std-ref">MathML</span></a> page for more on MathJax’s
+MathML support.</p>
+</section>
+<section id="asciimath-input">
+<span id="id2"></span><h3>AsciiMath input<a class="headerlink" href="#asciimath-input" title="Permalink to this heading"></a></h3>
+<p>MathJax v2.0 introduced a new input format, AsciiMath notation, by
+incorporating <a class="reference external" href="https://en.wikipedia.org/wiki/ASCIIMathML">ASCIIMathML</a>.
+This input processor has not been fully ported to MathJax version 3
+yet, but there is a version of it that uses the legacy version 2 code
+to patch it into MathJax version 3.  None of the combined components
+currently include it, so you would need to specify it explicitly in
+your MathJax configuration in order to use it.  See the
+<a class="reference internal" href="../input/asciimath.html#asciimath-support"><span class="std std-ref">AsciiMath</span></a> page for more details.</p>
+<p>By default, you mark mathematical expressions written in AsciiMath by
+surrounding them in “back-ticks”, i.e., <code class="docutils literal notranslate"><span class="pre">`...`</span></code>.</p>
+<p>Here is a complete sample page containing AsciiMath notation:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>MathJax AsciiMath Test Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/asciimath&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output/chtml&#39;</span><span class="p">]}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>When `a != 0`, there are two solutions to `ax^2 + bx + c = 0` and
+they are<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:center&quot;</span><span class="p">&gt;</span>
+  `x = (-b +- sqrt(b^2-4ac))/(2a) .`
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="../input/asciimath.html#asciimath-support"><span class="std std-ref">AsciiMath support</span></a> page for more on
+MathJax’s AsciiMath support and how to configure it.</p>
+</section>
+</section>
+<section id="putting-math-in-javascript-strings">
+<span id="math-in-strings"></span><h2>Putting Math in Javascript Strings<a class="headerlink" href="#putting-math-in-javascript-strings" title="Permalink to this heading"></a></h2>
+<p>If your are using javascript to process mathematics, and need to put a
+TeX or LaTeX expression in a string literal, you need to be aware that
+javascript uses the backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) as a special character in
+strings.  Since TeX uses the backslash to indicate a macro name, you
+often need backslashes in your javascript strings.  In order to
+achieve this, you must double all the backslashes that you want to
+have as part of your javascript string.  For example,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">math</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;\\frac{1}{\\sqrt{x^2 + 1}}&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This can be particularly confusing when you are using the LaTeX macro
+<cite>\</cite>, which must both be doubled, as <cite>\\</cite>.  So you would do</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;\\begin{array}{cc} a &amp; b \\\\ c &amp; d \\end{array}&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>to produce an array with two rows.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="legacy-accessibility.html" class="btn btn-neutral float-left" title="Legacy Assistive Support in v2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="community.html" class="btn btn-neutral float-right" title="The MathJax Community" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

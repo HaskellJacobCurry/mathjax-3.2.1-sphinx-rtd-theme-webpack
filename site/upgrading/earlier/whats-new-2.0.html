@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What’s New in MathJax v2.0 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="What’s New in MathJax v1.1" href="whats-new-1.1.html" />
+    <link rel="prev" title="What’s New in MathJax v2.1" href="whats-new-2.1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">What's New</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.2.html">In MathJax v3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.1.html">In MathJax v3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../whats-new-3.0.html">In MathJax v3.0</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">In Earlier Versions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.7.html">What's New in MathJax v2.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.6.html">What's New in MathJax v2.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.5.html">What's New in MathJax v2.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.4.html">What's New in MathJax v2.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.3.html">What's New in MathJax v2.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.2.html">What's New in MathJax v2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-2.1.html">What's New in MathJax v2.1</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">What's New in MathJax v2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whats-new-1.1.html">What's New in MathJax v1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade.html">Migrating from MathJax v1.0 to v1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsMath.html">Converting to MathJax from jsMath</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">What’s New in MathJax</a> &raquo;</li>
+          <li><a href="index.html">What’s New inEarlier Versions</a> &raquo;</li>
+      <li>What’s New in MathJax v2.0</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/upgrading/earlier/whats-new-2.0.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-s-new-in-mathjax-v2-0">
+<span id="whats-new-2-0"></span><h1>What’s New in MathJax v2.0<a class="headerlink" href="#what-s-new-in-mathjax-v2-0" title="Permalink to this heading"></a></h1>
+<p>MathJax version 2.0 includes many new and improved features, including
+much better speeds in Internet Explorer, a new AsciiMath input
+processor, a new <cite>SVG</cite> output processor, support for additional
+LaTeX commands, and many bug fixes, to name just a few of the changes.</p>
+<section id="major-speed-improvement-for-html-css-output-particularly-in-ie">
+<h2>Major speed improvement for HTML-CSS output, particularly in IE<a class="headerlink" href="#major-speed-improvement-for-html-css-output-particularly-in-ie" title="Permalink to this heading"></a></h2>
+<p>The HTML-CSS output processing was redesigned to avoid the page
+reflows that were the main source of the speed problem in Internet
+Explorer 8 and 9.  For test pages having between 20 and 50 typeset
+expressions, we see an 80% reduction in output processing time for
+IE8, a 50% reduction for IE9, and between 15% and 25% reduction for
+most other browsers over the corresponding v1.1a times.  Since the
+processing time in v1.1a grows non-linearly in IE, you should see even
+larger savings for pages with more equations when using v2.0.  Forcing
+IE7 emulation mode is no longer necessary (and indeed is no longer
+recommended).</p>
+</section>
+<section id="reduced-flickering-during-typsetting">
+<h2>Reduced flickering during typsetting<a class="headerlink" href="#reduced-flickering-during-typsetting" title="Permalink to this heading"></a></h2>
+<p>In the past, each expression was displayed as soon as it was typeset,
+which caused a lot of visual flickering as MathJax processed the page.
+In v2.0, the output is processed in blocks so that typeset expressions
+are revealed in groups.  This reduces the visual distraction, and also
+speeds up the processing.  The number of equations in a block can be
+controlled through the <code class="docutils literal notranslate"><span class="pre">EqnChunk</span></code> parameter in the HTML-CSS or SVG
+block of your configuration.  See the <cite>configuration options for
+HTML-CSS</cite> and <cite>configuration options for SVG</cite> pages for details.</p>
+<p>If the page URL includes a hash reference (a link to a particular
+location within the page), MathJax v2.0 will jump to that location
+after the page has finished typsetting.  (Since the size of the page
+may have changed due to the mathematical typsetting, that location may
+no longer be visible on screen, so MathJax moves there when it is done
+with the initial typesetting.)  You can control this behavior with the
+<code class="docutils literal notranslate"><span class="pre">positionToHash</span></code> parameter in the main section of your
+configuration.  See the <cite>core configuration options</cite> page for details.</p>
+</section>
+<section id="automatic-equation-numbering-of-tex-formulas">
+<h2>Automatic equation numbering of TeX formulas<a class="headerlink" href="#automatic-equation-numbering-of-tex-formulas" title="Permalink to this heading"></a></h2>
+<p>The TeX input jax now can be configured to add equation numbers
+(though the default is not to number equations so that existing pages
+will not change their appearance).  This is controlled through the
+<code class="docutils literal notranslate"><span class="pre">equationNumbers</span></code> section of the <code class="docutils literal notranslate"><span class="pre">TeX</span></code> block of your configuration
+(see the <cite>equation numbering</cite> section for
+details).  You can request that the numbering follow the AMS-style
+numbering of environments, or you can request that every displayed
+equation be numbered.  There are now <code class="docutils literal notranslate"><span class="pre">\label</span></code>, <code class="docutils literal notranslate"><span class="pre">\ref</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">\eqref</span></code> commands to make it easier to link to particular equations
+within the document.</p>
+</section>
+<section id="automatic-line-breaking-of-long-displayed-equations">
+<h2>Automatic line breaking of long displayed equations<a class="headerlink" href="#automatic-line-breaking-of-long-displayed-equations" title="Permalink to this heading"></a></h2>
+<p>MathJax now implements the MathML3 specification for automatic line
+breaking of displayed equations in its HTML-CSS output.  This is
+disabled by default, but can be enabled via the <code class="docutils literal notranslate"><span class="pre">linebreaks</span></code> section
+of the <code class="docutils literal notranslate"><span class="pre">HTML-CSS</span></code> or <code class="docutils literal notranslate"><span class="pre">SVG</span></code> block of your configuration (see the
+<cite>automatic line breaking</cite> section for
+details).  Note that automatic line breaking only applies to displayed
+equations, not in-line equations, unless they are themselves longer
+than a line.  The algorithm uses the nesting depth, the type of
+operator, the size of spaces, and other factors to decide on the
+breakpoints, but it does not know the meaning of the mathematics, and
+may not choose the optimal breakpoints.  We will continue to work on
+the algorithm as we gain information from its actual use in the field.</p>
+</section>
+<section id="new-asciimath-input-jax-and-svg-output-jax">
+<h2>New AsciiMath input jax and SVG output jax<a class="headerlink" href="#new-asciimath-input-jax-and-svg-output-jax" title="Permalink to this heading"></a></h2>
+<p>MathJax currently processes math in either <cite>TeX</cite> and
+<cite>LaTeX</cite> format, or <cite>MathML</cite> notation; version 2.0 augments
+that to include <cite>AsciiMath</cite> notation (see <a class="reference external" href="http://www1.chapman.edu/~jipsen/mathml/asciimath.html">the ASCIIMathML
+home page</a>
+for details on this format).  This is a notation that is easier for
+students to use than TeX, and has been requested by the user
+community.  See the <cite>AsciiMath support</cite> page
+for details.</p>
+<p>In addition to the HTML-CSS and Native MathML output available in
+v1.1, MathJax v2.0 includes an <cite>SVG</cite>-based output jax.  This should
+prove to be more reliable than the HTML-CSS output, as it avoids some
+CSS, web-font, and printing issues that the HTML-CSS output suffers
+from, and it currently has no browser-dependent code.  The SVG mode
+even works in some ebook readers (like Apple iBooks and Calibre).  See
+the <cite>output formats</cite> documentation for details.</p>
+</section>
+<section id="new-combined-configuration-files">
+<h2>New combined configuration files<a class="headerlink" href="#new-combined-configuration-files" title="Permalink to this heading"></a></h2>
+<p>Pre-defined configuration files that include the AsciiMath and SVG
+processors are now available with MathJax v2.0. These include
+<code class="docutils literal notranslate"><span class="pre">AM_HTMLorMML</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-AMS-MML_SVG</span></code>, and <code class="docutils literal notranslate"><span class="pre">TeX-MML-AM_HTMLorMML</span></code>.
+See the <cite>common configurations</cite> section for details.</p>
+</section>
+<section id="mathjax-contextual-menu-now-available-on-mobile-devices">
+<h2>MathJax contextual menu now available on mobile devices<a class="headerlink" href="#mathjax-contextual-menu-now-available-on-mobile-devices" title="Permalink to this heading"></a></h2>
+<p>MathJax v2.0 provides access to its contextual menu in mobile devices
+that are based on the WebKit (Safari) and Gecko (Firefox) engines.
+For Mobile Firefox, the menu is accessed by a tap-and-hold on any
+expression rendered by MathJax (this is Mobile Firefox’s standard
+method of triggering a contextual menu).  In Mobile Safari, use a
+double-tap-and-hold (you may need to zoom in a bit to be able to
+accomplish this).  This is the first step toward providing a better
+interface for mobile devices.</p>
+</section>
+<section id="improved-support-for-screen-readers">
+<h2>Improved support for screen readers<a class="headerlink" href="#improved-support-for-screen-readers" title="Permalink to this heading"></a></h2>
+<p>Some issues surrounding the use of screen readers and their
+interaction with MathPlayer have been resolved in MathJax v2.0.  In
+particular, there are additional menu items that allow the user finer
+control over some aspects of MathJax’s interface that were interfering
+with some screen readers’ ability to properly identify the
+mathematics.  Several stability issues with MathPlayer have also been
+addressed.  In Internet Explorer when MathPlayer is installed, there
+is now a new contextual menu item to allow you to specify what events
+are handled by MathJax and what should be handled by MathPlayer.  This
+gives you finer control over MathPlayer’s interaction with some screen
+readers.</p>
+</section>
+<section id="many-new-tex-additions-and-enhancements">
+<h2>Many new TeX additions and enhancements<a class="headerlink" href="#many-new-tex-additions-and-enhancements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>New <cite>mhchem</cite> chemistry extension (adds <code class="docutils literal notranslate"><span class="pre">\ce</span></code>, <code class="docutils literal notranslate"><span class="pre">\cf</span></code>, and <code class="docutils literal notranslate"><span class="pre">\cee</span></code> macros)</p></li>
+<li><p>New <cite>cancel</cite> extension (adds <code class="docutils literal notranslate"><span class="pre">\cancel</span></code>, <code class="docutils literal notranslate"><span class="pre">\bcancel</span></code>, <code class="docutils literal notranslate"><span class="pre">\xcancel</span></code>, and <code class="docutils literal notranslate"><span class="pre">\cancelto</span></code> macros)</p></li>
+<li><p>New <cite>extpfeil</cite> extension (adds more stretchy arrows)</p></li>
+<li><p>New <cite>color</cite> extension (makes <code class="docutils literal notranslate"><span class="pre">\color</span></code> work as a switch, as in LaTeX).
+Adds <code class="docutils literal notranslate"><span class="pre">\definecolor</span></code>, other color models, LaTeX named colors,
+<code class="docutils literal notranslate"><span class="pre">\colorbox</span></code>, <code class="docutils literal notranslate"><span class="pre">\fcolorbox</span></code>, etc.</p></li>
+<li><p>New <cite>begingroup</cite> extension to allow macro definitions to be
+localized. Adds <code class="docutils literal notranslate"><span class="pre">\begingroup</span></code> and <code class="docutils literal notranslate"><span class="pre">\endgroup</span></code> for isolating macro
+declarations, and defines <code class="docutils literal notranslate"><span class="pre">\let</span></code>, <code class="docutils literal notranslate"><span class="pre">\renewenvironment</span></code>, <code class="docutils literal notranslate"><span class="pre">\global</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">\gdef</span></code>.</p></li>
+<li><p>New <cite>enclose</cite> extension to give TeX access to <code class="docutils literal notranslate"><span class="pre">&lt;menclose&gt;</span></code> elements.
+Adds <code class="docutils literal notranslate"><span class="pre">\enclose{type}[attributes]{math}</span></code> macro.</p></li>
+<li><p>New <cite>action</cite> extension to give TeX access to <code class="docutils literal notranslate"><span class="pre">&lt;maction&gt;</span></code> elements.
+Adds <code class="docutils literal notranslate"><span class="pre">\mathtip{math}{tip}</span></code>, <code class="docutils literal notranslate"><span class="pre">\texttip{math}{tip}</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">\toggle{math1}{math2}...\endtoggle</span></code> macros.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">\mmToken{type}[attributes]{text}</span></code> macro for producing <code class="docutils literal notranslate"><span class="pre">&lt;mo&gt;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;mi&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;mtext&gt;</span></code>, and other token MathML elements directly.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">\bbox[color;attributes]{math}</span></code> macro to add background color,
+padding, borders, etc.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">\middle</span></code> macro for stretchy delimiters between <code class="docutils literal notranslate"><span class="pre">\left</span></code> and <code class="docutils literal notranslate"><span class="pre">\right</span></code>.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">\label</span></code>, <code class="docutils literal notranslate"><span class="pre">\ref</span></code>, and <code class="docutils literal notranslate"><span class="pre">\eqref</span></code> macros for numbered equations.</p></li>
+<li><p>Better implementation of <code class="docutils literal notranslate"><span class="pre">\not</span></code> so it produces proper MathML when possible.</p></li>
+<li><p>Better implementation of <code class="docutils literal notranslate"><span class="pre">\dots</span></code> that selects <code class="docutils literal notranslate"><span class="pre">\ldots</span></code> or <code class="docutils literal notranslate"><span class="pre">\cdots</span></code>
+depending on the context.</p></li>
+<li><p>Better implementation of <code class="docutils literal notranslate"><span class="pre">\cases</span></code> that automatically uses <code class="docutils literal notranslate"><span class="pre">\text</span></code> on
+the second entry in each row.</p></li>
+<li><p>Safer implementation of <code class="docutils literal notranslate"><span class="pre">\require</span></code> that only allows loading from
+extensions directory.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">\newcommand</span></code> to provide a default parameter.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">\\</span></code> to take an optional argument that specifies additional
+space between lines.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">\\</span></code> to be used anywhere (to force a line break), not just in
+arrays.</p></li>
+<li><p>Allow optional alignment parameter for array, aligned, and gathered
+environments.</p></li>
+</ul>
+<p>See the <cite>TeX support</cite> page for details on these
+extensions and macros.</p>
+</section>
+<section id="font-enhancements">
+<h2>Font enhancements<a class="headerlink" href="#font-enhancements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Work around for the OS X Lion STIX font problem.</p></li>
+<li><p>Support for STIX-1.1 fonts (detection of which version you have,
+and use data appropriate for that).</p></li>
+<li><p>New WOFF versions of the web fonts (smaller, so faster to
+download).</p></li>
+<li><p>Data for more stretchy characters in HTML-CSS output.</p></li>
+<li><p>Add support for Unicode planes 1 through 10 (not just the Math
+Alphabet block) in HTML-CSS output.</p></li>
+<li><p>Increased timeout for web fonts (since it was switching to image
+fonts too often, especially for mobile devices).</p></li>
+<li><p>Only switch to image fonts if the first web font fails to load (if
+we can access one, assume we can access them all).</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">&lt;mtext&gt;</span></code> elements to use the page font rather than MathJax
+fonts (optionally).  This is controlled by the <code class="docutils literal notranslate"><span class="pre">mtextFontInerhit</span></code>
+configuration parameter for HTML-CSS and SVG output jax.</p></li>
+<li><p>Provide better control over the font used for characters that are
+not in the MathJax fonts.</p></li>
+<li><p>Allow Firefox to use web-based fonts when a local URL uses MathJax
+from the CDN (in the past it would force image fonts when that was
+not necessary).</p></li>
+</ul>
+</section>
+<section id="interface-improvements">
+<h2>Interface improvements<a class="headerlink" href="#interface-improvements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The MathJax contextual menu has been reorganized to make it easier
+to get the source view, and to control the parameters for
+MathPlayer in IE.</p></li>
+<li><p>The MathJax contextual menu is available in mobile devices (see
+description above).</p></li>
+<li><p>Warning messages are issued if you switch renderers to one that is
+inappropriate for your browser.</p></li>
+<li><p>MathJax now starts processing the page on the <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code>
+event rather than the page <code class="docutils literal notranslate"><span class="pre">onload</span></code> event (this allows the
+mathematics to appear sooner).</p></li>
+<li><p>Native MathML output is now scaled to better match the surrounding
+font (like it is for HTML-CSS output).</p></li>
+<li><p>Better CSS styling for NativeMML output in Firefox in order to
+handle <code class="docutils literal notranslate"><span class="pre">\cal</span></code> and other fonts.</p></li>
+<li><p>MathML output now (optionally) includes class names to help mark
+special situations generated by the TeX input jax.  (This lets the
+MathML from the Show Source menu item better reproduce the original
+TeX output.)</p></li>
+<li><p>MathJax now loads the menu and zoom code (if they haven’t been
+loaded already) after the initial typesetting has occured so that
+they will be available immediately when a user needs those
+features, but do not delay the initial typesetting of the
+mathematics.</p></li>
+<li><p>For the <cite>tex2jax</cite> preprocessor, the <code class="docutils literal notranslate"><span class="pre">processClass</span></code> can now be
+used to override the <code class="docutils literal notranslate"><span class="pre">skipTags</span></code> to force a tag that is usually
+skipped to have its contents be processed.</p></li>
+<li><p>The <cite>noErrors</cite> and <cite>noUndefined</cite> extensions can now be disabled via
+a configuration option (since they are included in many of the
+combined configuration files).  See the <cite>noErrors</cite> and
+<cite>noUndefined</cite> sections of the <cite>TeX support</cite> page for more information.</p></li>
+<li><p>There is a new <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.setRenderer()</span></code> function that can
+be used to switch the current renderer.  See the <cite>MathJax Hub
+API</cite> documentation for details.</p></li>
+<li><p>A user-defined macros is no longer overridden if an extension is
+loaded that redefines that macro.</p></li>
+<li><p>Improved web-font detection reliability.</p></li>
+</ul>
+</section>
+<section id="important-changes-from-previous-versions">
+<span id="important-changes-2-0"></span><h2>Important changes from previous versions<a class="headerlink" href="#important-changes-from-previous-versions" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>The default renderer for Firefox has been changed from <cite>NativeMML</cite> to
+<cite>HTML-CSS</cite> (in those configurations that choose between the two).
+The only browser that defaults to <cite>NativeMML</cite> is now IE with
+MathPlayer installed.  You can configure this to your liking using
+the <cite>MMLorHTML configuration options</cite>.</p></li>
+<li><p><cite>NativeMML</cite> output will now be selected in IE9 when MathPlayer is
+present (since IE9 was released the same day as MathJax v1.1a, and
+there had been problems with IE9 beta releases, we weren’t sure if
+MathPlayer would work with the official release, and so did not
+select NativeMML by default.)</p></li>
+<li><p>The performance improvements in IE8 and IE9 now make it unnecessary
+to use a <code class="docutils literal notranslate"><span class="pre">&lt;meta&gt;</span></code> tag to force IE7 emulation mode.  In fact IE9 in
+IE9 standards mode now runs faster than IE9 in IE7 standards mode,
+and IE8 in IE8 standards mode is comparable to IE8 in IE7 standards
+mode.  We now recommend that you use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to obtain the highest emulation mode available in IE, which
+will be the fastest one for MathJax 2.0.</p>
+</li>
+<li><p>The <cite>tex2jax</cite> preprocessor now balances braces when looking for the
+closing math delimiter.  That allows expressions like</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="s">$</span><span class="nb">y </span><span class="o">=</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\hbox</span><span class="nb">{ when </span><span class="s">$</span>x &gt; 2<span class="s">$</span><span class="nb">}</span><span class="s">$</span>
+</pre></div>
+</div>
+<p>to be properly parsed as a single math expression rather than two
+separate ones with unbalanced braces.  The old behavior can be
+obtained by setting <code class="docutils literal notranslate"><span class="pre">balanceBraces</span></code> to false in the <code class="docutils literal notranslate"><span class="pre">tex2jax</span></code>
+block of your configuration.  (See the <cite>tex2jax configuration
+options</cite> for details.)</p>
+</li>
+<li><p>If you are hosting your own copy of MathJax on your server, and
+that copy is being used from pages in a different domain, you will
+have set up the access control paramters for the font directory to
+allow Firefox to access the font files properly.  Since MathJax 2.0
+includes fonts in WOFF format, you will need to include <code class="docutils literal notranslate"><span class="pre">woff</span></code> in
+you access control declaration for the fonts.  E.g., use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">FilesMatch</span> <span class="s2">&quot;\.(ttf|otf|eot|woff)$&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">mod_headers</span><span class="o">.</span><span class="n">c</span><span class="o">&gt;</span>
+<span class="n">Header</span> <span class="nb">set</span> <span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span> <span class="s2">&quot;*&quot;</span>
+<span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">FilesMatch</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>in the <code class="docutils literal notranslate"><span class="pre">.htaccess`</span> <span class="pre">file</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">``MathJax/fonts</span></code> directory if you
+are using the Apache web server.  See <cite>Notes about shared
+installations</cite> for details.</p>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">\cases</span></code> macro now properly places the second column in text
+mode not math mode.  In the past, one needed to use <code class="docutils literal notranslate"><span class="pre">\text</span></code> in
+the second column to achieve the proper results; pages that did
+this will still work properly in v2.0.  Pages that took advantage
+of the math mode in the second column will need to be adjusted.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">\dots</span></code> macro now produces <code class="docutils literal notranslate"><span class="pre">\ldots</span></code> or <code class="docutils literal notranslate"><span class="pre">\cdots</span></code> depending
+on the context (in the past, <code class="docutils literal notranslate"><span class="pre">\dots</span></code> always produced <code class="docutils literal notranslate"><span class="pre">\ldots</span></code>).</p></li>
+<li><p>A one pixel padding has been added above and below HTML-CSS and SVG
+output so that math on successive lines of a paragraph won’t bump
+into each other.</p></li>
+<li><p>There is a new <cite>MathPlayer</cite> submenu of the <cite>Math Settings</cite> menu in
+the MathJax contextual menu that allows the user to control what
+events are passed on to MathPlayer.  This allows better control for
+those using assistive devices like screen readers.  When menu
+events are being passed on to MathPlayer, the MathJax menu can be
+obtained by ALT-clicking on a typeset expression (so the user can
+still access MathJax’s other features).</p></li>
+<li><p>In order to improve stability with IE when MathPlayer is installed,
+MathJax now adds the namespace and object bindings that are needed
+for MathPlayer at the time that MathJax is first loaded, rather
+than waiting for the <cite>NativeMML</cite> output jax to be loaded.  Since
+this is before the configuration information has been obtained,
+this will happen regardless of whether the <cite>NativeMML</cite> output jax
+is requested.  This means that IE may ask the user to allow
+MathPlayer to be used, and may show the MathPlayer splash dialog
+even when MathPlayer is not in the end used by MathJax.  Note that
+this setup can only be performed if MathJax is loaded explicitly as
+part of the initial web page; if it is injected into the page later
+by adding a <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag to the page dynamically, then
+MathPlayer will be set up when the <cite>NativeMML</cite> jax is loaded as in
+the past, and some stability issues may occur if events are passed
+to MathPlayer.</p></li>
+<li><p>The MathJax typesetting is now started on <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code>
+rather than at the page <code class="docutils literal notranslate"><span class="pre">onload</span></code> event, when possible, so that
+means MathJax may start typesetting the page earlier than in the
+past.  This should speed up typesetting one pages with lots of
+images or side-bar content, for example.</p></li>
+<li><p>MathJax now attempts to determine whether the page’s <code class="docutils literal notranslate"><span class="pre">onload</span></code>
+event had already occurred, and if it has, it does not try to wait
+for the <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code> or <code class="docutils literal notranslate"><span class="pre">onload</span></code> event before doing its
+initial typeset pass.  This means that it is no longer necessary to
+call <code class="docutils literal notranslate"><span class="pre">MathJax.Hub.Startup.onload()</span></code> by hand if you insert MathJax
+into the page dynamically (e.g., from a GreaseMonkey script).</p></li>
+<li><p>If the page URL includes a hash reference (a link to a particular
+location within the page), MathJax v2.0 will jump to that location
+after the page has finished typsetting.  Since the size of the page
+may have changed due to the mathematical typsetting, that location
+may no longer be visible on screen, so MathJax moves there when it
+is done with the initial typesetting.  You can control this
+behavior with the <code class="docutils literal notranslate"><span class="pre">positionToHash</span></code> parameter in the main section
+of your configuration (see <cite>core configuration options</cite>).</p></li>
+<li><p>In the event that MathJax is not able to load the configuration file
+you have specified in the script tag that loads <code class="docutils literal notranslate"><span class="pre">MathJax.js</span></code> via
+<code class="docutils literal notranslate"><span class="pre">config=filename</span></code>, it will no longer issue the warning message
+about a missing configuration.  The configuration process changed
+in v1.1, and that message was to help page maintainers update their
+configurations, but it turns out that for users with slow network
+connections, MathJax could time out waiting for the configuration
+file and would issue the warning message in that case, even though
+the page included the proper configuration.  That should no longer
+occur in MathJax v2.0.</p></li>
+</ul>
+</section>
+<section id="other-enhancements">
+<h2>Other enhancements<a class="headerlink" href="#other-enhancements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use prioritized lists of callbacks for StartupHooks, MessageHooks,
+LoadHooks, PreProcessors, and pre- and post-filters on the input jax.</p></li>
+<li><p>Updated operator dictionary to correspond to current W3C version.</p></li>
+<li><p>Improved browser detection for Gecko and WebKit browsers.</p></li>
+<li><p>Make prefilters and postfilters for all input jax, and make them into
+hook lists rather than a single hook.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">&lt;mi&gt;</span></code> rather than <code class="docutils literal notranslate"><span class="pre">&lt;mo&gt;</span></code> for <code class="docutils literal notranslate"><span class="pre">\sin</span></code>, <code class="docutils literal notranslate"><span class="pre">\cos</span></code>, and other
+such functions, for <code class="docutils literal notranslate"><span class="pre">\mathop{\rm...}</span></code> and <code class="docutils literal notranslate"><span class="pre">\operatorname</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">&amp;ApplyFunction;</span></code> after <code class="docutils literal notranslate"><span class="pre">\mathop{}</span></code> and other macros that are
+functions (e.g., <code class="docutils literal notranslate"><span class="pre">\sin</span></code>).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MathJax_Preview</span></code> style has been moved from <code class="docutils literal notranslate"><span class="pre">HTML-CSS/jax.js</span></code> to
+<code class="docutils literal notranslate"><span class="pre">MathJax.js</span></code>, since it is common to all output.</p></li>
+<li><p>The <cite>autobold</cite> extension now uses <code class="docutils literal notranslate"><span class="pre">\boldsymbol</span></code> rather than
+<code class="docutils literal notranslate"><span class="pre">\bf</span></code> so that it will affect more characters.</p></li>
+<li><p>Make units of <code class="docutils literal notranslate"><span class="pre">mu</span></code>’s be relative to the scriptlevel (as they
+are supposed to be).</p></li>
+<li><p>Reorganized the event-handling code to make it more modular and reduce
+redundancy in the different output jax.</p></li>
+<li><p>Modified CSS in <cite>NativeMML</cite> output for Firefox to use local copies of
+the web fonts, if they are available.</p></li>
+<li><p>Error messages now have the MathJax contextual menu.</p></li>
+<li><p>Better handling of some characters not in the web fonts (remap to
+locations where they exist, when possible).</p></li>
+<li><p>Better choice of accent characters in some cases.</p></li>
+<li><p>Better handling of pseudo-scripts (like primes).</p></li>
+<li><p>Better sizing of characters introduced by <code class="docutils literal notranslate"><span class="pre">\unicode{}</span></code>, or
+otherwise outside of the fonts known to MathJax.</p></li>
+<li><p>Provide a new extension to handle tagged equations better in
+<cite>HTML-CSS</cite> output when there are floating elements that might
+reduce the area available to displayed equations.  (See the
+HTML-CSS extensions section of the <cite>output formats</cite> documentation
+for detais.)</p></li>
+<li><p>Use a text font for <code class="docutils literal notranslate"><span class="pre">\it</span></code> rather than the math italics, so
+spacing is better.</p></li>
+<li><p>Handle italic correction better in <cite>HTML-CSS</cite> output</p></li>
+<li><p>Handle <code class="docutils literal notranslate"><span class="pre">href</span></code> attributes better, especially when on <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code>
+elements.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">\sqrt\frac{}{}</span></code> without producing an error.</p></li>
+</ul>
+</section>
+<section id="other-bug-fixes">
+<h2>Other bug fixes<a class="headerlink" href="#other-bug-fixes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>MathPlayer setup changed to prevent crashes.</p></li>
+<li><p>Moved remapping of <code class="docutils literal notranslate"><span class="pre">&lt;mo&gt;</span></code> contents to the output jax so that the
+original contents aren’t changed.</p></li>
+<li><p>Don’t combine <code class="docutils literal notranslate"><span class="pre">mathvariant</span></code> with <code class="docutils literal notranslate"><span class="pre">fontstyle</span></code> or <code class="docutils literal notranslate"><span class="pre">fontweight</span></code>
+(as per the MathML specification).</p></li>
+<li><p>Isolate non-standard attributes on MathML elements so that they don’t
+interfere with the inner workings of MathJax.</p></li>
+<li><p>Properly handle width of border and padding in merrors in <cite>HTML-CSS</cite>
+output.</p></li>
+<li><p>Properly handle lower-case Greek better.</p></li>
+<li><p>Process weight and style of unknown characters properly.</p></li>
+<li><p>Fixed spacing problems with <code class="docutils literal notranslate"><span class="pre">\cong</span></code> in MathJax web fonts .</p></li>
+<li><p>Choose better sizes for <code class="docutils literal notranslate"><span class="pre">\widehat</span></code> and <code class="docutils literal notranslate"><span class="pre">\widetilde</span></code></p></li>
+<li><p>Fixed problem with detecting em/ex sizes when uses in mobile devices
+with small screen widths.</p></li>
+<li><p>Fixed MathML output when dimensions of <code class="docutils literal notranslate"><span class="pre">mu</span></code>’s are used in TeX input.</p></li>
+<li><p>Better handling of table borders from TeX.</p></li>
+<li><p>Fixed some problems with table widths and heights, and spacing.</p></li>
+<li><p>Better handling of colored backgrounds in <cite>HTML-CSS</cite> output.</p></li>
+<li><p>Handle border and padding CSS styles better in <cite>HTML-CSS</cite> output.</p></li>
+<li><p>Fixed multline environment to put tags on bottom row when
+<code class="docutils literal notranslate"><span class="pre">TagSide</span></code> is set to <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p></li>
+<li><p>Force reflow after equations are typeset so that some rendering
+problems in tables are corrected in Firefox and WebKit browsers.</p></li>
+<li><p>Fixed a number of bugs with the size of zoom boxes and the size of their
+content.</p></li>
+<li><p>Have equations with tags zoom into a full-width zoom box to
+accommodate the tag.</p></li>
+<li><p>Fixed positioning problem with zoom boxes in NativeMML mode.</p></li>
+<li><p>Don’t allow mouse events on zoomed math.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">MathJax.Hub.getJaxFor()</span></code> and <code class="docutils literal notranslate"><span class="pre">MathJax.Hub.isJax()</span></code> to
+properly handle elements that are part of an output jax’s output
+(in particular, you can find the element jax from any DOM element
+in the output).</p></li>
+<li><p>Fixed a number of font anomalies (problems in the data files).</p></li>
+<li><p>Fixed problem where <code class="docutils literal notranslate"><span class="pre">&lt;mspace&gt;</span></code> with a background color would not
+always overlay previous items.</p></li>
+<li><p>Fixed a problem with colored <code class="docutils literal notranslate"><span class="pre">&lt;mspace&gt;</span></code> elements being too tall in
+IE/quirks mode.</p></li>
+<li><p>Fixed problem where <code class="docutils literal notranslate"><span class="pre">&lt;mtable&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">equalrows=&quot;true&quot;</span></code> would
+not produce equal height rows.</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">&lt;mpadded&gt;</span></code> background color to be specified exactly (i.e.,
+without the 1px padding) when one of its dimensions is given
+explicitly (or there is no content).</p></li>
+<li><p>Avoiding flicker problem with hover zoom trigger in Firefox.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">\unicode</span></code> bug with font names that include spaces.</p></li>
+<li><p>Remove internal multiple spaces in token elements as per the MathML
+specification.</p></li>
+<li><p>Work around HTML5 removing namespaces, so that <code class="docutils literal notranslate"><span class="pre">xmlns:xlink</span></code>
+becomes <code class="docutils literal notranslate"><span class="pre">xlink</span></code> with no namespace, which confuses the XML parsers.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">MathJax.Message.Set()</span></code> and <code class="docutils literal notranslate"><span class="pre">MathJax.Message.Clear()</span></code> so
+that a delay of 0 is properly handled.</p></li>
+<li><p>Produce better MathML for <code class="docutils literal notranslate"><span class="pre">\bmod</span></code>, <code class="docutils literal notranslate"><span class="pre">\mod</span></code>, and <code class="docutils literal notranslate"><span class="pre">\pmod</span></code>.</p></li>
+<li><p>Don’t allow Safari/Windows to use STIX fonts since it can’t access
+characters in Plane1 (the mathematical alphabets).</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">\thickapprox</span></code> to use the correct glyph in <cite>HTML-CSS</cite> output
+with MathJax web fonts.</p></li>
+<li><p>Make style attributes work on <code class="docutils literal notranslate"><span class="pre">&lt;mstyle&gt;</span></code> elements.</p></li>
+<li><p>Better handling of border and padding on MathML elements in
+<cite>HTML-CSS</cite> output.</p></li>
+<li><p>Fixed error with size of <code class="docutils literal notranslate"><span class="pre">\:</span></code> space.</p></li>
+<li><p>Allow delimiter of <code class="docutils literal notranslate"><span class="pre">.</span></code> on <code class="docutils literal notranslate"><span class="pre">\genfrac</span></code> (it was accidentally rejected).</p></li>
+<li><p>Handle AMSmath control sequences with stars better (<code class="docutils literal notranslate"><span class="pre">\cs{*}</span></code> no longer
+counts as <code class="docutils literal notranslate"><span class="pre">\cs*</span></code>).</p></li>
+<li><p>Fixed wrong character number in stretchy data for <cite>U+221A</cite>.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">&lt;annotation-xml&gt;</span></code> to use the proper scaling in <cite>HTML-CSS</cite>
+output.</p></li>
+<li><p>Fixed a problem with combining characters when they are used as
+accents.</p></li>
+<li><p>Fixed a problem in Firefox with <code class="docutils literal notranslate"><span class="pre">\mathchoice</span></code> when the contents have
+negative width.</p></li>
+<li><p>TeX input jax no longer incorrectly combines <code class="docutils literal notranslate"><span class="pre">&lt;mo&gt;</span></code> elements that have
+different variants, styles, classes, or id’s.</p></li>
+<li><p>Fixed the <code class="docutils literal notranslate"><span class="pre">scriptlevel</span></code> when <code class="docutils literal notranslate"><span class="pre">&lt;munderover&gt;</span></code> has base with
+<code class="docutils literal notranslate"><span class="pre">movablelimits=&quot;true&quot;</span></code> in non-display mode.</p></li>
+<li><p>Fixed typo in implementation of <code class="docutils literal notranslate"><span class="pre">SimpleSUPER</span></code>.</p></li>
+<li><p>Fixed typo in self-closing flag for <code class="docutils literal notranslate"><span class="pre">&lt;mprescript&gt;</span></code> tag.</p></li>
+<li><p>Prevent infinite loop if one of the jax fails to load (due to failure
+to compile or timeout waiting for it to load).</p></li>
+<li><p>Fixed a whitespace issue in token elements with IE/quirks mode in
+the <cite>MathML</cite> input jax.</p></li>
+<li><p>Make sure height is above depth when making spaces and rules in
+<cite>HTML-CSS</cite> and <cite>SVG</cite> output.</p></li>
+<li><p>Fixed <cite>HTML-CSS</cite> tooltip to be work properly when a restart occurs
+within the tooltip.</p></li>
+<li><p>Fixed problem with size of colored backgrounds on <code class="docutils literal notranslate"><span class="pre">&lt;mo&gt;</span></code> in some
+circumstances in <cite>HTML-CSS</cite> output.</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">\ulcorner</span></code>, etc. use more approprate unicode positions, and remap
+those positions to the locations in the MathJax web fonts.</p></li>
+</ul>
+</section>
+<section id="some-technical-changes">
+<h2>Some technical changes<a class="headerlink" href="#some-technical-changes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Break the processing phase into two separate phases to do input
+processing separately from output processing (they used to be
+interleaved).  This makes it easier to implement forward references
+for the <code class="docutils literal notranslate"><span class="pre">\ref</span></code> macro.</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">Font</span> <span class="pre">Preference</span></code> menu honor the <code class="docutils literal notranslate"><span class="pre">imageFont</span></code> setting.</p></li>
+<li><p>Changed the name of the preview filter commands to <code class="docutils literal notranslate"><span class="pre">previewFilter</span></code>
+in all preprocessors.</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">_</span></code> be stretchy even though that isn’t in the W3C
+dictionary.</p></li>
+<li><p>Fixed <cite>HTML-CSS</cite> output problem when a multi-character token element has
+characters taken from multiple fonts.</p></li>
+<li><p>Force message text to be black in FontWarnings and configuration
+warnings.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Find()</span></code> and <code class="docutils literal notranslate"><span class="pre">IndexOf()</span></code> commands to menus to locate menu items.</p></li>
+<li><p>Added menu signals for post/unpost and activation of menu items.</p></li>
+<li><p>Added signals for typesetting of unknown characters.</p></li>
+<li><p>Added signals for zoom/unzoom.</p></li>
+<li><p>Added More signals for error conditions.</p></li>
+<li><p>Allow preferences to select MathML output for Safari with late enough
+version.</p></li>
+<li><p>Improved <cite>About MathJax</cite> box.</p></li>
+<li><p>Have <cite>tex2jax</cite> handle empty delimiter arrays and don’t scan page if
+there is nothing to look for.</p></li>
+<li><p>Make delay following a <cite>processing</cite> message configurable and lengthen
+it to make browser more responsive during typesetting.</p></li>
+<li><p>Make thin rules be in pixels to try to improve results in IE
+(disappearing division lines).</p></li>
+<li><p>Mark all output elements as <code class="docutils literal notranslate"><span class="pre">isMathJax</span></code>, so it can be used to identify
+what elements are part of mathematical output.</p></li>
+<li><p>Force MathZoom and MathMenu to wait for the <code class="docutils literal notranslate"><span class="pre">Begin</span> <span class="pre">Styles</span></code> message
+before inserting their styles so when they are included in the
+combined files, the author can still configure them.</p></li>
+<li><p>Add default id’s to the jax base object classes.</p></li>
+<li><p>Mark top-level math element as having a <code class="docutils literal notranslate"><span class="pre">texError</span></code> when it is one (to
+make it easier to recognize).</p></li>
+<li><p>Have <code class="docutils literal notranslate"><span class="pre">Update()</span></code> method ask ElementJax to determine if it needs updating
+(which in turn asks the associated input jax).</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">Remove()</span></code> work for just clearing output (without detaching) if
+desired.</p></li>
+<li><p>Have ElementJax store input and output jax ID’s rather than pointers
+(to help avoid circular references for cleanup purposes).</p></li>
+<li><p>Move input/output jax and preprocessor registries from <code class="docutils literal notranslate"><span class="pre">Hub.config</span></code> to
+Hub itself (they are not user configurable through <code class="docutils literal notranslate"><span class="pre">Hub.Config</span></code>, and so
+even though they are configurations, they don’t belong there).</p></li>
+<li><p>Make sure embelished large ops are type <code class="docutils literal notranslate"><span class="pre">OP</span></code> not <code class="docutils literal notranslate"><span class="pre">ORD</span></code> to get spacing
+right.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">MathJax.HTML.getScript()</span></code> to get the contents of a script (needed
+since it works differently in different browsers).</p></li>
+<li><p>Move code that prevents numbers from being treated as a unit for
+super- and subscripts to the super- and subscript routine in the
+<cite>TeX</cite> input jax (prevents making changes to <code class="docutils literal notranslate"><span class="pre">\text{}</span></code>,
+<code class="docutils literal notranslate"><span class="pre">\hbox{}</span></code>, <code class="docutils literal notranslate"><span class="pre">\href{}</span></code>, etc.).</p></li>
+<li><p>Make <cite>mml2jax</cite> work better with IE namespaces (IE9 no longer seems to
+list the <code class="docutils literal notranslate"><span class="pre">xmlns</span></code> entries on the <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> element).</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whats-new-2.1.html" class="btn btn-neutral float-left" title="What’s New in MathJax v2.1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="whats-new-1.1.html" class="btn btn-neutral float-right" title="What’s New in MathJax v1.1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

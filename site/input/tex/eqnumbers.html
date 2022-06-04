@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Equation Numbering &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TeX and LaTeX extensions" href="extensions.html" />
+    <link rel="prev" title="Defining TeX macros" href="macros.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions/index.html">The TeX/LaTeX Extension List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">TeX and LaTeX Support</a> &raquo;</li>
+      <li>Automatic Equation Numbering</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/input/tex/eqnumbers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="automatic-equation-numbering">
+<span id="tex-eq-numbers"></span><h1>Automatic Equation Numbering<a class="headerlink" href="#automatic-equation-numbering" title="Permalink to this heading"></a></h1>
+<p>The TeX input processing in MathJax can be configured to add equation
+numbers to displayed equations automatically.  This functionality is
+turned off by default, but it is easy to configure MathJax to produce
+automatic equation numbers by adding:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>to tell the TeX input processor to use the AMS numbering rules (where
+only certain environments produce numbered equations, as they would be
+in LaTeX).  It is also possible to set the tagging to <code class="docutils literal notranslate"><span class="pre">'all'</span></code>, so that
+every displayed equation will get a number, regardless of the
+environment used.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">\notag</span></code> or <code class="docutils literal notranslate"><span class="pre">\nonumber</span></code> to prevent
+individual equations from being numbered, and <code class="docutils literal notranslate"><span class="pre">\tag{}</span></code> can be used
+to override the usual equation number with your own symbol instead (or
+to add an equation tag even when automatic numbering is off).</p>
+<p>Note that the AMS environments come in two forms: starred and
+unstarred.  The unstarred versions produce equation numbers (when
+<code class="docutils literal notranslate"><span class="pre">tags</span></code> is set to <code class="docutils literal notranslate"><span class="pre">'ams'</span></code>) and the starred ones don’t.  For example</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+   E = mc<span class="nb">^</span>2
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</pre></div>
+</div>
+<p>will be numbered, while</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span>
+   e<span class="nb">^{</span><span class="k">\pi</span> i<span class="nb">}</span> + 1 = 0
+<span class="k">\end</span><span class="nb">{</span>equation*<span class="nb">}</span>
+</pre></div>
+</div>
+<p>will not be numbered (when <code class="docutils literal notranslate"><span class="pre">tags</span></code> is <code class="docutils literal notranslate"><span class="pre">'ams'</span></code>).</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">\label</span></code> to give an equation an identifier that you can
+use to refer to it later, and then use <code class="docutils literal notranslate"><span class="pre">\ref</span></code> or <code class="docutils literal notranslate"><span class="pre">\eqref</span></code> within
+your document to insert the actual equation number at that location,
+as a reference. For example,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>In equation <span class="k">\eqref</span><span class="nb">{</span>eq:sample<span class="nb">}</span>, we find the value of an
+interesting integral:
+
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+  <span class="k">\int</span><span class="nb">_</span>0<span class="nb">^</span><span class="k">\infty</span> <span class="k">\frac</span><span class="nb">{</span>x<span class="nb">^</span>3<span class="nb">}{</span>e<span class="nb">^</span>x-1<span class="nb">}</span><span class="k">\,</span>dx = <span class="k">\frac</span><span class="nb">{</span><span class="k">\pi</span><span class="nb">^</span>4<span class="nb">}{</span>15<span class="nb">}</span>
+  <span class="k">\label</span><span class="nb">{</span>eq:sample<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</pre></div>
+</div>
+<p>includes a labeled equation and a reference to that equation.  Note
+that references can come before the corresponding formula as well as
+after them.</p>
+<p>You can configure the way that numbers are displayed and how the
+references to them by including the <code class="docutils literal notranslate"><span class="pre">tagformat</span></code> extension, and
+setting options within the <code class="docutils literal notranslate"><span class="pre">tagformat</span></code> block of your <code class="docutils literal notranslate"><span class="pre">tex</span></code>
+configuration.  See the <a class="reference internal" href="extensions/tagformat.html#tex-tagformat"><span class="std std-ref">tagformat</span></a> extension for more
+details.</p>
+<p>If you are using automatic equation numbering and modifying the page
+dynamically, you can run into problems due to duplicate labels. See
+<a class="reference internal" href="../../web/typeset.html#tex-reset"><span class="std std-ref">Resetting Automatic Equation Numbering</span></a> for how to address this.</p>
+<p><hr></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="macros.html" class="btn btn-neutral float-left" title="Defining TeX macros" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="extensions.html" class="btn btn-neutral float-right" title="TeX and LaTeX extensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

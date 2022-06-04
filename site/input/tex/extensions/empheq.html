@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>empheq &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="enclose" href="enclose.html" />
+    <link rel="prev" title="configmacros" href="configmacros.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The TeX/LaTeX Extension List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="action.html">action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ams.html">ams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amscd.html">amscd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload.html">autoload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boldsymbol.html">boldsymbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braket.html">braket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bussproofs.html">bussproofs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cancel.html">cancel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cases.html">cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centernot.html">centernot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colortbl.html">colortbl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorv2.html">colorv2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configmacros.html">configmacros</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">empheq</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#empheq-commands">empheq Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enclose.html">enclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extpfeil.html">extpfeil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gensymb.html">gensymb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mathtools.html">mathtools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mhchem.html">mhchem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newcommand.html">newcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noerrors.html">noerrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noundefined.html">noundefined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setoptions.html">setoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagformat.html">tagformat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textcomp.html">textcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textmacros.html">textmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgreek.html">upgreek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verb.html">verb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autobold.html">autobold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload-all.html">autoload-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="begingroup.html">begingroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mediawiki-texvc.html">mediawiki-texvc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">TeX and LaTeX Support</a> &raquo;</li>
+          <li><a href="index.html">The TeX/LaTeX Extension List</a> &raquo;</li>
+      <li>empheq</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/input/tex/extensions/empheq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="empheq">
+<span id="tex-empheq"></span><h1>empheq<a class="headerlink" href="#empheq" title="Permalink to this heading"></a></h1>
+<p>The <cite>empheq</cite> extension partially implements the <code class="docutils literal notranslate"><span class="pre">empheq</span></code> style package from
+LaTeX.  The package provides macros and environments for emphasising equations.
+See the <a class="reference internal" href="#tex-empheq-commands"><span class="std std-ref">list of control sequences</span></a> for details about
+what commands are implemented in this extension.  Note, that the current
+implementation of the <code class="docutils literal notranslate"><span class="pre">empheq</span></code> environment supports only the <code class="docutils literal notranslate"><span class="pre">left</span></code> and
+<code class="docutils literal notranslate"><span class="pre">right</span></code> options. Also see the <a class="reference external" href="https://www.ctan.org/pkg/empheq">CTAN page</a>
+for more information and documentation of <cite>empheq</cite>.</p>
+<p>This package is not autoloaded, so you must request it explicitly if you want to use it.
+To load the <cite>empheq</cite> extension, add <code class="docutils literal notranslate"><span class="pre">'[tex]/empheq'</span></code> to the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your
+MathJax configuration, and add <code class="docutils literal notranslate"><span class="pre">'empheq'</span></code> to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/empheq&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;empheq&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can configure the <cite>autoload</cite> extension to load <cite>empheq</cite> when the
+<code class="docutils literal notranslate"><span class="pre">empheq</span></code> environment is first used via</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">autoload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">empheq</span><span class="o">:</span><span class="w"> </span><span class="p">[[],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;empheq&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively, use <code class="docutils literal notranslate"><span class="pre">\require{empheq}</span></code> in a TeX expression to load it
+dynamically from within the math on the page, if the <cite>require</cite>
+extension is loaded.</p>
+<hr class="docutils" />
+<section id="empheq-commands">
+<span id="tex-empheq-commands"></span><h2>empheq Commands<a class="headerlink" href="#empheq-commands" title="Permalink to this heading"></a></h2>
+<p>The <cite>empheq</cite> extension implements the following macros:
+<code class="docutils literal notranslate"><span class="pre">\empheqbigl</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglangle</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglbrace</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglbrack</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglceil</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglfloor</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglvert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbiglVert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigr</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrangle</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrbrace</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrbrack</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrceil</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrfloor</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrvert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqbigrVert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheql</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlangle</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlbrace</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlbrack</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlceil</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlfloor</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlvert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqlVert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqr</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrangle</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrbrace</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrbrack</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrceil</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrfloor</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrvert</span></code>, <code class="docutils literal notranslate"><span class="pre">\empheqrVert</span></code></p>
+<p>And the following environments:
+<code class="docutils literal notranslate"><span class="pre">empheq</span></code></p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configmacros.html" class="btn btn-neutral float-left" title="configmacros" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enclose.html" class="btn btn-neutral float-right" title="enclose" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

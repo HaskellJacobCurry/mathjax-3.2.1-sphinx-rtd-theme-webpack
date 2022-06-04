@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contextual Menu Options &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Safe Extension Options" href="safe.html" />
+    <link rel="prev" title="Accessibility Extensions Options" href="accessibility.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuring MathJax</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="input/index.html">Input Processor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/index.html">Output Processor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">Document Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility Extensions Options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Contextual Menu Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-configuration-block">The Configuration Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#option-descriptions">Option Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#developer-options">Developer Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="safe.html">Safe Extension Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="startup/index.html">Startup and Loader Options</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Configuring MathJax</a> &raquo;</li>
+      <li>Contextual Menu Options</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/options/menu.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contextual-menu-options">
+<span id="menu-options"></span><h1>Contextual Menu Options<a class="headerlink" href="#contextual-menu-options" title="Permalink to this heading"></a></h1>
+<p>The <cite>ui/menu</cite> component implements the contextual menu that you get
+when you right-click (or control-click) on a typeset expression.  The
+settings in the menu are “sticky”, which means that they are saved
+from page to page and session to session (though they web-site
+specific, so each web site has its own saved settings).</p>
+<p>As a page author, you can alter the default settings of the menu by
+using the <code class="docutils literal notranslate"><span class="pre">menuOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">options</span></code> section of your
+MathJax configuration, as described below.</p>
+<p>The <cite>ui/menu</cite> component adds a render action called <code class="docutils literal notranslate"><span class="pre">addMenu</span></code> that
+attaches the menu event handlers to the typeset output. (It also adds
+a second render action called <code class="docutils literal notranslate"><span class="pre">checkLoading</span></code> that mediates the
+loading of extensions needed by the contextual menu.  For example,
+when the assistive <a class="reference internal" href="../web/components/accessibility.html#explorer-component"><span class="std std-ref">a11y/explorer</span></a> component is first
+activated, MathJax may need to load the <cite>a11y/explorer</cite> component;
+this render action makes sure that has happened before any math is
+typeset.)</p>
+<p>If you want to disable the contextual menu, you can set the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">enableMenu</span></code> option to <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
+<hr class="docutils" />
+<section id="the-configuration-block">
+<h2>The Configuration Block<a class="headerlink" href="#the-configuration-block" title="Permalink to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">enableMenu</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">          </span><span class="c1">// set to false to disable the menu</span><span class="w"></span>
+<span class="w">    </span><span class="nx">menuOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">texHints</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">        </span><span class="c1">// put TeX-related attributes on MathML</span><span class="w"></span>
+<span class="w">        </span><span class="nx">semantics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">      </span><span class="c1">// put original format in &lt;semantic&gt; tag in MathML</span><span class="w"></span>
+<span class="w">        </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;NoZoom&#39;</span><span class="p">,</span><span class="w">        </span><span class="c1">// or &#39;Click&#39; or &#39;DoubleClick&#39; as zoom trigger</span><span class="w"></span>
+<span class="w">        </span><span class="nx">zscale</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;200%&#39;</span><span class="p">,</span><span class="w">        </span><span class="c1">// zoom scaling factor</span><span class="w"></span>
+<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CHTML&#39;</span><span class="p">,</span><span class="w">     </span><span class="c1">// or &#39;SVG&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alt</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">            </span><span class="c1">// true if ALT required for zooming</span><span class="w"></span>
+<span class="w">        </span><span class="nx">cmd</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">            </span><span class="c1">// true if CMD required for zooming</span><span class="w"></span>
+<span class="w">        </span><span class="nx">ctrl</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">           </span><span class="c1">// true if CTRL required for zooming</span><span class="w"></span>
+<span class="w">        </span><span class="nx">shift</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">          </span><span class="c1">// true if SHIFT required for zooming</span><span class="w"></span>
+<span class="w">        </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w">              </span><span class="c1">// scaling factor for all math</span><span class="w"></span>
+<span class="w">        </span><span class="nx">inTabOrder</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">      </span><span class="c1">// true if tabbing includes math</span><span class="w"></span>
+
+<span class="w">        </span><span class="nx">assistiveMml</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">    </span><span class="c1">// true if hidden assistive MathML should be generated for screen readers</span><span class="w"></span>
+<span class="w">        </span><span class="nx">collapsible</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">    </span><span class="c1">// true if complex math should be collapsible</span><span class="w"></span>
+<span class="w">        </span><span class="nx">explorer</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">       </span><span class="c1">// true if the expression explorer should be active</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nx">annotationTypes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">TeX</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;TeX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LaTeX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;application/x-tex&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nx">StarMath</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;StarMath 5.0&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Maple</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Maple&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nx">ContentMathML</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;MathML-Content&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;application/mathml-content+xml&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nx">OpenMath</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;OpenMath&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="option-descriptions">
+<h2>Option Descriptions<a class="headerlink" href="#option-descriptions" title="Permalink to this heading"></a></h2>
+<span class="target" id="menu-enablemenu"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">enableMenu:</span> <span class="pre">true</span></span></dt>
+<dd><p>This controls whether the MathJax contextual menu will be added to
+the typeset mathematics or not.</p>
+</dd></dl>
+
+<span class="target" id="menu-settings"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">settings:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>These settings give the default menu settings for the page, though
+a user can change them using the menu.  These are described in the
+comments in the example above.</p>
+</dd></dl>
+
+<span class="target" id="menu-annotationtypes"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">annotationTypes:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>These are the settings for the “Annotation” submenu of the “Show
+Math As” menu. If the <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> root element has a <code class="docutils literal notranslate"><span class="pre">&lt;semantics&gt;</span></code>
+child that contains one of the specified annotation formats, the
+source will be available via the “Show Math As” and “Copy to
+Clipboard” menus. Each format has a list of possible encodings. For
+example, the line</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">TeX</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;TeX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LaTeX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;application/x-tex&#39;</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>maps an annotation with an encoding of <code class="docutils literal notranslate"><span class="pre">TeX</span></code>, <code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">application/x-tex</span></code> to the “TeX” entry in the “Annotation”
+sub-menus.</p>
+</dd></dl>
+
+</section>
+<hr class="docutils" />
+<section id="developer-options">
+<h2>Developer Options<a class="headerlink" href="#developer-options" title="Permalink to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">MenuClass</span><span class="o">:</span><span class="w"> </span><span class="nx">Menu</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">menuOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">jax</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">CHTML</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">SVG</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<span class="target" id="menu-menuclass"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">menuClass:</span>&#160; <span class="pre">Menu</span></span></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">Menu</span></code> object class to use for creating the menu.  This
+allows you to create a subclass of <code class="docutils literal notranslate"><span class="pre">Menu</span></code> and pass that to
+the document in pace of the default one.</p>
+</dd></dl>
+
+<span class="target" id="menu-jax"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">jax:</span> <span class="pre">{CHTML:</span> <span class="pre">null,</span> <span class="pre">SVG:</span> <span class="pre">null}</span></span></dt>
+<dd><p>This lists the output jax instances to be used for the different
+output formats.  These will get set up automatically by the menu
+code if you don’t specify one, so it is only necessary to set these
+if you want to manage the options specially.</p>
+</dd></dl>
+
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessibility.html" class="btn btn-neutral float-left" title="Accessibility Extensions Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="safe.html" class="btn btn-neutral float-right" title="Safe Extension Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

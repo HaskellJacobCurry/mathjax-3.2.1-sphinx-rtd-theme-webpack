@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Extension &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Keyboard Explorer Commands" href="explorer-commands.html" />
+    <link rel="prev" title="Accessibility Features" href="accessibility.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="accessibility.html">MathJax Accessibility Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#mathjax-user-interface">MathJax User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#mathjax-accessibility-extensions">MathJax Accessibility Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#screen-reader-support">Screen Reader Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="accessibility.html#more-information">More Information</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Accessibility extensions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-exploration">Interactive Exploration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#speech-braille-support">Speech &amp; Braille Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abstraction">Abstraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#highlight">Highlight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnification">Magnification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#semantic-info">Semantic Info</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="explorer-commands.html">Available explorer keyboard commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legacy-accessibility.html">Legacy Assistive Support in v2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="accessibility.html">Accessibility Features</a> &raquo;</li>
+      <li>Accessibility Extension</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basic/a11y-extensions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <style>
+kbd  {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+</style>
+<br/><section id="accessibility-extension">
+<span id="a11y-extensions"></span><h1>Accessibility Extension<a class="headerlink" href="#accessibility-extension" title="Permalink to this heading"></a></h1>
+<p>MathJax offers accessibility support via its own built-in extension that
+provides a choice of support options as well as a high degree of
+personalization.  The extension can be activated either via the context menu,
+which itself is fully accessible, or by default using configuration
+options. Similarly its various features and options are best selected via the
+<a class="reference internal" href="../options/menu.html#menu-options"><span class="std std-ref">MathJax Menu</span></a> or programmatically using the
+<a class="reference internal" href="../options/accessibility.html#accessibility-options"><span class="std std-ref">accessibility options</span></a>.  We discuss
+the different features of the accessibility tool at the hand of the context
+menu, roughly in the order in which they appear.</p>
+<p>Most features of the Accessibility extensions are based on technology provided by
+the <a class="reference external" href="https://speechruleengine.org">Speech Rule Engine</a>. For some more details
+and information please also see there.</p>
+<p>MathJax’s supports the widest selection of browsers, operating systems, and
+assistive technologies as they only require the use of well-supported web
+standards such as WAI-ARIA, in particular labels and live regions.</p>
+<section id="interactive-exploration">
+<h2>Interactive Exploration<a class="headerlink" href="#interactive-exploration" title="Permalink to this heading"></a></h2>
+<p>The main feature is an interactive exploration mode that allows a reader to
+traverse and explore sub-expressions step-by-step. The explorer is activated in
+the context menu by checking the <cite>Activate</cite> item in the <cite>Accessibility</cite>
+sub-menu.</p>
+<p>Once a math expression is focused, the explorer can be started by pressing the
+<kbd> Enter </kbd> key. The cursor keys then allow traversal of the expression.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="explorer-commands.html">Available keyboard commands</a></li>
+</ul>
+</div>
+<p>During traversal, focused sub-expressions are highlighted and optionally
+magnified. In addition, an aural rendering is pushed to a screen reader, if one
+is available, and a tactile rendering can be read on a Braille display, if one
+is connected.</p>
+</section>
+<section id="speech-braille-support">
+<h2>Speech &amp; Braille Support<a class="headerlink" href="#speech-braille-support" title="Permalink to this heading"></a></h2>
+<p>Both aural and tactile rendering can be controlled via the options in the
+<cite>Speech</cite> sub-menu. <cite>Speech Output</cite> and <cite>Braille Output</cite>, respectively,
+control whether or not speech or Braille output is generated. If speech is
+generated, it is by default also displayed in <cite>Speech Subtitles</cite>, which can be
+switched off and hidden. Braille on the other hand is by default hidden but can
+be displayed by switching on the <cite>Braille Subtitles</cite>.</p>
+<p>Speech is generally generated with respect to the currently chosen locale (if it
+is available).  In addition, there are a number of different rule sets that can
+be chosen for translating math to text, where each can have a number of
+different preferences for how a particular expression is spoken. By default, MathJax
+uses the <cite>MathSpeak</cite> rule set in <cite>Verbose</cite> mode; however, the menu allows this
+to be changed to either the <cite>ClearSpeak</cite> or <cite>ChromeVox</cite>. Each rule set has
+several different preference settings; three in the case of MathSpeak, for example,
+which primarily influence the length of produced text.  <a class="reference external" href="https://docs.wiris.com/en/mathtype/mathtype_desktop/accessibility/clearspeak">ClearSpeak</a>
+on the other hand has a large number of preferences that allow very fine-tuned
+control over how different types of expressions are spoken. The MathJax menu
+allows a smart choice of preferences by only displaying the preferences that
+are currently relevant for the sub-expression that is currently explored.
+The <cite>Select Preferences</cite> option opens a selection box for all possible
+ClearSpeak preference choices.</p>
+<p>Some rule-set and preference settings can also be controlled by keyboard
+commands. This allows the user to have the same expression read in different
+variants without having to leave the exploration mode.  The <kbd> &gt; </kbd> key
+switches rule sets between MathSpeak and ClearSpeak if both are available for
+the current locale. The <kbd> &lt; </kbd> key cycles preferences for the currently
+active rule set.  For ClearSpeak rules, preference cycling depends on the type
+of the currently explored sub-expression, similar to smart selection of menu
+entries.</p>
+<p>The speech language can be adjusted in the <cite>Language</cite> sub-menu in the
+<cite>Speech</cite> options.  MathJax currently only supports speech in English,
+French, German, and Spanish.  The only available Braille output is
+Nemeth. We are hoping to add more in the future.</p>
+<p>In addition to voicing expressions, the explorer allows for queries on
+sub-expression, such as getting positional information with respect to the
+context, as well as summaries of the sub-expression currently explored.</p>
+</section>
+<section id="abstraction">
+<h2>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this heading"></a></h2>
+<p>In addition to textual summaries of expressions, MathJax offers the
+possibility to abstract certain sub-expressions so that the entire
+sub-expression is visually replaced by a placeholder symbol and
+interactive traversal treats it as a single element. This allows the
+reader to abstract away details and to better observe the overall
+structure of a formula.</p>
+<p>Abstraction can be triggered either via mouse click on a collapsible
+expression or via pressing the <kbd> Enter </kbd> key during keyboard
+exploration. Expressions that can be abstracted can also be discovered
+using some of the highlighting features.</p>
+</section>
+<section id="highlight">
+<h2>Highlight<a class="headerlink" href="#highlight" title="Permalink to this heading"></a></h2>
+<p>During interactive exploration, the sub-expression that is explorered is
+automatically highlighted, by default with a blue background color. The
+highlighting can be customized by changing <cite>Background</cite> or <cite>Foreground</cite>
+colors in in the <cite>Highlight</cite> sub-menu of the MathJax contextual menu.
+In addition, the opacity of both <cite>Background</cite> and <cite>Foreground</cite> can be
+adjusted by two slider bars underneath the respective sub-menus.</p>
+<p>The <cite>Highlight</cite> sub-menu also provides a choice of highlighters for
+marking collapsible sub-expressions: The <cite>Flame</cite> highligher permanently
+colors collapsible sub-expressions while successively darkening the
+background for nested collapsible expressions. The <cite>Hover</cite> highlighter
+colors each collapsible sub-expression only when hovering over it with
+the mouse pointer.</p>
+<p>A final highlighting feature is <cite>Tree Coloring</cite>, in which expressions are
+visually distinguished by giving neighbouring symbols different, ideally
+contrasting foreground colors.</p>
+</section>
+<section id="magnification">
+<h2>Magnification<a class="headerlink" href="#magnification" title="Permalink to this heading"></a></h2>
+<p>During exploration, the accessibility extension can optionally magnify
+the sub-expression that is currently explored. The zoomed version of
+the expression is overlayed on the original one when traversing the
+formula. For keyboard exploration, this can be switched on in the
+<cite>Magnification</cite> sub-menu by selecting the <cite>Keyboard</cite> option.</p>
+<p>A similar effect can be achieved by exploring an expression with the mouse.
+When using the <cite>Mouse</cite> option in the <cite>Magnification</cite> sub-menu, the
+sub-expression over which the mouse pointer hovers is zoomed.</p>
+<p>The zoom factor of the magnification can also be adjusted.  The values
+available in the context menu are <cite>200%</cite>, <cite>300%</cite>, <cite>400%</cite>, and
+<cite>500%</cite>.</p>
+</section>
+<section id="semantic-info">
+<h2>Semantic Info<a class="headerlink" href="#semantic-info" title="Permalink to this heading"></a></h2>
+<p>The <cite>Semantic Info</cite> sub-menu contains a number of options that allow the reader to see
+the semantic classifications MathJax applies to a particular sub-expression, by
+hovering over it with the mouse pointer. The choices here are</p>
+<ul class="simple">
+<li><p><cite>Type</cite>
+is an immutable property of an expression that is independent
+of its particular position in a formula. Note, however that types can change
+depending on the subject area of a document.</p></li>
+<li><p><cite>Role</cite>
+is dependent on the context of a sub-expression in the overall expression.</p></li>
+<li><p><cite>Prefix</cite>
+is information pertaining to the position of a
+sub-expression. Examples are <code class="docutils literal notranslate"><span class="pre">'exponent'</span></code>, <code class="docutils literal notranslate"><span class="pre">'radicand'</span></code>, etc. These would
+also be spoken during interactive exploration.</p></li>
+</ul>
+<p>For more details on all of these concepts, see also the documentation of the
+<a class="reference external" href="https://speechruleengine.org">Speech Rule Engine</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessibility.html" class="btn btn-neutral float-left" title="Accessibility Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="explorer-commands.html" class="btn btn-neutral float-right" title="Keyboard Explorer Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

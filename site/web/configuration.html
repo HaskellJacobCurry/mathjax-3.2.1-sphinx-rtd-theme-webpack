@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring and Loading MathJax &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The MathJax Components" href="components/index.html" />
+    <link rel="prev" title="Getting Started with MathJax Components" href="start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> Configuring and Loading MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-mathjax">Configuring MathJax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-using-an-in-line-script">Configuration Using an In-Line Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-local-file-for-configuration">Using a Local File for Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-and-loading-in-one-script">Configuring and Loading in One Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-your-v2-configuration-to-v3">Converting Your v2 Configuration to v3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-mathjax">Loading MathJax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-components-individually">Loading Components Individually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-additional-components">Loading Additional Components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#performing-actions-during-startup">Performing Actions During Startup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#performing-actions-during-initialization">Performing Actions During Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performing-actions-after-typesetting">Performing Actions After Typesetting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-mathjax-after-it-is-loaded">Configuring MathJax After it is Loaded</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Configuring and Loading MathJax</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/web/configuration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-and-loading-mathjax">
+<span id="web-configuration"></span><h1>Configuring and Loading MathJax<a class="headerlink" href="#configuring-and-loading-mathjax" title="Permalink to this heading"></a></h1>
+<p>The configuration, loading, and startup processes for MathJax version
+3 are different from those of version 2 in a number of ways.  Where
+version 2 had several different methods for configuring MathJax,
+version 3 streamlines the process and has only one, as described
+below.  In version 2, you always loaded <code class="docutils literal notranslate"><span class="pre">MathJax.js</span></code>, and added a
+<code class="docutils literal notranslate"><span class="pre">config=...</span></code> parameter to provide a combined configuration file, but
+in version 3 you load one of several different files, depending on
+your needs (so you can avoid multiple file transfers, and also use
+MathJax synchronously, which was not possible in version 2).</p>
+<p>If you use one of the combined component files in version 3, like
+<code class="docutils literal notranslate"><span class="pre">mml-chtml</span></code>, you may not need to do any configuration at all.</p>
+<hr class="docutils" />
+<section id="configuring-mathjax">
+<span id="configuration"></span><h2>Configuring MathJax<a class="headerlink" href="#configuring-mathjax" title="Permalink to this heading"></a></h2>
+<p>To configure MathJax, you use a global object named <cite>MathJax</cite> that
+contains configuration data for the various components of MathJax.
+For example, to configure the TeX input component to use single dollar
+signs as in-line math delimiters (in addition to the usual <code class="docutils literal notranslate"><span class="pre">\(...\)</span></code>
+delimiters) and the SVG output component to use a global font cache
+for all expressions on the page, you would use</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\)&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">svg</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fontCache</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;global&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The sections below describe the different places you could put such a
+configuration.  For information on the options that you can set for
+each of the components, see the <a class="reference internal" href="#configuration"><span class="std std-ref">Configuring MathJax</span></a> pages.</p>
+<section id="configuration-using-an-in-line-script">
+<span id="inline-configuration"></span><h3>Configuration Using an In-Line Script<a class="headerlink" href="#configuration-using-an-in-line-script" title="Permalink to this heading"></a></h3>
+<p>The easiest way to configure MathJax is to place the <code class="docutils literal notranslate"><span class="pre">MathJax</span></code>
+object in a <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag just before the script that loads MathJax
+itself.  For example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\)&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">svg</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fontCache</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;global&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This will configure the TeX input component to use single dollar
+signs as in-line math delimiters, and the SVG output component to use
+a global font cache (rather than a separate cache for each expression
+on the page), and then loads the latest version of the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code>
+component file from the <code class="docutils literal notranslate"><span class="pre">jsdelivr</span></code> CDN.  This will typeset any TeX
+mathematics on the page, producing SVG versions of the expressions.</p>
+</section>
+<section id="using-a-local-file-for-configuration">
+<span id="local-configuration-file"></span><h3>Using a Local File for Configuration<a class="headerlink" href="#using-a-local-file-for-configuration" title="Permalink to this heading"></a></h3>
+<p>If you are using the same MathJax configuration over multiple pages,
+you may find it convenient to store your configuration in a separate
+JavaScript file that you load into the page.  For example, you could
+create a file called <code class="docutils literal notranslate"><span class="pre">mathjax-config.js</span></code> that contains</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\)&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">svg</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fontCache</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;global&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>and then use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;mathjax-config.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">defer</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to first load your configuration file, and then load the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code>
+component from the <code class="docutils literal notranslate"><span class="pre">jsdelivr</span></code> CDN.</p>
+<p>Note that here we use the <code class="docutils literal notranslate"><span class="pre">defer</span></code> attribute on both scripts so that
+they will execute in order, but still not block the rest of the page
+while the files are being downloaded to the browser.  If the <code class="docutils literal notranslate"><span class="pre">async</span></code>
+attribute were used, there is no guarantee that the configuration
+would run first, and so you could get instances where MathJax doesn’t
+get properly configured, and they would seem to occur randomly.</p>
+</section>
+<section id="configuring-and-loading-in-one-script">
+<span id="config-loads-mathjax"></span><h3>Configuring and Loading in One Script<a class="headerlink" href="#configuring-and-loading-in-one-script" title="Permalink to this heading"></a></h3>
+<p>It is possible to have the MathJax configuration file also load
+MathJax as well, which would be another way to handle the problem of
+synchronizing the two scripts described above.  For example, you could
+make the file <code class="docutils literal notranslate"><span class="pre">load-mathjax.js</span></code> containing</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\)&#39;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">svg</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fontCache</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;global&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">script</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">script</span><span class="p">.</span><span class="k">async</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span><span class="w"></span>
+<span class="p">})();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>and then simply link to that file via</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;load-mathjax.js&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This script can be <code class="docutils literal notranslate"><span class="pre">async</span></code> because it doesn’t have to synchronize
+with any other script.  This will allow it to run as soon as it loads
+(since it is small, there is little cost to that), meaning the script
+to load MathJax itself will be inserted as soon as possible, so that
+MathJax can begin downloading as early as possible.  (If this script
+were loaded with <code class="docutils literal notranslate"><span class="pre">defer</span></code>, it would not run until the page was ready,
+so the script to load MathJax would not be inserted until then, and
+you would have to wait for MathJax to be downloaded before it could
+run.)</p>
+</section>
+<section id="converting-your-v2-configuration-to-v3">
+<span id="v2-to-v3-converter"></span><h3>Converting Your v2 Configuration to v3<a class="headerlink" href="#converting-your-v2-configuration-to-v3" title="Permalink to this heading"></a></h3>
+<p>Because the version 3 configuration options are somewhat different
+from their version 2 counterparts, we provide an automated
+<a class="reference external" href="https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html">configuration conversion tool</a>
+to help you move from version 2 to version 3.  Simply paste your
+current <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.Hub.Config()</span></code> call into the converter, press
+<code class="docutils literal notranslate"><span class="pre">Convert</span></code> and you should get the equivalent version 3 configuration,
+and comments about any options that could not be translated to version
+3 (some options are not yet implements, others no longer make sense in
+version 3).  See the instructions on the linked page for more details.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="loading-mathjax">
+<span id="id1"></span><h2>Loading MathJax<a class="headerlink" href="#loading-mathjax" title="Permalink to this heading"></a></h2>
+<p>Once you have configured MathJax, you then load the MathJax component
+file that you want to use.  Most often, this will mean you load a
+combined component that loads everything you need to run MathJax with
+a particular input and output format.  For example, the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code>
+component would allow you to process TeX input and produce SVG output.
+To do so, use a script like the following</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to get the latest (3.x.x) version of the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code> component in ES5
+format (the only one currently available) from the <code class="docutils literal notranslate"><span class="pre">jsdelivr</span></code> CDN.
+This takes advantage of the feature of <code class="docutils literal notranslate"><span class="pre">jsdeliver</span></code> that allows you
+to get the latest version using the <code class="docutils literal notranslate"><span class="pre">mathjax&#64;3</span></code> notation.  For a
+specific version, you would use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to always get the 3.0.0 version of the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code> component.</p>
+<p>Other CDNs have slightly different formats for how to specify the
+version number.  For example, <code class="docutils literal notranslate"><span class="pre">cdnjs</span></code> uses the following:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Some CDNs don’t provide a means of getting the lastest version
+automatically.  For these, MathJax provides a <code class="docutils literal notranslate"><span class="pre">latest.js</span></code> file that
+will do that for you.  For example, <code class="docutils literal notranslate"><span class="pre">cdnjs</span></code> doesn’t have a mechanism
+for getting the latest 3.x.x version automtically.  If you want to do
+that using <code class="docutils literal notranslate"><span class="pre">cdnjs</span></code>, then use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-svg.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to obtain the latest (3.x.x) version of the <code class="docutils literal notranslate"><span class="pre">tex-svg</span></code> component.</p>
+<p>See <a class="reference internal" href="components/index.html#web-components"><span class="std std-ref">The MathJax Components</span></a> for a list of the various components you can
+choose and descriptions of their contents.  See the <a class="reference internal" href="start.html#cdn-list"><span class="std std-ref">list of CDNs</span></a> for the URLs for a number of CDNs that serve MathJax.</p>
+<p>Note that the script that loads the MathJax component file should
+<em>follow</em> the script that configures MathJax (otherwise MathJax will not
+know what configuration you need).  If you use one of the combined
+component files in version 3, you may not need to do any configuration
+at all.</p>
+<section id="loading-components-individually">
+<span id="loader-load-explicit"></span><h3>Loading Components Individually<a class="headerlink" href="#loading-components-individually" title="Permalink to this heading"></a></h3>
+<p>If none of the combined component files suits your needs, you can
+specify the individual components you want by setting the <code class="docutils literal notranslate"><span class="pre">load</span></code>
+array in the <code class="docutils literal notranslate"><span class="pre">loader</span></code> section of your MathJax configuration and
+loading the <code class="docutils literal notranslate"><span class="pre">startup</span></code> component.</p>
+<p>For example</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;input/tex-base&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output/svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ui/menu&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[tex]/require&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;require&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/startup.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>would cause the base TeX input, the SVG output, the contextual menu
+code, and the TeX <code class="docutils literal notranslate"><span class="pre">\require</span></code> macro extension components to be loaded
+(and would tell TeX to use the <code class="docutils literal notranslate"><span class="pre">require</span></code> extension in addition to the
+base TeX macros).  In this way, you can load exactly the components
+you want.  Note, however, that each component will be loaded as a
+separate file, so it is better to use a combined component file if
+possible.</p>
+</section>
+<section id="loading-additional-components">
+<span id="loader-load-combined"></span><h3>Loading Additional Components<a class="headerlink" href="#loading-additional-components" title="Permalink to this heading"></a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">load</span></code> array described in the previous section to
+load additional components even if you are using one of the combined
+components.  For example</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/colorv2&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;colorv2&#39;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nx">autoload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="p">[]}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-chtml.js&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>would load the version-2-compatible <code class="docutils literal notranslate"><span class="pre">\color</span></code> macro, inform TeX to
+add that to the packages that it already has loaded, and not autoload
+the default version 3 <code class="docutils literal notranslate"><span class="pre">color</span></code> (the LaTeX-compatible one).  This is
+done on top of the <code class="docutils literal notranslate"><span class="pre">tex-chtml</span></code> combined configuration file, so the
+TeX input and CommonHTML output formats are already included (as are
+the contextual menu, and several TeX packages; see
+<a class="reference internal" href="components/index.html#web-components"><span class="std std-ref">The MathJax Components</span></a> for details).</p>
+</section>
+</section>
+<section id="performing-actions-during-startup">
+<span id="startup-action"></span><h2>Performing Actions During Startup<a class="headerlink" href="#performing-actions-during-startup" title="Permalink to this heading"></a></h2>
+<p>MathJax allows you several ways to hook into the MathJax startup
+process so that you can do additional configuration, perform actions
+after the initial typesetting, and so on.  Because MathJax version 3
+uses <em>promises</em> for its synchronization, they are what MathJax
+provides in order for you to hook into the startup process.  There are
+two main hooks that you can set in the <code class="docutils literal notranslate"><span class="pre">startup</span></code> block of your
+configuration: the <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function and the
+<code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> function.</p>
+<p>The <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function is what MathJax calls when all the
+components of MathJax have been loaded.  It builds the internal
+structures needed by MathJax, creates functions in the <code class="docutils literal notranslate"><span class="pre">MathJax</span></code>
+object to make typesetting and format conversion easy for you,
+performs the initial typesetting call, and sets up a promise for when
+that is complete.  You can override the <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function with
+one of your own to override the startup process completely, or to
+perform actions before or after the usual initialization.  For
+example, you could do additional setup before MathJax created the
+objects it needs, or you could hook into the typesetting promise to
+synchronize other actions with the completion of the initial
+typesetting.  Examples of these are given below.</p>
+<p>The <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> function is performed when MathJax is ready
+(all its components are loaded, and the internal objects have been
+created), and the page itself is ready (i.e., it is OK to typeset the
+page).  The default is for <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> to perform the initial
+typesetting of the page, but you can override that to perform other
+actions instead, such as delaying the initial typesetting while other
+content is loaded dynamically, for example.  The <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code>
+function sets up the call to <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> as part of its
+default action.</p>
+<p>The return value of <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> is a promise that is resolved
+when the initial typesetting is finished (it is the return value of
+the initial <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.typesetPromise()</span></code> call).  If you override
+the <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> method, your function should return a promise
+as well.  If your function calls
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultPageReady()</span></code>, then you should return the
+promise that it returns (or a promise obtained from its <code class="xref js js-func docutils literal notranslate"><span class="pre">then()</span></code>
+or <code class="xref js js-func docutils literal notranslate"><span class="pre">catch()</span></code> methods).  The <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> will
+resolve when the promise you return is resolved; if you don’t return a
+promise, <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> will resolve immediately,
+which may mean that it resolves too early.</p>
+<p>Using these two functions separately or in combination gives you full
+control over the actions that MathJax takes when it starts up, and
+allows you to customize MathJax’s startup process to suit your needs.
+Several examples are given below for common situations.</p>
+<section id="performing-actions-during-initialization">
+<span id="initialization-actions"></span><h3>Performing Actions During Initialization<a class="headerlink" href="#performing-actions-during-initialization" title="Permalink to this heading"></a></h3>
+<p>If you want to perform actions after MathJax has loaded all the needed
+components, you can set the <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function to a function that does
+the needed actions, and then calls
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultReady()</span></code> to perform the usual
+startup process.</p>
+<p>Actions coming before the <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultReady()</span></code>
+call are run before any initialization has been done.  In particular,
+this is before any input or output jax are created, so this is where
+customization of the MathJax object definitions could be performed.
+For example, you could modify the configuration blocks at this point,
+or you could create subclasses of the MathJax objects that override
+some of their methods to produce custom behavior, and then register
+those subclasses with MathJax so they will be used in place of the
+originals.</p>
+<p>Actions coming after the <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultReady()</span></code>
+call are run after initialization is complete.  In particular, all the
+internal objects used by MathJax (e.g., the input and output jax, the
+math document, the DOM adaptor, etc) will have been created, and the
+typesetting and conversion methods will have been created in the
+<code class="docutils literal notranslate"><span class="pre">MathJax</span></code> object.  Also the <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> value
+will hold a promise that is resolved when the initial typesetting is
+complete, but note that the typesetting has not yet been performed at
+this point.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ready</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MathJax is loaded, but not yet initialized&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultReady</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MathJax is initialized, and the initial typeset is queued&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The next section shows how to use the <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code>
+to synchronize with the initial typesetting action.</p>
+</section>
+<section id="performing-actions-after-typesetting">
+<span id="post-typesetting"></span><h3>Performing Actions After Typesetting<a class="headerlink" href="#performing-actions-after-typesetting" title="Permalink to this heading"></a></h3>
+<p>Often, you may need to wait for MathJax to finish typesetting the page
+before you perform some action.  To accomplish this, you can override
+the <code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function, having it perform the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultReady()</span></code> action, and then use the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> to queue your actions; these will be
+performed after the initial typesetting is complete.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ready</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultReady</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MathJax initial typesetting complete&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As an alternative, you can override the <code class="xref js js-func docutils literal notranslate"><span class="pre">pageReady()</span></code> function,
+and use the promise returned from the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.defaultPageReady()</span></code> function:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">startup</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pageReady</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">startup</span><span class="p">.</span><span class="nx">defaultPageReady</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MathJax initial typesetting complete&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Be sure that you return the promise that you obtain from
+<code class="xref js js-func docutils literal notranslate"><span class="pre">then()</span></code> method, otherwise <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> will
+resolve before the initial typesetting (and your code) has been
+performed.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="configuring-mathjax-after-it-is-loaded">
+<span id="configure-after-load"></span><h2>Configuring MathJax After it is Loaded<a class="headerlink" href="#configuring-mathjax-after-it-is-loaded" title="Permalink to this heading"></a></h2>
+<p>The global variable <code class="docutils literal notranslate"><span class="pre">MathJax</span></code> is used to store the configuration for
+MathJax.  Once MathJax is loaded, however, MathJax changes the
+<code class="docutils literal notranslate"><span class="pre">MathJax</span></code> variable to contain the various methods needed to control
+MathJax.  The initial configuration that you provided is moved to the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.config</span></code> property so that its contents doesn’t conflict
+with the new values provides in <code class="docutils literal notranslate"><span class="pre">MathJax</span></code>.  This occurs when the
+MathJax component you have requested is loaded (and before the
+<code class="xref js js-func docutils literal notranslate"><span class="pre">ready()</span></code> function is called).</p>
+<p>Once MathJax has created the objects that it needs (like the input and
+output jax), changes to the configuration may not have any effect, as
+the configuration values were used during the creation of the objects,
+and that is already complete.  Most objects make a copy of their
+configuration from your original <code class="docutils literal notranslate"><span class="pre">MathJax</span></code> object, so changing the
+values in <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.config</span></code> after the objects are created will
+not change their configurations.  (You can change
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.config</span></code> values for objects that haven’t been created
+yet, but not for ones that have.)</p>
+<p>For some objects, like input and output jax, document handlers, and
+math documents, the local copies of the configuration settings are
+stored in the <code class="xref js js-attr docutils literal notranslate"><span class="pre">options</span></code> property of the object, and you may be
+able to set the value there.  For example,
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.output.options.scale</span></code> is the scaling value for
+the output, and you can set that at any time to affect any subsequent
+typeset calls.</p>
+<p>Note that some options are moved to sub-objects when the main object
+is created. For example, with the TeX input jax, the <code class="docutils literal notranslate"><span class="pre">inlineMath</span></code>
+and similar options are used to create a <code class="docutils literal notranslate"><span class="pre">FindTeX</span></code> object that is
+stored at <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.input[0].findTeX</span></code>; but in this case, the
+<code class="docutils literal notranslate"><span class="pre">FindTeX</span></code> object uses the configuration once when it is created, so
+changing <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.input[0].findTeX.options</span></code> will not affect
+it.  (There is a <code class="xref js js-meth docutils literal notranslate"><span class="pre">getPatterns()</span></code> method if the <code class="docutils literal notranslate"><span class="pre">FindTeX</span></code>
+object that could be used to refresh the object if the options are
+changed, however.)</p>
+<p>If you need to change the configuration for an object whose options
+can’t be changed once it is created, then you will need to create a
+new version of that object after you change the configuration.  For
+example, if you change <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.config.tex.inlineMath</span></code> after
+MathJax has started up, that will not affect the TeX input jax, as
+described above.  In this case, you can call
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.getComponents()</span></code> to ask MathJax to recreate all
+the internal objects (like <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.input</span></code>).  This will
+cause them to be created using the new configuration options.  Note,
+however, that MathJax will no longer know about any mathematics that
+has already been typeset, as that data was stored in the objects that
+have been discarded when the new ones are created.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="start.html" class="btn btn-neutral float-left" title="Getting Started with MathJax Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="components/index.html" class="btn btn-neutral float-right" title="The MathJax Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

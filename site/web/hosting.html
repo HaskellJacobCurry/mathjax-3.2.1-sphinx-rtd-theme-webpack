@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosting Your Own Copy of MathJax &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Making a Custom Build of MathJax" href="webpack.html" />
+    <link rel="prev" title="Typesetting and Converting Mathematics" href="typeset.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> Hosting Your Own Copy of MathJax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#acquiring-the-mathjax-code">Acquiring the MathJax Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-mathjax-via-npm">Getting MathJax via npm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-mathjax-via-git">Getting MathJax via git</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#make-the-files-available">Make the Files Available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-to-you-your-copy-of-mathjax">Linking to you Your Copy of MathJax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonts-on-shared-servers">Fonts on Shared Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#firefox-and-local-fonts">Firefox and Local Fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Hosting Your Own Copy of MathJax</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/web/hosting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hosting-your-own-copy-of-mathjax">
+<span id="web-hosting"></span><h1>Hosting Your Own Copy of MathJax<a class="headerlink" href="#hosting-your-own-copy-of-mathjax" title="Permalink to this heading"></a></h1>
+<p>We recommend using a CDN service if you can, but you can also install
+MathJax on your own server, or locally on your own hard disk.  You may
+need to do this if you are <a class="reference internal" href="webpack.html#web-custom-build"><span class="std std-ref">creating a custom build</span></a> of MathJax, for example, or if you wish to use
+MathJax off-line.</p>
+<section id="acquiring-the-mathjax-code">
+<span id="obtain-mathjax"></span><h2>Acquiring the MathJax Code<a class="headerlink" href="#acquiring-the-mathjax-code" title="Permalink to this heading"></a></h2>
+<p>In order to host your own version of MathJax, you must first obtain a
+copy of the MathJax code.  That can be done in several ways, the
+easiest being to use <code class="docutils literal notranslate"><span class="pre">npm</span></code> (the node package manager), or <code class="docutils literal notranslate"><span class="pre">git</span></code> to
+get MathJax from its GitHub development repository.</p>
+<section id="getting-mathjax-via-npm">
+<span id="mathjax-npm"></span><h3>Getting MathJax via npm<a class="headerlink" href="#getting-mathjax-via-npm" title="Permalink to this heading"></a></h3>
+<p>To include MathJax in your project, use the command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm install mathjax@3
+</pre></div>
+</div>
+<p>This will install MathJax in <code class="docutils literal notranslate"><span class="pre">node_modules/mathjax</span></code> subdirectory of
+your current directory.  It will include the pre-built components in
+the <code class="docutils literal notranslate"><span class="pre">node_modules/mathjax/es5</span></code> directory.  (Note that it is
+important to use <code class="docutils literal notranslate"><span class="pre">mathjax&#64;3</span></code>, as we are still making v2 releases,
+and so the latest mathjax npm package may not be the v3 one.  The
+<code class="docutils literal notranslate"><span class="pre">latest</span></code> version on <code class="docutils literal notranslate"><span class="pre">npmjs.com</span></code> appears to be chronological rather
+than by version number.)</p>
+<p>If you need access to the source code, as well.  Then use</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm install mathjax-full@3
+</pre></div>
+</div>
+<p>which installs MathJax in the <code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full</span></code>
+subdirectory, the source files for the components in
+<code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full/components/src</span></code>, the typescript source
+files for MathJax in <code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full/ts</span></code>, and the
+compiled javascript files from the typescript source in
+<code class="docutils literal notranslate"><span class="pre">node_modules/mathjax-full/js</span></code>.</p>
+</section>
+<section id="getting-mathjax-via-git">
+<span id="mathjax-git"></span><h3>Getting MathJax via git<a class="headerlink" href="#getting-mathjax-via-git" title="Permalink to this heading"></a></h3>
+<p>To obtain a copy of MathJax from the GitHub component repository, use the
+command</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mathjax/MathJax.git mathjax
+</pre></div>
+</div>
+<p>This will install a copy of MathJax in the <code class="docutils literal notranslate"><span class="pre">mathjax/es5</span></code> directory.</p>
+<p>If you need access to the source code as well, then use</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mathjax/MathJax-src.git mathjax
+</pre></div>
+</div>
+<p>which will install the source code for MathJax in the
+<code class="docutils literal notranslate"><span class="pre">mathjax</span></code> sub-directory of your current directory.  You will need to
+compile the typescript source files and build the component files by
+hand, as they are not part of the repository itself.  To do this, do
+the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> mathjax
+npm install
+npm run compile
+npm run make-components
+<span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>This will compile the typescript source files from the <code class="docutils literal notranslate"><span class="pre">mathjax/ts</span></code>
+directory into javascript files in the <code class="docutils literal notranslate"><span class="pre">mathjax/js</span></code> directory, and
+then will build the component files from <code class="docutils literal notranslate"><span class="pre">mathjax/components/src</span></code>
+into the <code class="docutils literal notranslate"><span class="pre">mathjax/es5</span></code> directory.</p>
+</section>
+</section>
+<section id="make-the-files-available">
+<span id="serve-files"></span><h2>Make the Files Available<a class="headerlink" href="#make-the-files-available" title="Permalink to this heading"></a></h2>
+<p>Once you have acquired the MathJax files by one of the methods
+described above, you need to make the proper files available on your
+web server.  Note that most of the files in the MathJax distribution
+are not needed on the server.  For example, the <code class="docutils literal notranslate"><span class="pre">mathjax/ts</span></code>
+directory is typescript source code for MathJax, and this is compiled
+into the javascript files found in the <code class="docutils literal notranslate"><span class="pre">mathjax/js</span></code> directory.  But
+even these are not the files you want on your server.  These
+javascript files are further processed into the MathJax components
+stored in the <code class="docutils literal notranslate"><span class="pre">mathjax/es5</span></code> files using the data in the
+<code class="docutils literal notranslate"><span class="pre">mathjax/components/src</span></code> directory.</p>
+<p>It is the contents of the <code class="docutils literal notranslate"><span class="pre">mathjax/es5</span></code> directory that
+you want to make available on your server, as these are the files that
+are served from the CDNs that provide MathJax.  You should move them
+to a convenient location on your server.  This might be a top-level
+directory called <code class="docutils literal notranslate"><span class="pre">mathjax</span></code>, for example.</p>
+</section>
+<section id="linking-to-you-your-copy-of-mathjax">
+<span id="link-files"></span><h2>Linking to you Your Copy of MathJax<a class="headerlink" href="#linking-to-you-your-copy-of-mathjax" title="Permalink to this heading"></a></h2>
+<p>You can include MathJax in your web page by putting</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;path-to-MathJax/tex-chtml.js&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>in your document’s <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> block.  Here, <code class="docutils literal notranslate"><span class="pre">tex-chtml.js</span></code> is the
+combined component that you are loading, and this is just an example; you
+will need to pick the one you want to use.  See the section on
+<a class="reference internal" href="configuration.html#web-configuration"><span class="std std-ref">Configuring and Loading MathJax</span></a> for more details.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">path-to-MathJax</span></code> should be replaced by the URL for the main
+MathJax directory, so if you have put the <code class="docutils literal notranslate"><span class="pre">mathjax/es5</span></code>
+directory at the top level of you server’s web site and named it
+<code class="docutils literal notranslate"><span class="pre">mathjax</span></code>, you could use</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/mathjax/tex-chtml.js&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>to load MathJax in your page.  For example, your page could look like</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        ...
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/mathjax/tex-chtml.js&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MathJax-script&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        ...
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="fonts-on-shared-servers">
+<span id="same-origin-policy"></span><h2>Fonts on Shared Servers<a class="headerlink" href="#fonts-on-shared-servers" title="Permalink to this heading"></a></h2>
+<p>Typically, you want to have MathJax installed on the same server as
+your web pages that use MathJax. There are times, however, when that
+may be impractical, or when you want to use a MathJax installation at
+a different site. For example, a departmental server at
+<code class="docutils literal notranslate"><span class="pre">www.math.yourcollege.edu</span></code> might like to use a college-wide
+installation at <code class="docutils literal notranslate"><span class="pre">www.yourcollege.edu</span></code> rather than installing a
+separate copy on the departmental machine. MathJax can certainly be
+loaded from another server, but there is one important caveat —
+The same-origin security policy for cross-domain
+scripting.</p>
+<p>Some browsers’ (e.g., Firefox’s) interpretation of the same-origin
+policy is more strict than most other browsers, and it affects how
+fonts are loaded with the <code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code> CSS directive. MathJax’s
+CommonHTML output modes use this directive to load web-based math
+fonts into a page when the user doesn’t have them installed locally on
+their own computer. These browsers’ security policies, however, only allow
+this when the fonts come from the same server as the web page itself,
+so if you load MathJax (and hence its web fonts) from a different
+server, they won’t be able to access those web fonts. In this case,
+MathJax’s CommonHTML output mode will not show the correct
+fonts.</p>
+<p>There is a solution to this, however, if you manage the server where
+MathJax is installed, and if that server is running the Apache web
+software. In the remote server’s MathJax folder, create a file
+called <code class="docutils literal notranslate"><span class="pre">.htaccess</span></code> that contains the following lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">FilesMatch</span> <span class="s2">&quot;\.(ttf|otf|eot|woff)$&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">mod_headers</span><span class="o">.</span><span class="n">c</span><span class="o">&gt;</span>
+<span class="n">Header</span> <span class="nb">set</span> <span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span> <span class="s2">&quot;*&quot;</span>
+<span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">FilesMatch</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and make sure the permissions allow the server to read this file. (The
+file’s name starts with a period, which causes it to be an “invisible”
+file on unix-based operating systems. Some systems, particularly those
+with graphical user interfaces, may not allow you to create such
+files, so you might need to use the command-line interface to
+accomplish this.)</p>
+<p>This file should make it possible for pages at other sites to load
+MathJax from this server in such a way that Firefox (and the other
+browsers with similar same-origin policies that apply to fonts) will
+be able to download the web-based fonts. If you want to restrict the
+sites that can access the web fonts, change the
+<code class="docutils literal notranslate"><span class="pre">Access-Control-Allow-Origin</span></code> line to something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Header</span> <span class="nb">set</span> <span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span> <span class="s2">&quot;http://www.math.yourcollege.edu&quot;</span>
+</pre></div>
+</div>
+<p>so that only pages at <code class="docutils literal notranslate"><span class="pre">www.math.yourcollege.edu</span></code> will be able to
+download the fonts from this site. See the open font library
+discussion of web-font linking for more details.</p>
+</section>
+<section id="firefox-and-local-fonts">
+<span id="firefox-local-fonts"></span><h2>Firefox and Local Fonts<a class="headerlink" href="#firefox-and-local-fonts" title="Permalink to this heading"></a></h2>
+<p>Firefox’s same-origin security policy affects its ability to load
+web-based fonts, as described above. This has implications not only to
+cross-domain loading of MathJax, but also to using MathJax locally
+from your hard disk. Firefox’s interpretation of the same-origin
+policy for local files used to be that the “same domain” for a page is
+the directory where that page exists, or any of its subdirectories.
+This allowed MathJax to be loaded from a subdirectory of the director
+where the web page was loaded.</p>
+<p>This is no longer the case with Firefox starting with version 68 and
+going forward (see <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp#Local_File_Security_in_Firefox_68">their documentation</a>).
+Now there is no same origin for a <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL (the origin for a
+page loaded from a <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL is unique).</p>
+<p>This means there are limited options for using MathJax in Firefox with
+a local copy of MathJax.  The easiest option is to use the SVG output
+renderer rather than the CommonHTML output, as that does not require
+fonts to be loaded, so avoids the same-origin issue.  Alternatively,
+you could install the MathJax TeX fonts as system fonts so that
+Firefox doesn’t hav to try to load them as web fonts.</p>
+<p>This is an unfortunate restriction for MathJax (though we understand
+their reasoning), but it is a limitation imposed by Firefox’s
+security model that MathJax can not circumvent. Currently, this is not
+a problem for other browsers, though there is no guarantee that it
+won’t be in the future.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="typeset.html" class="btn btn-neutral float-left" title="Typesetting and Converting Mathematics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="webpack.html" class="btn btn-neutral float-right" title="Making a Custom Build of MathJax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

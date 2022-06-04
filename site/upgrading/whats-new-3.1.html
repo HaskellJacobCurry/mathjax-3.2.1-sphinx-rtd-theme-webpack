@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What’s New in MathJax v3.1 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What’s New in MathJax v3.0" href="whats-new-3.0.html" />
+    <link rel="prev" title="What’s New in MathJax v3.2" href="whats-new-3.2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">What's New</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="whats-new-3.2.html">In MathJax v3.2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">In MathJax v3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats-new-3.0.html">In MathJax v3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earlier/index.html">In Earlier Versions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">What’s New in MathJax</a> &raquo;</li>
+      <li>What’s New in MathJax v3.1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/upgrading/whats-new-3.1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-s-new-in-mathjax-v3-1">
+<span id="whats-new-3-1"></span><h1>What’s New in MathJax v3.1<a class="headerlink" href="#what-s-new-in-mathjax-v3-1" title="Permalink to this heading"></a></h1>
+<p>Version 3.1 includes a number of new features, as well as bug fixes
+for several issues with version 3.0.  These are described below.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#v3-1-tex-package-name-changes"><span class="std std-ref">TeX Package Name Changes</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-tex-format-error"><span class="std std-ref">TeX Error Formatting</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-tex-noundefined-options"><span class="std std-ref">Noundefined Package Options</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-tex-textmacros"><span class="std std-ref">New textmacros Package</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-safe"><span class="std std-ref">New Safe Extension</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-accessibility"><span class="std std-ref">New Accessibility Features</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-mathml-verification-options"><span class="std std-ref">MathML Verification Options</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-output-options"><span class="std std-ref">New Output Configuration Options</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-startup-promise"><span class="std std-ref">Startup Promise Revisions</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-typesetclear"><span class="std std-ref">New API for Clearing Typeset Content</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-getmathitemswithin"><span class="std std-ref">New API for Getting Math within a Container</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-sreready"><span class="std std-ref">Change to SRE Interface</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-litedom"><span class="std std-ref">Fixes to the LiteDOM and DOMAdaptors</span></a></p></li>
+<li><p><a class="reference internal" href="#v3-1-demos"><span class="std std-ref">Updated Demos</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<section id="tex-package-name-changes">
+<span id="v3-1-tex-package-name-changes"></span><h2>TeX Package Name Changes<a class="headerlink" href="#tex-package-name-changes" title="Permalink to this heading"></a></h2>
+<p>The names of several tex packages have been changed to conform to a
+new naming convention.  All package names are now entirely in lower
+case.  The mixed case naming used in the past proved to be
+problematic, and so four extensions have been renamed to all lower
+case:  <code class="docutils literal notranslate"><span class="pre">amscd</span></code>, <code class="docutils literal notranslate"><span class="pre">colorv2</span></code>, <code class="docutils literal notranslate"><span class="pre">configmacros</span></code>, and <code class="docutils literal notranslate"><span class="pre">tagformat</span></code>.</p>
+<p>If you are using the component system to load MathJax, the old names
+will continue to work for now, but the backward-compatibility support
+may be removed in the future, so you should change the names to their
+lower case versions for protection against future changed.  Note that
+the names need to be changed in not only in the <code class="xref js js-attr docutils literal notranslate"><span class="pre">tex.packages</span></code>
+array but also in the name of their configuration options, if any, and
+in the <cite>autoload</cite> configuration (e.g., if you are disabling the
+autoloading of the <code class="docutils literal notranslate"><span class="pre">colorv2</span></code> extension).</p>
+<p>If you are using direct imports of the MathJax modules, you will need
+to change to the new names now, as there is no backward-compatibility
+option for that.</p>
+</section>
+<section id="tex-error-formatting">
+<span id="v3-1-tex-format-error"></span><h2>TeX Error Formatting<a class="headerlink" href="#tex-error-formatting" title="Permalink to this heading"></a></h2>
+<p>There is a new <code class="xref js js-attr docutils literal notranslate"><span class="pre">formatError</span></code> option for the TeX input jax that
+provides a function that is called when a syntax or other error occurs
+during the processing of a TeX expression.  This can be used to trap
+the errors for reporting purposes, or to process the errors in other
+ways.  See the <a class="reference internal" href="../options/input/tex.html#tex-formaterror"><span class="std std-ref">formatError</span></a> documenation.</p>
+</section>
+<section id="noundefined-package-options">
+<span id="v3-1-tex-noundefined-options"></span><h2>Noundefined Package Options<a class="headerlink" href="#noundefined-package-options" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">noundefined</span></code> package now has configuration options similar to
+the ones available in the ones available in version 2.  These include
+tha ability to set the text color, background color, and size of the
+text to use for disoplaying undefined macro names within TeX formulas.
+See the <a class="reference internal" href="../input/tex/extensions/noundefined.html#tex-noundefined-options"><span class="std std-ref">noundefined options</span></a> for
+details.</p>
+</section>
+<section id="new-textmacros-package">
+<span id="v3-1-tex-textmacros"></span><h2>New <cite>textmacros</cite> Package<a class="headerlink" href="#new-textmacros-package" title="Permalink to this heading"></a></h2>
+<p>There is a new <cite>textmacros</cite> package for the TeX input jax that
+provides support for processing a number of text-mode macros when they
+appear inside <code class="docutils literal notranslate"><span class="pre">\text{}</span></code> or other similar settings that produce
+text-mode material.  This allows you to quote TeX special characters,
+create accented characters, change fonts and sizes, add spacing, etc.,
+within text-mode material.  See the <a class="reference internal" href="../input/tex/extensions/textmacros.html#tex-textmacros"><span class="std std-ref">textmacros</span></a> page
+for complete details.</p>
+</section>
+<section id="new-safe-extension">
+<span id="v3-1-safe"></span><h2>New Safe Extension<a class="headerlink" href="#new-safe-extension" title="Permalink to this heading"></a></h2>
+<p>The <cite>Safe</cite> extension hs now been ported from v2 to v3.  This
+extensions allows you to filter the values used in the attributes of
+the underlying MathML that is generated from the TeX, AsciiMath, or
+MathML input.  This can be used to prevent certain URLs from being
+used, or certain CSS styles from being used, etc.  See
+<a class="reference internal" href="../web/typeset.html#safe-typesetting"><span class="std std-ref">Typesetting User-Supplied Content</span></a> for more details.</p>
+</section>
+<section id="new-accessibility-features">
+<span id="v3-1-accessibility"></span><h2>New Accessibility Features<a class="headerlink" href="#new-accessibility-features" title="Permalink to this heading"></a></h2>
+<p>MathJax’s accessibility code has undergone some internal improvements
+for speed and reliability.  In addition, there is now a localization
+of the speech output for the German lanugage.  The accessibility
+contextual menu has been updated to include the ability to select the
+localization language (in the <cite>speech</cite> submenu), and to expose
+additional features, such as the ability to set the opacity of the
+foreground and background colors in the <cite>highlight</cite> submenu.  Finally,
+there is a new control panel for managing the Clearspeak preferences
+available in the <cite>Clearspeak rules</cite> submenu of the <cite>Speech</cite> menu.  See
+the <a class="reference internal" href="../basic/a11y-extensions.html#a11y-extensions"><span class="std std-ref">Accessibility Extension</span></a> for more details.</p>
+</section>
+<section id="mathml-verification-options">
+<span id="v3-1-mathml-verification-options"></span><h2>MathML Verification Options<a class="headerlink" href="#mathml-verification-options" title="Permalink to this heading"></a></h2>
+<p>The MathML input jax has the ability to check and report or
+(sometimes) correct errors in MathML trees, but the options that
+control this checking were not documented, and could not be changed
+easily.  Version 3.1 exposes these options so they can be set in the
+configuration block for the MathML input jax.</p>
+</section>
+<section id="new-output-configuration-options">
+<span id="v3-1-output-options"></span><h2>New Output Configuration Options<a class="headerlink" href="#new-output-configuration-options" title="Permalink to this heading"></a></h2>
+<p>There are two new output configuration options, and updated behavior
+and defaults for two existing options.  These options control the
+fonts used for <code class="docutils literal notranslate"><span class="pre">&lt;mtext&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;merror&gt;</span></code> elements.  The original
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">mtextInheritFont</span></code> and <code class="xref js js-attr docutils literal notranslate"><span class="pre">merrorInheritFont</span></code> properties
+controlled whether these elements used the same font as the
+surrounding text, but neither worked properly in version 3.0.  This
+has been fixed in version 3.1 so these now properly cause the
+surrounding font to be used for the contents of the specified elements
+when set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>If these are set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the new <code class="xref js js-attr docutils literal notranslate"><span class="pre">mtextFont</span></code> and
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">merrorFont</span></code> properties specify a font family (or list of families)
+to use fort the content of these elemements.  This allows you to force
+a specific font to be used for the text within mathematics.  If these
+are set to an empty string, then the MathJax fonts will be used.</p>
+<p>The defaults for these are</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mtextInheritFont</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="nx">merrorInheritFont</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="nx">mtextFont</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="nx">merrorFont</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;serif&#39;</span><span class="p">,</span><span class="w"></span>
+</pre></div>
+</div>
+<p>which means that the MathJax fonts will be used for <code class="docutils literal notranslate"><span class="pre">&lt;mtext&gt;</span></code>
+elements, and the browser’s serif font will be used for <code class="docutils literal notranslate"><span class="pre">&lt;merror&gt;</span></code>
+text.  See the <a class="reference internal" href="../options/output/index.html#output-common-options"><span class="std std-ref">Options Common to All Output Processors</span></a> for more information.</p>
+<p><strong>Note:</strong> the default for <code class="xref js js-attr docutils literal notranslate"><span class="pre">merrorInheritFont</span></code> has been changed from
+<code class="docutils literal notranslate"><span class="pre">true</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> now that <code class="xref js js-attr docutils literal notranslate"><span class="pre">merrorFont</span></code> is available.</p>
+</section>
+<section id="startup-promise-revisions">
+<span id="v3-1-startup-promise"></span><h2>Startup Promise Revisions<a class="headerlink" href="#startup-promise-revisions" title="Permalink to this heading"></a></h2>
+<p>The <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> now works in a more intuitive way.
+In the past, it was initially set to be a promise that resolves when
+MathJax is ready and the <code class="docutils literal notranslate"><span class="pre">DOMContentLoaded</span></code> event occurs, and was
+changed by the <code class="xref js js-meth docutils literal notranslate"><span class="pre">startup.pageReady()</span></code> function to one that
+resolve when the initial typesetting is finished.  So you could not
+use <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> to tell when the initial
+typesetting is complete without overriding the
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">startup.pageReady()</span></code> method as well.</p>
+<p>In version 3.1, the <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.promise</span></code> has been changed
+to one that resolves when the action of the <code class="xref js js-meth docutils literal notranslate"><span class="pre">startup.pageReady()</span></code>
+method is finished (which includes the initial typesetting action).
+That makes this promise a reliable way to determine when the initial
+typesetting is finished.</p>
+<p>See the sections on <a class="reference internal" href="../web/configuration.html#startup-action"><span class="std std-ref">Performing Actions During Startup</span></a>, on <a class="reference internal" href="../web/typeset.html#typeset-async"><span class="std std-ref">Handling Asynchronous Typesetting</span></a>,
+and on the <a class="reference internal" href="../options/startup/startup.html#startup-pageready"><span class="std std-ref">pageReady()</span></a> for more
+details.</p>
+</section>
+<section id="new-api-for-clearing-typeset-content">
+<span id="v3-1-typesetclear"></span><h2>New API for Clearing Typeset Content<a class="headerlink" href="#new-api-for-clearing-typeset-content" title="Permalink to this heading"></a></h2>
+<p>If you are dynamically adding and removing content from your page, you
+need to tell MathJax abiout what you are doing so that it can typeset
+any new mathematics, and forget about any old typeset mathematics that
+you have removed.  In version 3.0, the <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.typesetClear()</span></code>
+method could be used to tell MathJax to forget about <em>all</em> the
+mathematics that is ahs typeset, but if you only removed some of it,
+there was no easy way to tell it to forget about only the math you
+removed.  This situation has been improved in version 3.1 by allowing
+the <code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.typesetClear()</span></code> method to accept an array of
+elements whose contents should be forgotten.  See <a class="reference internal" href="../web/typeset.html#typeset-clear"><span class="std std-ref">Updating Previously Typeset Content</span></a>
+for more details.</p>
+</section>
+<section id="new-api-for-getting-math-within-a-container">
+<span id="v3-1-getmathitemswithin"></span><h2>New API for Getting Math within a Container<a class="headerlink" href="#new-api-for-getting-math-within-a-container" title="Permalink to this heading"></a></h2>
+<p>MathJax keeps track of the math that you have typeset using a list of
+objects called <cite>MathItems</cite>.  These store the original math string, the
+locatino of the math in the document, the input jax used to process
+it, and so on.  In the past, you had access to these through a list
+stored in the <cite>MathDocument</cite> object stored at <code class="xref js js-attr docutils literal notranslate"><span class="pre">MathJax.startup.document</span></code>,
+but it was not easy to get access to the individual MathItems in a
+convenient way.  In v3.1 there is now a function
+<code class="xref js js-meth docutils literal notranslate"><span class="pre">MathJax.startup.document.getMathItemsWithin()</span></code> that returns all
+the MathItems for the typeset math within a DOM container element (or
+collection of DOM elements).  See <a class="reference internal" href="../web/typeset.html#get-math-items"><span class="std std-ref">Looking up the Math on the Page</span></a> for details.</p>
+</section>
+<section id="change-to-sre-interface">
+<span id="v3-1-sreready"></span><h2>Change to SRE Interface<a class="headerlink" href="#change-to-sre-interface" title="Permalink to this heading"></a></h2>
+<p>In version 3.0.5, The <cite>a11y/sre</cite> module exposed a value
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">sreReady</span></code> that was a promise that would be resolved when the
+Speech-Rule Engine was ready to use.  Due to changes in SRE (which can
+now be configured to load localized translation data, and so may
+become un-ready while that is happening), the <code class="xref js js-attr docutils literal notranslate"><span class="pre">sreReady</span></code> value
+in version 3.1.0 is now a function returning a promise, so should be
+called as <code class="xref js js-meth docutils literal notranslate"><span class="pre">sreReady()</span></code>.</p>
+</section>
+<section id="fixes-to-the-litedom-and-domadaptors">
+<span id="v3-1-litedom"></span><h2>Fixes to the LiteDOM and DOMAdaptors<a class="headerlink" href="#fixes-to-the-litedom-and-domadaptors" title="Permalink to this heading"></a></h2>
+<p>The <cite>LiteDOM</cite> in version 3.0.5 failed to process comments correctly:
+they were properly read and ignored, but where not included in the
+output when the DOM is serialized.  In version 3.1.0, this has been
+fixes so that comments are properly maintained.  In addition, the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">doctype</span></code> of the document is now retained by the <cite>LiteDOM</cite>, and
+can be accessed by a new <code class="xref js js-meth docutils literal notranslate"><span class="pre">doctype()</span></code> method of the <cite>DOMAdaptor</cite>
+class (and its subclasses).</p>
+</section>
+<section id="updated-demos">
+<span id="v3-1-demos"></span><h2>Updated Demos<a class="headerlink" href="#updated-demos" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://github.com/mathjax/MathJax-demos-web#MathJax-demos-web">web</a>
+and <a class="reference external" href="https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node">node</a>
+examples have been updated to use the new features available in
+version 3.1.0, and to include more examples.  In particular, the node
+examples now include demonstrations of using the simpler loading
+mechanism for node applications, using puppeteer to perform
+server-side processing, and using JSDOM for server-side processing.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whats-new-3.2.html" class="btn btn-neutral float-left" title="What’s New in MathJax v3.2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="whats-new-3.0.html" class="btn btn-neutral float-right" title="What’s New in MathJax v3.0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Extension Options &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Startup and Loader Options" href="startup/index.html" />
+    <link rel="prev" title="Contextual Menu Options" href="menu.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuring MathJax</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="input/index.html">Input Processor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/index.html">Output Processor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">Document Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility Extensions Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html">Contextual Menu Options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Safe Extension Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-configuration-block">The Configuration Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#option-descriptions">Option Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#developer-options">Developer Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="startup/index.html">Startup and Loader Options</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Configuring MathJax</a> &raquo;</li>
+      <li>Safe Extension Options</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/options/safe.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="safe-extension-options">
+<span id="safe-options"></span><h1>Safe Extension Options<a class="headerlink" href="#safe-extension-options" title="Permalink to this heading"></a></h1>
+<p>The <cite>ui/safe</cite> component provides a means of filtering the various
+attributes of the mathematics on the page so that certain limitations
+on their content is enforced.  This allows you to prevent
+<code class="docutils literal notranslate"><span class="pre">javascript:</span></code> or <code class="docutils literal notranslate"><span class="pre">data:</span></code> URLs from appearing in <code class="xref js js-attr docutils literal notranslate"><span class="pre">href</span></code>
+attributes, for example, which would otherwise cause potential
+security issues.</p>
+<p>All mathematics processed by MathJax is converted into an internal
+MathML structure, regardless of its initial format in the page.  The
+<cite>ui/safe</cite> extension works by walking the internal MathML tree for the
+mathematics and checking the attributes of the nodes in the tree to
+maker sure they comply with the restrictions you specify.</p>
+<p>To load the <cite>ui/safe</cite> extension, add <code class="docutils literal notranslate"><span class="pre">'ui/safe'</span></code> to the <code class="docutils literal notranslate"><span class="pre">load</span></code>
+array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your MathJax configuration.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;ui/safe&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The <cite>ui/safe</cite> extension can filter several classes of information:
+URLs, class names, css IDs, and css style declarations.  The filtering
+for these can each be set to one of three different values: <code class="docutils literal notranslate"><span class="pre">'all'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'safe'</span></code> or <code class="docutils literal notranslate"><span class="pre">'none'</span></code>.  When set to <code class="docutils literal notranslate"><span class="pre">'all'</span></code> no filtering is
+performed (all values are allowed); when set to <code class="docutils literal notranslate"><span class="pre">'none'</span></code> the value
+is always cleared (no value can be set for that attribute); and when
+set to <code class="docutils literal notranslate"><span class="pre">'safe'</span></code> the values are filtered using additional criteria
+given in the options, as listed below.</p>
+<hr class="docutils" />
+<section id="the-configuration-block">
+<h2>The Configuration Block<a class="headerlink" href="#the-configuration-block" title="Permalink to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">safeOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">allow</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//  Values can be &quot;all&quot;, &quot;safe&quot;, or &quot;none&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//</span><span class="w"></span>
+<span class="w">        </span><span class="nx">URLs</span><span class="o">:</span><span class="w">    </span><span class="s1">&#39;safe&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// safe are in safeProtocols below</span><span class="w"></span>
+<span class="w">        </span><span class="nx">classes</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;safe&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// safe start with mjx- (can be set by pattern below)</span><span class="w"></span>
+<span class="w">        </span><span class="nx">cssIDs</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;safe&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// safe start with mjx- (can be set by pattern below)</span><span class="w"></span>
+<span class="w">        </span><span class="nx">styles</span><span class="o">:</span><span class="w">  </span><span class="s1">&#39;safe&#39;</span><span class="w">    </span><span class="c1">// safe are in safeStyles below</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  Which URL protocols are allowed</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="nx">safeProtocols</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">http</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">javascript</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  Which styles are allowed</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="nx">safeStyles</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">cursor</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">textShadow</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fontFamily</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fontStyle</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fontWeight</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outline</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nx">lengthMax</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w">                           </span><span class="c1">// Largest padding/border/margin, etc. in em&#39;s</span><span class="w"></span>
+<span class="w">      </span><span class="nx">scriptsizemultiplierRange</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">.6</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">],</span><span class="w">     </span><span class="c1">// Valid range for scriptsizemultiplier</span><span class="w"></span>
+<span class="w">      </span><span class="nx">scriptlevelRange</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">],</span><span class="w">              </span><span class="c1">// Valid range for scriptlevel</span><span class="w"></span>
+<span class="w">      </span><span class="nx">classPattern</span><span class="o">:</span><span class="w"> </span><span class="sr">/^mjx-[-a-zA-Z0-9_.]+$/</span><span class="p">,</span><span class="w">  </span><span class="c1">// Pattern for allowed class names</span><span class="w"></span>
+<span class="w">      </span><span class="nx">idPattern</span><span class="o">:</span><span class="w"> </span><span class="sr">/^mjx-[-a-zA-Z0-9_.]+$/</span><span class="p">,</span><span class="w">     </span><span class="c1">// Pattern for allowed ids</span><span class="w"></span>
+<span class="w">      </span><span class="nx">dataPattern</span><span class="o">:</span><span class="w"> </span><span class="sr">/^data-mjx-/</span><span class="w">               </span><span class="c1">// Pattern for data attributes</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="option-descriptions">
+<h2>Option Descriptions<a class="headerlink" href="#option-descriptions" title="Permalink to this heading"></a></h2>
+<span class="target" id="safe-allow"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">allow:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>These settings control what level of filtering to perform for each
+of the categories provided.  When set to <code class="docutils literal notranslate"><span class="pre">'all'</span></code> no filtering is
+performed (all values are allowed); when set to <code class="docutils literal notranslate"><span class="pre">'none'</span></code> the
+value is always cleared (no value can be set for that attribute);
+and when set to <code class="docutils literal notranslate"><span class="pre">'safe'</span></code> the values are filtered using additional
+criteria given in the remaining options.</p>
+</dd></dl>
+
+<span class="target" id="safe-safeprotocols"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">safeProtocols:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>This object controls which internet protocols are allowed to be
+used in URLs within the mathematics (in <code class="xref js js-attr docutils literal notranslate"><span class="pre">href</span></code> and
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">src</span></code> attributes).  A protocol whose value is give as
+<code class="docutils literal notranslate"><span class="pre">true</span></code> will be allowed, and one given as <code class="docutils literal notranslate"><span class="pre">false</span></code> will not be.
+For example, the default is to allow <code class="docutils literal notranslate"><span class="pre">http:</span></code>, <code class="docutils literal notranslate"><span class="pre">https:</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">file:</span></code> protocols, but not <code class="docutils literal notranslate"><span class="pre">javascript:</span></code> or <code class="docutils literal notranslate"><span class="pre">data:</span></code>
+protocols.  A protocol that is not listed is considered to be
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</dd></dl>
+
+<span class="target" id="safe-safestyles"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">safeStyles:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>This object specifies which CSS style properties are allowed to be
+specified in the <code class="xref js js-attr docutils literal notranslate"><span class="pre">style</span></code> attribute of a MathML node.  When
+set to <code class="docutils literal notranslate"><span class="pre">true</span></code> that style (and any sub-styles of the style) are
+allowed; when <code class="docutils literal notranslate"><span class="pre">false</span></code> or not listed, the style is not allowed to
+be specified.  For example, since <code class="xref js js-attr docutils literal notranslate"><span class="pre">border</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">style</span></code> attribute can include <code class="xref js js-attr docutils literal notranslate"><span class="pre">border</span></code>,
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">border-top</span></code>, <code class="xref js js-attr docutils literal notranslate"><span class="pre">border-top-width</span></code>, and so on.  Some
+style values may be further filtered based on other configuration
+options.</p>
+</dd></dl>
+
+<span class="target" id="safe-lengthmax"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">lengthMax:</span> <span class="pre">3</span></span></dt>
+<dd><p>This specifies the largest dimension allowed for styles like
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">padding</span></code>, <code class="xref js js-attr docutils literal notranslate"><span class="pre">border</span></code>, <code class="xref js js-attr docutils literal notranslate"><span class="pre">margin</span></code>, etc. These are
+limited in order to prevent users from making borders that are
+gigantic, for example.  The values of these attributes must have
+absolute value less than this value (in ems).</p>
+</dd></dl>
+
+<span class="target" id="safe-scriptsizemultiplierrange"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">scriptsizemultiplierRange:</span> <span class="pre">[.6,</span> <span class="pre">1]</span></span></dt>
+<dd><p>This specifies the range of values allowed for the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">scriptsizemultiplier</span></code> MathML attribute (for <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&lt;mstyle&gt;</span></code> nodes).  These are filtered to prevent users from
+making super- and subscripts too large (or too small).</p>
+</dd></dl>
+
+<span class="target" id="safe-scriptlevelrange"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">scriptlevelRange:</span> <span class="pre">[-2,</span> <span class="pre">2]</span></span></dt>
+<dd><p>This specifies the range of values allowd for the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">scriptlevel</span></code> MathML attribute (for <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&lt;mstyle&gt;</span></code> nodes).  These are filtered to prevent users from
+making text that is too large (via negative <code class="xref js js-attr docutils literal notranslate"><span class="pre">scriptlevel</span></code>) or
+too small (via large <code class="xref js js-attr docutils literal notranslate"><span class="pre">scriptlevel</span></code>).</p>
+</dd></dl>
+
+<span class="target" id="safe-classpattern"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">classPattern:</span> <span class="pre">/^mjx-[-a-zA-Z0-9_.]+$/</span></span></dt>
+<dd><p>This gives a regular expression used to determine if a class name
+is allowed to be specified.  The default is to allow names starting
+with <code class="docutils literal notranslate"><span class="pre">mjx-</span></code> and containing letters, numbers, minus, period, and
+underscore.</p>
+</dd></dl>
+
+<span class="target" id="safe-idpattern"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">idPattern:</span> <span class="pre">/^mjx-[-a-zA-Z0-9_.]+$/</span></span></dt>
+<dd><p>This gives a regular expression used to determine what node
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">id</span></code> values are allowed to be specified.  The default is to
+allow ids starting with <code class="docutils literal notranslate"><span class="pre">mjx-</span></code> and containing letters, numbers,
+minus, period, and underscore.</p>
+</dd></dl>
+
+<span class="target" id="safe-datapattern"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">dataPattern:</span> <span class="pre">/^data-mjx-/</span></span></dt>
+<dd><p>This gives a regular expression used to determine what <code class="xref js js-attr docutils literal notranslate"><span class="pre">data-</span></code>
+attribute names are allowed to be specified.  The default is to
+allow <code class="xref js js-attr docutils literal notranslate"><span class="pre">data-</span></code> attributes whose names begin with <code class="docutils literal notranslate"><span class="pre">data-mjx-</span></code>.</p>
+</dd></dl>
+
+</section>
+<hr class="docutils" />
+<section id="developer-options">
+<h2>Developer Options<a class="headerlink" href="#developer-options" title="Permalink to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">safeOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  CSS styles that have Top/Right/Bottom/Left versions</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="nx">styleParts</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outline</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//  CSS styles that are lengths needing max/min testing</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//    A string value means test that style value;</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//    An array gives [min,max] in em&#39;s</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//    Otherwise use [-lengthMax,lengthMax] from above</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//</span><span class="w"></span>
+<span class="w">      </span><span class="nx">styleLengths</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">borderTop</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;borderTopWidth&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">borderRight</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;borderRightWidth&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">borderBottom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;borderBottomWidth&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">borderLeft</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;borderLeftWidth&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">paddingTop</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">paddingRight</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">paddingBottom</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">paddingLeft</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">marginRight</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">marginBottom</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">marginLeft</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outlineTop</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outlineRight</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outlineBottom</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">outlineLeft</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">.707</span><span class="p">,</span><span class="w"> </span><span class="mf">1.44</span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<span class="target" id="safe-styleparts"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">styleParts:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>This object indicates which safe styles have
+<code class="docutils literal notranslate"><span class="pre">Top</span></code>/<code class="docutils literal notranslate"><span class="pre">Right</span></code>/<code class="docutils literal notranslate"><span class="pre">Bottom</span></code>/<code class="docutils literal notranslate"><span class="pre">Left</span></code> versions (so that the
+sub-parts can be properly checked).  If you extend the
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">safeStyles</span></code> to include others that have these four
+sub-properties, be sure to add them here.</p>
+</dd></dl>
+
+<span class="target" id="safe-stylelengths"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">styleLengths:</span> <span class="pre">{...}</span></span></dt>
+<dd><p>This object lists the styles that are lengths that need to be
+tested.  A string value means test that style’s value (e.g.,
+<code class="xref js js-attr docutils literal notranslate"><span class="pre">borderTop</span></code> is set to <code class="docutils literal notranslate"><span class="pre">'borderTopWidth'</span></code>, so the border’s
+width is tested).  An array value gives the minimum and maximum
+value (in ems) that the property can have, and <code class="docutils literal notranslate"><span class="pre">true</span></code> means use
+<code class="docutils literal notranslate"><span class="pre">[-lengthMax,</span> <span class="pre">lengthMax]</span></code> using the <code class="xref js js-attr docutils literal notranslate"><span class="pre">lengthMax</span></code> option
+listed above.</p>
+</dd></dl>
+
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="menu.html" class="btn btn-neutral float-left" title="Contextual Menu Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="startup/index.html" class="btn btn-neutral float-right" title="Startup and Loader Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

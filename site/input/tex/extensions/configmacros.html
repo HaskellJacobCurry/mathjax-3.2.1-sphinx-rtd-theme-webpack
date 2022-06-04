@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>configmacros &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="empheq" href="empheq.html" />
+    <link rel="prev" title="colorv2" href="colorv2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The TeX/LaTeX Extension List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="action.html">action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ams.html">ams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amscd.html">amscd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload.html">autoload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boldsymbol.html">boldsymbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braket.html">braket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bussproofs.html">bussproofs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cancel.html">cancel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cases.html">cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centernot.html">centernot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colortbl.html">colortbl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorv2.html">colorv2</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">configmacros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configmacros-options">configmacros Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="empheq.html">empheq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enclose.html">enclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extpfeil.html">extpfeil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gensymb.html">gensymb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mathtools.html">mathtools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mhchem.html">mhchem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newcommand.html">newcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noerrors.html">noerrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noundefined.html">noundefined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setoptions.html">setoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagformat.html">tagformat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textcomp.html">textcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textmacros.html">textmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgreek.html">upgreek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verb.html">verb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autobold.html">autobold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload-all.html">autoload-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="begingroup.html">begingroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mediawiki-texvc.html">mediawiki-texvc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">TeX and LaTeX Support</a> &raquo;</li>
+          <li><a href="index.html">The TeX/LaTeX Extension List</a> &raquo;</li>
+      <li>configmacros</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/input/tex/extensions/configmacros.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configmacros">
+<span id="tex-configmacros"></span><h1>configmacros<a class="headerlink" href="#configmacros" title="Permalink to this heading"></a></h1>
+<p>The <cite>configmacros</cite> extension provides the <code class="docutils literal notranslate"><span class="pre">macros</span></code> and
+<code class="docutils literal notranslate"><span class="pre">environments</span></code> configuration options for the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block of your
+MathJax configuration.  This allows you to predefine custom macros end
+environments for your page using javascript.  For example,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">RR</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{\\bf R}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">bold</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;{\\bf #1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nx">environments</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">braced</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;\\left\\{&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\\right\\}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>defines a macro <code class="docutils literal notranslate"><span class="pre">\RR</span></code> that produces a bold “R”, while
+<code class="docutils literal notranslate"><span class="pre">\bold{math}</span></code> typesets the <code class="docutils literal notranslate"><span class="pre">math</span></code> using the bold font (see
+<a class="reference internal" href="../macros.html#tex-macros"><span class="std std-ref">Defining TeX macros</span></a> for more information).  It also creates the
+<code class="docutils literal notranslate"><span class="pre">braced</span></code> environment that puts <code class="docutils literal notranslate"><span class="pre">\left\{</span></code> and <code class="docutils literal notranslate"><span class="pre">\right\}</span></code> around
+its contents.</p>
+<p>This extension is already loaded in all the components that
+include the TeX input jax, other than <code class="docutils literal notranslate"><span class="pre">input/tex-base</span></code>.  To load the
+<cite>configmacros</cite> extension explicitly (when using <code class="docutils literal notranslate"><span class="pre">input/tex-base</span></code> for
+example), add <code class="docutils literal notranslate"><span class="pre">'[tex]/configmacros'</span></code> to the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the
+<code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your MathJax configuration, and add
+<code class="docutils literal notranslate"><span class="pre">'configmacros'</span></code> to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/configmacros&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;configmacros&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since the <cite>configmacros</cite> extension is included in the combined
+components that contain the TeX input jax, it may already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[-]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;configmacros&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="configmacros-options">
+<span id="tex-configmacros-options"></span><h2>configmacros Options<a class="headerlink" href="#configmacros-options" title="Permalink to this heading"></a></h2>
+<p>The <cite>configmacros</cite> extension adds a <code class="docutils literal notranslate"><span class="pre">macros</span></code> option to the <code class="docutils literal notranslate"><span class="pre">tex</span></code>
+block that lets you pre-define macros, and the <code class="docutils literal notranslate"><span class="pre">environments</span></code> option
+that lets you pre-define your own environments.</p>
+<span class="target" id="tex-macros-option"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">macros:</span> <span class="pre">{}</span></span></dt>
+<dd><p>This lists macros to define before the TeX input processor begins.
+These are <cite>name: value</cite> pairs where the <cite>name</cite> gives the name of
+the TeX macro to be defined, and <cite>value</cite> gives the replacement
+text for the macro.  The <cite>value</cite> can be a simple replacement
+string, or an array of the form <cite>[value, n]</cite>, where <cite>value</cite> is the
+replacement text and <cite>n</cite> is the number of parameters for the
+macro.  The array can have a third entry:  either a string that is
+the default value to give for an optional (bracketed) parameter
+when the macro is used, or an array consisting of template strings
+that are used to separate the various parameters.  The first
+template must precede the first parameter, the second must precede
+the second, and so on until the final which must end the last
+parameter to the macro.  See the examples below.</p>
+<p>Note that since the <cite>value</cite> is a javascript string,
+backslashes in the replacement text must be doubled to prevent
+them from acting as javascript escape characters.</p>
+<p>For example,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">RR</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;{\\bf R}&#39;</span><span class="p">,</span><span class="w">                    </span><span class="c1">// a simple string replacement</span><span class="w"></span>
+<span class="w">  </span><span class="nx">bold</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\boldsymbol{#1}&#39;</span><span class="p">,</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w">     </span><span class="c1">// this macro has one parameter</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ddx</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\frac{d#2}{d#1}&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;x&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// this macro has an optional parameter that defaults to &#39;x&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">abc</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;(#1)&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\cba&#39;</span><span class="p">]]</span><span class="w">  </span><span class="c1">// equivalent to \def\abc#1\cba{(#1)}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>would ask the TeX processor to define four new macros:  <code class="docutils literal notranslate"><span class="pre">\RR</span></code>,
+which produces a bold-face “R”, and <code class="docutils literal notranslate"><span class="pre">\bold{...}</span></code>, which takes one
+parameter and sets it in the bold-face font, <code class="docutils literal notranslate"><span class="pre">\ddx</span></code>, which has
+an optional (bracketed) parameter that defaults to <code class="docutils literal notranslate"><span class="pre">x</span></code>, so that
+<code class="docutils literal notranslate"><span class="pre">\ddx{y}</span></code> produces <code class="docutils literal notranslate"><span class="pre">\frac{dy}{dx}</span></code> while <code class="docutils literal notranslate"><span class="pre">\ddx[t]{y}</span></code>
+produces <code class="docutils literal notranslate"><span class="pre">\frac{dy}{dt}</span></code>, and <code class="docutils literal notranslate"><span class="pre">\abc</span></code> that is equivalent to
+<code class="docutils literal notranslate"><span class="pre">\def\abc#1\cba{(#1)}</span></code>.</p>
+</dd></dl>
+
+<span class="target" id="tex-environments-option"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">environments:</span> <span class="pre">{}</span></span></dt>
+<dd><p>This lists environments to define before the TeX input processor
+begins.  These are <cite>name: value</cite> pairs where the <cite>name</cite> gives the
+name of the environment to be defined, and <cite>value</cite> gives an array
+that defines the material to go before and after the content of the
+environment.  The array is of the form <cite>[before, after, n, opt]</cite>
+where <cite>before</cite> is the material that replaces the <code class="docutils literal notranslate"><span class="pre">\begin{name}</span></code>,
+<cite>after</cite> is the material that replaces <code class="docutils literal notranslate"><span class="pre">\end{name}</span></code>, <cite>n</cite> is the
+number of parameters that follow the <code class="docutils literal notranslate"><span class="pre">\begin{name}</span></code>, and <cite>opt</cite> is
+the default value used for an optional parameter that would follow
+<code class="docutils literal notranslate"><span class="pre">\begin{name}</span></code> in brackets.  The parameters can be inserted into
+the <cite>before</cite> string using <code class="docutils literal notranslate"><span class="pre">#1</span></code>, <code class="docutils literal notranslate"><span class="pre">#2</span></code>, etc., where <code class="docutils literal notranslate"><span class="pre">#1</span></code> is the
+optional parameter, if there is one.</p>
+<p>Note that since the <cite>before</cite> and <cite>after</cite> values are javascript
+strings, backslashes in the replacement text must be doubled to
+prevent them from acting as javascript escape characters.</p>
+<p>For example,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">environments</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">braced</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\left\\{&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\right\\}&#39;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ABC</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;(#1)(#2)(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>would define two environments, <code class="docutils literal notranslate"><span class="pre">braced</span></code> and <code class="docutils literal notranslate"><span class="pre">ABC</span></code>, where</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>braced<span class="nb">}</span> <span class="k">\frac</span><span class="nb">{</span>x<span class="nb">}{</span>y<span class="nb">}</span> <span class="k">\end</span><span class="nb">{</span>braced<span class="nb">}</span>
+</pre></div>
+</div>
+<p>would produce the fraction <cite>x</cite>/<cite>y</cite> in braces that stretch to the
+height of the fraction, while</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>ABC<span class="nb">}{</span>Z<span class="nb">}</span> xyz <span class="k">\end</span><span class="nb">{</span>ABC<span class="nb">}</span>
+</pre></div>
+</div>
+<p>would produce <code class="docutils literal notranslate"><span class="pre">(X)(Z)(xyz)</span></code>, and</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>ABC<span class="nb">}</span>[Y]<span class="nb">{</span>Z<span class="nb">}</span> xyz <span class="k">\end</span><span class="nb">{</span>ABC<span class="nb">}</span>
+</pre></div>
+</div>
+<p>would produce <code class="docutils literal notranslate"><span class="pre">(Y)(Z)(xyz)</span></code>.</p>
+</dd></dl>
+
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="colorv2.html" class="btn btn-neutral float-left" title="colorv2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="empheq.html" class="btn btn-neutral float-right" title="empheq" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legacy Assistive Support in v2 &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Writing Mathematics for MathJax" href="mathematics.html" />
+    <link rel="prev" title="Keyboard Explorer Commands" href="explorer-commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="accessibility.html">MathJax Accessibility Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#mathjax-user-interface">MathJax User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#mathjax-accessibility-extensions">MathJax Accessibility Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html#screen-reader-support">Screen Reader Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="accessibility.html#more-information">More Information</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="a11y-extensions.html">Accessibility extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explorer-commands.html">Available explorer keyboard commands</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Legacy Assistive Support in v2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#support-matrix-assistivemml-js">Support Matrix (AssistiveMML.js)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notes-on-apple-voiceover">Notes on Apple VoiceOver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notes-on-mathplayer-4-and-internet-explorer-11">Notes on MathPlayer 4 and Internet Explorer 11</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../input/tex/index.html">TeX and LaTeX Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input/asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="accessibility.html">Accessibility Features</a> &raquo;</li>
+      <li>Legacy Assistive Support in v2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basic/legacy-accessibility.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="legacy-assistive-support-in-v2">
+<span id="legacy-accessibility"></span><h1>Legacy Assistive Support in v2<a class="headerlink" href="#legacy-assistive-support-in-v2" title="Permalink to this heading"></a></h1>
+<p>Interactions between screen readers and MathJax are delicate and vary
+from browser to broswer, operating system to operating system, and
+screen reader to screen reader.  The following information was
+gathered over time for version 2 of MathJax and various
+broser/operating-system/screen-reader combinations.  The information
+is several years old, and my no longer be completely accurate, as
+features in browsers and screen readers change regularly.  Because
+this inforamtion changes regularly with updates to browsers and screen
+readers, we are unable to maintin a table like this for version 3.</p>
+<section id="support-matrix-assistivemml-js">
+<h2>Support Matrix (AssistiveMML.js)<a class="headerlink" href="#support-matrix-assistivemml-js" title="Permalink to this heading"></a></h2>
+<p>Below is a summary of results for MathML enabled screenreaders and the
+legacy AssistiveMML extension, based on tests as well as user reports.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Screenreader</th>
+            <th>Browser</th>
+            <th>OS</th>
+            <th>Usable?</th>
+            <th>Bugs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ChromeVox</td>
+            <td>Chrome</td>
+            <td>any</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>any</td>
+            <td>WinXP</td>
+            <td>DNA</td>
+            <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160598962">MathPlayer 4 does not support WinXP</a></td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>Chrome</td>
+            <td>any</td>
+            <td>DNA</td>
+            <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160503827">Chrome issues prevent MathML support by NVDA</a></td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>Firefox</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>Firefox</td>
+            <td>Win8.1</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>Firefox</td>
+            <td>Win10</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>MS Edge</td>
+            <td>Win10</td>
+            <td>DNA</td>
+            <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160598962">Edge issues prevent MathML support by NVDA</a></td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>IE11</td>
+            <td>Win8.1</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>IE10</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>NVDA</td>
+            <td>IE9</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>any</td>
+            <td>WinXP</td>
+            <td>DNA</td>
+            <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features#JAWSXP">JAWS 15 was the last version to support Windows XP but MathML support in JAWS starts with JAWS 16</a></td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>Chrome</td>
+            <td>any</td>
+            <td>DNA</td>
+            <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features">JAWS only supports IE and Firefox</a></td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>Firefox</td>
+            <td>Win8.1</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>Firefox</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>Firefox</td>
+            <td>Win10</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>MS Edge</td>
+            <td>Win10</td>
+            <td>DNA</td>
+            <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features">JAWS only supports IE and Firefox</a></td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>IE11</td>
+            <td>Win8.1</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>IE10</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>JAWS</td>
+            <td>IE9</td>
+            <td>Win7</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>VoiceOver</td>
+            <td>Safari</td>
+            <td>OSX</td>
+            <td>+1</td>
+            <td>see notes below</td>
+        </tr>
+        <tr>
+            <td>VoiceOver</td>
+            <td>Chrome</td>
+            <td>OSX</td>
+            <td>DNA</td>
+            <td>Chrome and VoiceOver issues prevent MathML support in this combination.</td>
+        </tr>
+        <tr>
+            <td>VoiceOver</td>
+            <td>Firefox</td>
+            <td>OSX</td>
+            <td>DNA</td>
+            <td>Chrome and Firefox issues prevent MathML support in this combination.</td>
+        </tr>
+        <tr>
+            <td>Orca</td>
+            <td>Firefox</td>
+            <td>Ubuntu 15.10</td>
+            <td>+1</td>
+            <td>no bugs</td>
+        </tr>
+        <tr>
+            <td>Orca</td>
+            <td>Web</td>
+            <td>Ubuntu 15.10</td>
+            <td>DNA</td>
+            <td><a href="https://mail.gnome.org/archives/orca-list/2015-July/msg00010.html">Chrome issues prevent MathML support by ORCA</a></td>
+        </tr>
+        <tr>
+            <td>Orca</td>
+            <td>Chrome(ium)</td>
+            <td>Ubuntu 15.10</td>
+            <td>DNA</td>
+            <td><a href="https://mail.gnome.org/archives/orca-list/2015-July/msg00010.html">Chrome issues prevent MathML support by ORCA</a></td>
+        </tr>
+    </tbody>
+</table>
+<br/></section>
+<section id="notes-on-apple-voiceover">
+<h2>Notes on Apple VoiceOver<a class="headerlink" href="#notes-on-apple-voiceover" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>VoiceOver</strong> on OSX</p>
+<ul>
+<li><p><em>Safari</em>. The visually-hidden MathML is read out and gets an
+outline. Visual rendering is ignored correctly. VoiceOver
+somtimes drops parts of the equation due to its partial MathML
+support.</p></li>
+<li><p><em>Chrome</em>. The visually-hidden MathML is detected but VoiceOver
+does not read it correctly (only e.g., “4 items detected; math”;
+this seems like a VO bug); an outline is added. Visual rendering
+is ignored correctly.</p></li>
+<li><p><em>Firefox</em>. The visually-hidden MathML is only read as a string of
+contained characters; an outline is added. Visual rendering is
+ignored correctly.</p></li>
+</ul>
+</li>
+<li><p><strong>VoiceOver</strong> on iOS</p>
+<ul>
+<li><p>The “slide two fingers from top to read screen” method will read
+the visually-hidden MathML. Visual rendering is ignored correctly.</p></li>
+<li><p>Manual exploration.</p>
+<ul>
+<li><p>Exploration by swiping left/right will read the visually-hidden MathML. Visual rendering is ignored correctly.</p></li>
+<li><p>Tapping on an equation does not work due to the visually-hidden MathML being placed in a 1px box.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="notes-on-mathplayer-4-and-internet-explorer-11">
+<h2>Notes on MathPlayer 4 and Internet Explorer 11<a class="headerlink" href="#notes-on-mathplayer-4-and-internet-explorer-11" title="Permalink to this heading"></a></h2>
+<p>Design Science suggests that you always use IE’s Enterprise mode for
+MathPlayer in IE11, <a class="reference external" href="http://www.dessci.com/en/products/mathplayer/tech/default.htm#Enterprise_mode">see their documentation</a>.
+However, it seems that this is only required for MathPlayer’s visual
+rendering to work and this additionally requires the MathPlayer
+BrowserHelperAddon to be active in IE.</p>
+<p>Unfortunately, the MathPlayer BrowserHelperAddon can lead to
+crashes. E.g., if you switch MathJax’s output to the NativeMML output,
+MathPlayer will crash IE11; you’ll have to clear the MathJax cookie
+to reset things. Also, in a plain MathML sample (without MathJax),
+clicking on the MathPlayer rendering will crash IE11.</p>
+<p>Using IE’s Enterprise mode should work with NVDA and the AssistiveMML extension
+but they don’t seem to work with NVDA and plain MathML pages.</p>
+<p>We suggest you do not switch on IE’s Enterprise mode on pages using MathJax and
+we also have to strongly suggest that you <strong>not</strong> use the BrowserHelperAddon with MathJax
+on IE11.</p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="explorer-commands.html" class="btn btn-neutral float-left" title="Keyboard Explorer Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mathematics.html" class="btn btn-neutral float-right" title="Writing Mathematics for MathJax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

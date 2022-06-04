@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mathtools &mdash; MathJax 3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/font.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mhchem" href="mhchem.html" />
+    <link rel="prev" title="html" href="html.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> MathJax
+          </a>
+              <div class="version">
+                3.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathjax.html">What is MathJax?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/accessibility.html">MathJax Accessibility Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/mathematics.html">Writing Mathematics for MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/community.html">The MathJax Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basic/bugs.html">Reporting Issues with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Including MathJax in a Web Page</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/start.html"> Getting Started with Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/configuration.html"> Configuring and Loading MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/components/index.html"> The MathJax Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/typeset.html"> Typesetting and Converting Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/hosting.html"> Hosting Your Own Copy of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/webpack.html"> Making a Custom Build of MathJax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/examples.html"> Examples in a Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax on a Server Using NodeJS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/start.html">Getting Started with Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/overview.html">Three Ways to Use MathJax in Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../server/examples.html">Examples in Node</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Input</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">TeX and LaTeX Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../differences.html">Differences from Actual TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../delimiters.html">TeX and LaTeX math delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html.html">TeX and LaTeX in HTML documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Defining TeX macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eqnumbers.html">Automatic Equation Numbering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions.html">TeX and LaTeX extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The TeX/LaTeX Extension List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="action.html">action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ams.html">ams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amscd.html">amscd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload.html">autoload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbox.html">bbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boldsymbol.html">boldsymbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braket.html">braket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bussproofs.html">bussproofs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cancel.html">cancel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cases.html">cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centernot.html">centernot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colortbl.html">colortbl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorv2.html">colorv2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configmacros.html">configmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="empheq.html">empheq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enclose.html">enclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extpfeil.html">extpfeil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gensymb.html">gensymb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html">html</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mathtools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mathtools-options">mathtools Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mathtools-commands">mathtools Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mhchem.html">mhchem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="newcommand.html">newcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noerrors.html">noerrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="noundefined.html">noundefined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="require.html">require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setoptions.html">setoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagformat.html">tagformat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textcomp.html">textcomp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textmacros.html">textmacros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgreek.html">upgreek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verb.html">verb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autobold.html">autobold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoload-all.html">autoload-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="begingroup.html">begingroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mediawiki-texvc.html">mediawiki-texvc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macros/index.html">Supported TeX/LaTeX commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathml.html">MathML Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asciimath.html">AsciiMath Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Output</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/lazy.html">Lazy Typesetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/linebreaks.html">Line Breaking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/fonts.html">Font Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/browser.html">Browser Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../options/index.html">Configuring MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/typeset.html">MathJax in Dynamic Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/extensions.html">Custom Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/model.html">The MathJax Processing Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/synchronize.html">Synchronizing Your Code with MathJax</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">The MathJax API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Using the MathJax API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/faq.html">MathJax FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/badges.html">MathJax Badges and Logo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/articles.html">Articles and Presentations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MathJax Updates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/v2.html">Upgrading from Version 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading/index.html">What's New</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MathJax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">TeX and LaTeX Support</a> &raquo;</li>
+          <li><a href="index.html">The TeX/LaTeX Extension List</a> &raquo;</li>
+      <li>mathtools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/input/tex/extensions/mathtools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mathtools">
+<span id="tex-mathtools"></span><h1>mathtools<a class="headerlink" href="#mathtools" title="Permalink to this heading"></a></h1>
+<p>The <cite>mathtools</cite> extension implements the <code class="docutils literal notranslate"><span class="pre">mathtools</span></code> style package from
+LaTeX. The package provides a number of tools for advanced mathematical
+typesetting. See the <a class="reference external" href="https://www.ctan.org/pkg/mathtools">CTAN page</a> for
+more information and documentation of <cite>mathtools</cite>.</p>
+<p>This package is not autoloaded, so you must request it explicitly if you want to use it.
+To load the <cite>mathtools</cite> extension, add <code class="docutils literal notranslate"><span class="pre">'[tex]/mathtools'</span></code> to the <code class="docutils literal notranslate"><span class="pre">load</span></code> array of the <code class="docutils literal notranslate"><span class="pre">loader</span></code> block of your
+MathJax configuration, and add <code class="docutils literal notranslate"><span class="pre">'mathtools'</span></code> to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> block.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/mathtools&#39;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mathtools&#39;</span><span class="p">]}}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively, use <code class="docutils literal notranslate"><span class="pre">\require{mathtools}</span></code> in a TeX expression to load it
+dynamically from within the math on the page, if the <cite>require</cite>
+extension is loaded.</p>
+<hr class="docutils" />
+<section id="mathtools-options">
+<span id="tex-mathtools-options"></span><h2>mathtools Options<a class="headerlink" href="#mathtools-options" title="Permalink to this heading"></a></h2>
+<p>Adding the <cite>mathtools</cite> extension to the <code class="docutils literal notranslate"><span class="pre">packages</span></code> array defines an
+<code class="docutils literal notranslate"><span class="pre">mathtools</span></code> sub-block of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> configuration block with the
+following values:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">mathtools</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">multlinegap</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">multlined</span><span class="o">-</span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">firstline</span><span class="o">-</span><span class="nx">afterskip</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">lastline</span><span class="o">-</span><span class="nx">preskip</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">smallmatrix</span><span class="o">-</span><span class="nx">align</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">shortvdotsadjustabove</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.2em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">shortvdotsadjustbelow</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.2em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">centercolon</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">centercolon</span><span class="o">-</span><span class="nx">offset</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.04em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">thincolon</span><span class="o">-</span><span class="nx">dx</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;-.04em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">thincolon</span><span class="o">-</span><span class="nx">dw</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;-.08em&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">use</span><span class="o">-</span><span class="nx">unicode</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">prescript</span><span class="o">-</span><span class="nx">sub</span><span class="o">-</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">prescript</span><span class="o">-</span><span class="nx">sup</span><span class="o">-</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">prescript</span><span class="o">-</span><span class="nx">arg</span><span class="o">-</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">allow</span><span class="o">-</span><span class="nx">mathtoolsset</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">pairedDelimiters</span><span class="o">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">      </span><span class="nx">tagforms</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<span class="target" id="tex-mathtools-multlinegap"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">multlinegap:</span> <span class="pre">'1em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Horizontal space for multlined environments.</p>
+<span class="target" id="tex-mathtools-multlined-pos"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">multlined-pos:</span> <span class="pre">'c'</span></span></dt>
+<dd></dd></dl>
+
+<p>Default alignment for multlined environments.</p>
+<span class="target" id="tex-mathtools-firstline-afterskip"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">firstline-afterskip:</span> <span class="pre">''</span></span></dt>
+<dd></dd></dl>
+
+<p>Space for first line of multlined (overrides multlinegap).</p>
+<span class="target" id="tex-mathtools-lastline-preskip"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">lastline-preskip:</span> <span class="pre">''</span></span></dt>
+<dd></dd></dl>
+
+<p>Space for last line of multlined (overrides multlinegap).</p>
+<span class="target" id="tex-mathtools-smallmatrix-align"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">smallmatrix-align:</span> <span class="pre">'c'</span></span></dt>
+<dd></dd></dl>
+
+<p>Default alignment for smallmatrix environments.</p>
+<span class="target" id="tex-mathtools-shortvdotsadjustabove"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">shortvdotsadjustabove:</span> <span class="pre">'.2em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Space to remove above <code class="docutils literal notranslate"><span class="pre">\shortvdots</span></code>.</p>
+<span class="target" id="tex-mathtools-shortvdotsadjustbelow"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">shortvdotsadjustbelow:</span> <span class="pre">'.2em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Space to remove below <code class="docutils literal notranslate"><span class="pre">\shortvdots</span></code>.</p>
+<span class="target" id="tex-mathtools-centercolon"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">centercolon:</span> <span class="pre">false</span></span></dt>
+<dd></dd></dl>
+
+<p>True to have colon automatically centered.</p>
+<span class="target" id="tex-mathtools-centercolon-offset"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">centercolon-offset:</span> <span class="pre">'.04em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Vertical adjustment for centered colons.</p>
+<span class="target" id="tex-mathtools-thincolon-dx"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">thincolon-dx:</span> <span class="pre">'-.04em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Horizontal adjustment for thin colons (e.g., <code class="docutils literal notranslate"><span class="pre">\coloneqq</span></code>).</p>
+<span class="target" id="tex-mathtools-thincolon-dw"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">thincolon-dw:</span> <span class="pre">'-.08em'</span></span></dt>
+<dd></dd></dl>
+
+<p>Width adjustment for thin colons.</p>
+<span class="target" id="tex-mathtools-use-unicode"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">use-unicode:</span> <span class="pre">false</span></span></dt>
+<dd></dd></dl>
+
+<p>True to use unicode characters rather than multi-character version for <code class="docutils literal notranslate"><span class="pre">\coloneqq</span></code>, etc., when possible.</p>
+<span class="target" id="tex-mathtools-prescript-sub-format"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">prescript-sub-format:</span> <span class="pre">''</span></span></dt>
+<dd></dd></dl>
+
+<p>Format for <code class="docutils literal notranslate"><span class="pre">\prescript</span></code> subscript.</p>
+<span class="target" id="tex-mathtools-prescript-sup-format"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">prescript-sup-format:</span> <span class="pre">''</span></span></dt>
+<dd></dd></dl>
+
+<p>Format for <code class="docutils literal notranslate"><span class="pre">\prescript</span></code> superscript.</p>
+<span class="target" id="tex-mathtools-prescript-arg-format"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">prescript-arg-format:</span> <span class="pre">''</span></span></dt>
+<dd></dd></dl>
+
+<p>Format for <code class="docutils literal notranslate"><span class="pre">\prescript</span></code> base.</p>
+<span class="target" id="tex-mathtools-allow-mathtoolsset"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">allow-mathtoolsset:</span> <span class="pre">true</span></span></dt>
+<dd></dd></dl>
+
+<p>True to allow <code class="docutils literal notranslate"><span class="pre">\mathtoolsset</span></code> to change settings.</p>
+<span class="target" id="tex-mathtools-paireddelimiters"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">pairedDelimiters:</span> <span class="pre">{}</span></span></dt>
+<dd></dd></dl>
+
+<p>Predefined paired delimiters of the form <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">[left,</span> <span class="pre">right,</span> <span class="pre">body,</span> <span class="pre">argcount,</span> <span class="pre">pre,</span> <span class="pre">post]</span></code>.</p>
+<span class="target" id="tex-mathtools-tagforms"></span><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">tagforms:</span> <span class="pre">{}</span></span></dt>
+<dd></dd></dl>
+
+<p>Tag form definitions of the form <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">[left,</span> <span class="pre">right,</span> <span class="pre">format]</span></code>.</p>
+<hr class="docutils" />
+</section>
+<section id="mathtools-commands">
+<span id="tex-mathtools-commands"></span><h2>mathtools Commands<a class="headerlink" href="#mathtools-commands" title="Permalink to this heading"></a></h2>
+<p>The <cite>mathtools</cite> extension implements the following macros:
+<code class="docutils literal notranslate"><span class="pre">\:</span></code>, <code class="docutils literal notranslate"><span class="pre">\Aboxed</span></code>, <code class="docutils literal notranslate"><span class="pre">\adjustlimits</span></code>, <code class="docutils literal notranslate"><span class="pre">\ArrowBetweenLines</span></code>, <code class="docutils literal notranslate"><span class="pre">\bigtimes</span></code>, <code class="docutils literal notranslate"><span class="pre">\centercolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\clap</span></code>, <code class="docutils literal notranslate"><span class="pre">\colonapprox</span></code>, <code class="docutils literal notranslate"><span class="pre">\Colonapprox</span></code>, <code class="docutils literal notranslate"><span class="pre">\coloneq</span></code>, <code class="docutils literal notranslate"><span class="pre">\Coloneq</span></code>, <code class="docutils literal notranslate"><span class="pre">\coloneqq</span></code>, <code class="docutils literal notranslate"><span class="pre">\Coloneqq</span></code>, <code class="docutils literal notranslate"><span class="pre">\colonsim</span></code>, <code class="docutils literal notranslate"><span class="pre">\Colonsim</span></code>, <code class="docutils literal notranslate"><span class="pre">\cramped</span></code>, <code class="docutils literal notranslate"><span class="pre">\crampedclap</span></code>, <code class="docutils literal notranslate"><span class="pre">\crampedllap</span></code>, <code class="docutils literal notranslate"><span class="pre">\crampedrlap</span></code>, <code class="docutils literal notranslate"><span class="pre">\crampedsubstack</span></code>, <code class="docutils literal notranslate"><span class="pre">\dblcolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\DeclarePairedDelimiters</span></code>, <code class="docutils literal notranslate"><span class="pre">\DeclarePairedDelimitersX</span></code>, <code class="docutils literal notranslate"><span class="pre">\DeclarePairedDelimitersXPP</span></code>, <code class="docutils literal notranslate"><span class="pre">\eqcolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\Eqcolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\eqqcolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\Eqqcolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\lparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathclap</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathllap</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathmakebox</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathmbox</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathrlap</span></code>, <code class="docutils literal notranslate"><span class="pre">\mathtoolsset</span></code>, <code class="docutils literal notranslate"><span class="pre">\MoveEqLeft</span></code>, <code class="docutils literal notranslate"><span class="pre">\MTFlushSpaceAbove</span></code>, <code class="docutils literal notranslate"><span class="pre">\MTFlushSpaceBelow</span></code>, <code class="docutils literal notranslate"><span class="pre">\MTThinColon</span></code>, <code class="docutils literal notranslate"><span class="pre">\ndownarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\newtagform</span></code>, <code class="docutils literal notranslate"><span class="pre">\nuparrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\ordinarycolon</span></code>, <code class="docutils literal notranslate"><span class="pre">\overbracket</span></code>, <code class="docutils literal notranslate"><span class="pre">\prescript</span></code>, <code class="docutils literal notranslate"><span class="pre">\refeq</span></code>, <code class="docutils literal notranslate"><span class="pre">\renewtagform</span></code>, <code class="docutils literal notranslate"><span class="pre">\rparen</span></code>, <code class="docutils literal notranslate"><span class="pre">\shortvdotswithin</span></code>, <code class="docutils literal notranslate"><span class="pre">\shoveleft</span></code>, <code class="docutils literal notranslate"><span class="pre">\shoveright</span></code>, <code class="docutils literal notranslate"><span class="pre">\splitdfrac</span></code>, <code class="docutils literal notranslate"><span class="pre">\splitfrac</span></code>, <code class="docutils literal notranslate"><span class="pre">\textclap</span></code>, <code class="docutils literal notranslate"><span class="pre">\textllap</span></code>, <code class="docutils literal notranslate"><span class="pre">\textrlap</span></code>, <code class="docutils literal notranslate"><span class="pre">\underbracket</span></code>, <code class="docutils literal notranslate"><span class="pre">\usetagform</span></code>, <code class="docutils literal notranslate"><span class="pre">\vdotswithin</span></code>, <code class="docutils literal notranslate"><span class="pre">\xhookleftarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xhookrightarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xLeftarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xleftharpoondown</span></code>, <code class="docutils literal notranslate"><span class="pre">\xleftharpoonup</span></code>, <code class="docutils literal notranslate"><span class="pre">\xleftrightarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xLeftrightarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xleftrightharpoons</span></code>, <code class="docutils literal notranslate"><span class="pre">\xmapsto</span></code>, <code class="docutils literal notranslate"><span class="pre">\xmathstrut</span></code>, <code class="docutils literal notranslate"><span class="pre">\xRightarrow</span></code>, <code class="docutils literal notranslate"><span class="pre">\xrightharpoondown</span></code>, <code class="docutils literal notranslate"><span class="pre">\xrightharpoonup</span></code>, <code class="docutils literal notranslate"><span class="pre">\xrightleftharpoons</span></code></p>
+<p>And the following environments:
+<code class="docutils literal notranslate"><span class="pre">bmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">Bmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">bsmallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">Bsmallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">bsmallmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">Bsmallmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">cases*</span></code>, <code class="docutils literal notranslate"><span class="pre">crampedsubarray</span></code>, <code class="docutils literal notranslate"><span class="pre">dcases*</span></code>, <code class="docutils literal notranslate"><span class="pre">dcases</span></code>, <code class="docutils literal notranslate"><span class="pre">drcases*</span></code>, <code class="docutils literal notranslate"><span class="pre">drcases</span></code>, <code class="docutils literal notranslate"><span class="pre">lgathered</span></code>, <code class="docutils literal notranslate"><span class="pre">matrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">multlined</span></code>, <code class="docutils literal notranslate"><span class="pre">pmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">psmallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">psmallmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">rcases*</span></code>, <code class="docutils literal notranslate"><span class="pre">rcases</span></code>, <code class="docutils literal notranslate"><span class="pre">rgathered</span></code>, <code class="docutils literal notranslate"><span class="pre">smallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">spreadlines</span></code>, <code class="docutils literal notranslate"><span class="pre">vmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">Vmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">vsmallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">Vsmallmatrix*</span></code>, <code class="docutils literal notranslate"><span class="pre">vsmallmatrix</span></code>, <code class="docutils literal notranslate"><span class="pre">Vsmallmatrix</span></code></p>
+<p><hr></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="html.html" class="btn btn-neutral float-left" title="html" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mhchem.html" class="btn btn-neutral float-right" title="mhchem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 The MathJax Consortium.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
